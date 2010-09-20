@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     #(r'^login/.*$', 'sensormap.api.views.login_bad'),
     #(r'^store/(?P<session_id>\d+)/(?P<data>.+)$', 'sensormap.api.views.store'),
     #(r'^store/.*$', 'sensormap.api.views.store_bad'),
-    (r'^.*', 'musiclibrary.folders.views.index'),
+    (r'^.*', 'musiclibrary.folder.views.index'),
 )
