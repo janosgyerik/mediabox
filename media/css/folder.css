@@ -1,0 +1,24 @@
+ul.albums {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul.albums li {
+    background: url(../images/bullet1.png) no-repeat left;
+    padding-left: 1.5em;
+}
+
+ul.album {
+    list-style: none;
+    padding-left: 0;
+}
+
+.album-images img {
+    height: 100px;
+    padding: 2px;
+    border: 2px groove black;
+    margin-right: 1em;
+}
+
+/**/

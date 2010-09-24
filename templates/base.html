@@ -1,29 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
-<head> 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<meta name="author" content="Janos Gyerik" /> 
-<title>Music Library</title> 
-<link rel="stylesheet" type="text/css" href="./css/style.css" /> 
-<link rel="stylesheet" type="text/css" href="./css/main.css" /> 
-<link rel="stylesheet" type="text/css" href="./css/nav.css" /> 
-<link rel="stylesheet" type="text/css" href="./css/messages.css" /> 
-<link rel="stylesheet" type="text/css" href="./css/folder.css" /> 
-<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script> 
-</head> 
-<body> 
-<div id="logo"><a href="." title=""><img src="./images/logo.png" title="" alt="" /></a></div> 
+{% extends "xhtml1-strict.html" %}
+
+{% block body %}
+
+<div id="logo"><a href="{% url home %}" title="Music Library"><img src="/media/images/logo.png" title="" alt="" /></a></div> 
 <div class="main"> 
-<p class="pack"><span class="icon"><a href=".?logout=1" title="Logout"><img src="./icons/logout.png" title="Logout" alt="Logout" />&nbsp;<span>Logout</span></a></span></p> 
-<p class="pack"><span class="icon"><a href="changepw.cgi" title="Change password"><img src="./icons/changepw.png" title="Change password" alt="Change password" />&nbsp;<span>Change password</span></a></span></p> 
-<h1>Music Library</h1> 
-<div class="description">This is my <em>private</em> music library. Feel free to look around, listen to songs right here in the browser, or download them to your computer. Have fun!</div> 
-<div class="location">Location: <a href="folder.cgi?" title="">Top</a></div> 
-<h2>Folders</h2> 
-{% block content %}
-{% endblock %}
-<div class="cleared"></div> 
+    {% if debugmsg %}<div class="debug">{{debugmsg}}</div>{% endif %}
+
+    {% if user.is_authenticated %}
+    <p class="pack"><span class="icon"><a href="{% url django.contrib.auth.views.logout_then_login %}" title="Logout"><img src="/media/icons/logout.png" title="Logout" alt="Logout" />&nbsp;<span>Logout</span></a></span></p> 
+    <p class="pack"><span class="icon"><a href="{% url django.contrib.auth.views.password_change %}" title="Change password"><img src="/media/icons/changepw.png" title="Change password" alt="Change password" />&nbsp;<span>Change password</span></a></span></p> 
+    {% endif %}
+
+    <h1>{% block title %}Music Library{% endblock %}</h1>
+    
+    <div class="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+
+    <div class="cleared"></div> 
 </div> 
-</body> 
-</html> 
+
+{% endblock body %}

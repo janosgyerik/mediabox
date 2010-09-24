@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Music Library{% endblock %}
+
+{% block content %}
+
+<p>Hello, {{ user.username }}. Thanks for logging in.</p>
+<p>Welcome to my <strong><em>private</em></strong> music library. 
+You can listen to all the songs right here in the browser, 
+or download them to your computer.</p>
+
+{% if files %}
+    <h2>Files</h2>
+    <ul class="album">
+	{% for file in files %}
+	    <li><a href="{{ file.href }}" title="{{ file.title }}">{{ file.name }}</a></li>
+	{% endfor %}
+    </ul>
+{% endif %}
+
+<h2>Folders</h2>
+{% if folders %}
+    <ul class="albums">
+	{% for folder in folders %}
+	    <li><a href="{{ folder.href }}" title="{{ folder.title }}">{{ folder.name }}</a></li>
+	{% endfor %}
+    </ul>
+{% else %}
+<div class="error">Hmmm, there are no visible folders...
+Perhaps the site is misconfigured?</div>
+{% endif %}
+
+{% if latest %}
+    <h2>Latest</h2>
+    <ul class="albums">
+	{% for folder in latest %}
+	    <li><a href="{{ folder.href }}" title="{{ folder.title }}">{{ folder.name }}</a></li>
+	{% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}

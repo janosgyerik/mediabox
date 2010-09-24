@@ -6,8 +6,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^musiclibrary/', include('musiclibrary.foo.urls')),
+    url(r'^$', 'musiclibrary.views.home', name="home"),
+    (r'^accounts/profile/$', 'musiclibrary.views.home'),
+    (r'^accounts/password_change_done/$', 'musiclibrary.views.home'),
+    (r'^accounts/$', 'musiclibrary.views.home'),
+    (r'^accounts/', include('musiclibrary.accounts.urls')),
     (r'^folder/', include('musiclibrary.folder.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
@@ -16,8 +19,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-
-    (r'^accounts/login/$', 'django.contrib.auth.views.login'),
 )
 
 from django.conf import settings

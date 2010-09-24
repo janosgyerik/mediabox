@@ -2,8 +2,12 @@
 
 {% block content %}
 
+<p>Welcome to my <strong><em>private</em></strong> music library. 
+You can listen to all the songs right here in the browser, 
+or download them to your computer.</p>
+
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<p class="error">Your username and password didn't match. Please try again.</p>
 {% endif %}
 
 <form method="post" action="{% url django.contrib.auth.views.login %}">

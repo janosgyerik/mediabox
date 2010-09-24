@@ -1,0 +1,23 @@
+/* section: convention */
+
+form.compact {
+    margin: 1em 0;
+}
+
+form.compact th.actions {
+    padding: .5em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+form.compact th.actions input {
+    margin: .5em;
+    font-weight: bold;
+    color: #004;
+}
+form.compact th.actions a {
+    margin: .5em;
+}
+
+/* section: custom */
+
+/**/

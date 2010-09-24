@@ -1,0 +1,57 @@
+/* section: convention */
+
+form.long {
+    margin: 1em 0;
+}
+
+form.long div.field {
+    margin-bottom: 1em;
+}
+
+form.long div.field div.name {
+    font-weight: bold;
+    color: #228;
+}
+
+form.long div.field div.name img {
+    margin-bottom: .3em;
+}
+
+form.long div.field div.input p {
+    margin: .5em 0;
+}
+
+form.long div.field div.description {
+    font-size: smaller;
+    font-style: italic;
+    margin-bottom: .5em;
+}
+
+form.long div.actions {
+    border: 1px dashed #c88;
+    padding: .5em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+form.long div.actions input {
+    margin: .5em;
+    font-weight: bold;
+    color: #004;
+}
+form.long div.actions a {
+    margin: .5em;
+}
+form.long div.actions p {
+    font-style: italic;
+}
+form.long div.actions p a {
+    margin: 0;
+}
+form.long span.action input {
+    font-weight: bold;
+    color: #004;
+}
+
+/* section: custom */
+
+/**/
