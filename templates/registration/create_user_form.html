@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Create account' %}{% endblock %}
+
+{% block content %}
+
+<form action="" method="post">{% csrf_token %}
+    <div>
+	{% if form.errors %}
+	    <p class="error">
+	    {% blocktrans count form.errors.items|length as counter %}Please correct the
+	 error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+	    </p>
+	{% endif %}
+	
+	<fieldset class="module aligned wide">
+
+	    {% for field in form %}
+	    <div class="form-row">
+		{{ field.errors }}
+		{{ field.label_tag }}{{ field }}
+	    </div>
+	    {% endfor %}
+
+	</fieldset>
+	<p><input type="submit" value="Create account" /></p>
+    </div>
+</form>
+
+{% endblock %}

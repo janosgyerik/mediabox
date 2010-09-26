@@ -17,4 +17,8 @@ urlpatterns = patterns('django.contrib.auth.views',
     (r'^password_reset_complete/$', 'password_reset_complete'),
 )
 
+urlpatterns += patterns('musiclibrary.accounts.views',
+    (r'^create_user/$', 'create_user'),
+)
+
 # eof

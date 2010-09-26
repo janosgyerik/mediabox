@@ -27,5 +27,6 @@ or download them to your computer.</p>
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 <p><a href="{% url django.contrib.auth.views.password_reset %}">Forgot your password?</a></p>
+<p><a href="{% url musiclibrary.accounts.views.create_user %}">Don't have an account yet?</a></p>
 
 {% endblock %}
