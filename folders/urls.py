@@ -4,10 +4,11 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('musiclibrary.folder.views',
+urlpatterns = patterns('musiclibrary.folders.views',
     #(r'^login/(?P<username>[^/]+)/(?P<sensor_id>[^/]+)/(?P<formatstr>[^/]+)$', 'sensormap.api.views.login'),
     #(r'^login/.*$', 'sensormap.api.views.login_bad'),
     #(r'^store/(?P<session_id>\d+)/(?P<data>.+)$', 'sensormap.api.views.store'),
     #(r'^store/.*$', 'sensormap.api.views.store_bad'),
-    (r'^.*', 'index'),
+    url(r'^$', 'index', name="folders"),
+    (r'^(?P<relpath>.*)', 'index'),
 )

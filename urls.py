@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     (r'^accounts/password_change_done/$', 'musiclibrary.views.home'),
     (r'^accounts/$', 'musiclibrary.views.home'),
     (r'^accounts/', include('musiclibrary.accounts.urls')),
-    (r'^folder/', include('musiclibrary.folder.urls')),
+    (r'^folders/', include('musiclibrary.folders.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:

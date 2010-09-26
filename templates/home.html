@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-{% block title %}Music Library{% endblock %}
-
 {% block content %}
 
 <p>Hello, {{ user.username }}. Thanks for logging in.</p>
@@ -9,20 +7,11 @@
 You can listen to all the songs right here in the browser, 
 or download them to your computer.</p>
 
-{% if files %}
-    <h2>Files</h2>
-    <ul class="album">
-	{% for file in files %}
-	    <li><a href="{{ file.href }}" title="{{ file.title }}">{{ file.name }}</a></li>
-	{% endfor %}
-    </ul>
-{% endif %}
-
 <h2>Folders</h2>
 {% if folders %}
     <ul class="albums">
 	{% for folder in folders %}
-	    <li><a href="{{ folder.href }}" title="{{ folder.title }}">{{ folder.name }}</a></li>
+	<li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
 	{% endfor %}
     </ul>
 {% else %}

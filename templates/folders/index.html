@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{{ foldername }}{% endblock %}
+
+{% block content %}
+
+{% if locations %}
+<div class="location">Location: {% for loc in locations %}
+<a href="{{ loc.href }}" title="{{ loc.name }}">{{ loc.name }}</a>
+{% if not loc.last %} / {% endif %}
+{% endfor %}</div>
+{% endif %}
+
+{% if files %}
+    <h2>Files</h2>
+    <p>Click on the links to play/pause. (Works only if you have the flash plugin.)</p>
+    <ul class="album">
+	{% for file in files %}
+	    <li><a href="{{ file.href }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
+	{% endfor %}
+    </ul>
+    <p>TODO: ZIP download link here</p>
+{% endif %}
+
+{% if folders %}
+<h2>Folders</h2>
+    <ul class="albums">
+	{% for folder in folders %}
+	    <li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
+	{% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}

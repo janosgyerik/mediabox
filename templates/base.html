@@ -5,6 +5,11 @@
 <div id="logo"><a href="{% url home %}" title="Music Library"><img src="/media/images/logo.png" title="" alt="" /></a></div> 
 <div class="main"> 
     {% if debugmsg %}<div class="debug">{{debugmsg}}</div>{% endif %}
+    {% if errors %}
+    {% for err in errors %}
+    <div class="error">{{err}}</div>
+    {% endfor %}
+    {% endif %}
 
     {% if user.is_authenticated %}
     <p class="pack"><span class="icon"><a href="{% url django.contrib.auth.views.logout_then_login %}" title="Logout"><img src="/media/icons/logout.png" title="Logout" alt="Logout" />&nbsp;<span>Logout</span></a></span></p> 
