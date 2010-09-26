@@ -1,0 +1,7 @@
+/folder.latest10
+
+cleanse
+	do not share "title" template param with h1
+	re-copy registration templates
+	improve create account page
+
