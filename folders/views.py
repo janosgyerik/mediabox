@@ -86,7 +86,7 @@ def folders(relpath=None):
 
 def files(relpath=None):
     import django.core.urlresolvers
-    href_base = "/media/mp3"
+    href_base = "/static/mp3"
 
     if relpath is None:
         mediapath = MUSIC_ROOT
