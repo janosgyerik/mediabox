@@ -6,12 +6,12 @@ from django.contrib.auth.decorators import login_required
 
 from folders.views import folders, latest_x
 
-@login_required
+#@login_required
 def home(request):
     return render_to_response('home.html', 
-	    { 
-		"folders": folders(), 
-		"latest": latest_x(10),
-		}, RequestContext(request))
+            { 
+                "folders": folders(), 
+                "latest": latest_x(10),
+                }, RequestContext(request))
 
 # eof

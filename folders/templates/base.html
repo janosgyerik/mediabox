@@ -1,0 +1,29 @@
+{% extends "xhtml1-strict.html" %}
+
+{% block body %}
+
+<div id="logo"><a href="{% url home %}" title="Music Library"><img src="{{ STATIC_URL }}images/logo.png" title="" alt="" /></a></div> 
+<div class="main"> 
+    {% if debugmsg %}<div class="debug">{{debugmsg}}</div>{% endif %}
+    {% if errors %}
+    {% for err in errors %}
+    <div class="error">{{err}}</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <p class="pack"><span class="icon"><a href="{% url django.contrib.auth.views.logout_then_login %}" title="Logout"><img src="{{ STATIC_URL }}icons/logout.png" title="Logout" alt="Logout" />&nbsp;<span>Logout</span></a></span></p> 
+    <p class="pack"><span class="icon"><a href="{% url django.contrib.auth.views.password_change %}" title="Change password"><img src="{{ STATIC_URL }}icons/changepw.png" title="Change password" alt="Change password" />&nbsp;<span>Change password</span></a></span></p> 
+    {% endif %}
+
+    <h1>{% block title %}Music Library{% endblock %}</h1>
+    
+    <div class="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+
+    <div class="cleared"></div> 
+</div> 
+
+{% endblock body %}
