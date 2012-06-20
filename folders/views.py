@@ -13,10 +13,10 @@ MUSIC_ROOT = settings.MUSIC_ROOT
 #@login_required
 def index(request, relpath=None):
     if relpath is None:
-	return render_to_response('folders/index.html', {
-        "foldername": "Music Library",
-        "folders": folders(relpath),
-        }, RequestContext(request))
+        return render_to_response('folders/index.html', {
+            "foldername": "Music Library",
+            "folders": folders(relpath),
+            }, RequestContext(request))
     else:
         return render_to_response('folders/index.html', {
             "foldername": os.path.basename(relpath),
