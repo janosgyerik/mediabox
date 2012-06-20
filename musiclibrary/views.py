@@ -4,7 +4,7 @@ from django.conf import settings
 
 from django.contrib.auth.decorators import login_required
 
-from musiclibrary.folders.views import folders, latest_x
+from folders.views import folders, latest_x
 
 @login_required
 def home(request):
