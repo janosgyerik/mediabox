@@ -1,26 +1,22 @@
+import os
+
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.conf import settings
 
-import os
+MUSIC_ROOT = settings.MUSIC_ROOT
 
-mp3_dir = os.path.dirname(__file__) + "/../media/mp3"
-
-errors = []
-if not os.path.isdir(mp3_dir) and not os.path.islink(mp3_dir):
-    errors.append("mp3 directory does not exist!")
-
-@login_required
+#@login_required
 def index(request, relpath=None):
     if relpath is None:
 	return render_to_response('folders/index.html',
 		{
 		    "foldername": "Music Library",
 		    "folders": folders(relpath),
-		    "errors": errors,
 		    }, RequestContext(request))
     else:
 	return render_to_response('folders/index.html',
@@ -29,7 +25,6 @@ def index(request, relpath=None):
 		    "folders": folders(relpath),
 		    "files": files(relpath),
 		    "locations": locations(relpath),
-		    "errors": errors,
 		    }, RequestContext(request))
 
 def locations(relpath=None):
@@ -69,12 +64,12 @@ def folders(relpath=None):
     href_base = django.core.urlresolvers.reverse("folders")
 
     if relpath is None:
-	mediapath = mp3_dir
+        mediapath = MUSIC_ROOT
     else:
-	mediapath = os.path.join(mp3_dir, relpath)
+        mediapath = os.path.join(MUSIC_ROOT, relpath)
 
     if not os.path.isdir(mediapath):
-	return
+        return
 
     folders = []
     for f in os.listdir(mediapath):
@@ -98,9 +93,9 @@ def files(relpath=None):
     href_base = "/media/mp3"
 
     if relpath is None:
-	mediapath = mp3_dir
+	mediapath = MUSIC_ROOT
     else:
-	mediapath = os.path.join(mp3_dir, relpath)
+	mediapath = os.path.join(MUSIC_ROOT, relpath)
 
     if not os.path.isdir(mediapath):
 	return

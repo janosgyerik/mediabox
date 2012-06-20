@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django_openid_auth',
+    'folders',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -158,6 +159,8 @@ LOGGING = {
 }
 
 ### project specific custom settings
+
+MUSIC_ROOT = os.path.join(DIRNAME, 'mp3')
 
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
