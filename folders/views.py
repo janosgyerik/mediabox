@@ -66,23 +66,21 @@ def folders(relpath=None):
     else:
         mediapath = os.path.join(MUSIC_ROOT, relpath)
 
-    if not os.path.isdir(mediapath):
-        return
-
     folders = []
-    for f in os.listdir(mediapath):
-        if os.path.isdir(os.path.join(mediapath, f)):
-            if relpath is None:
-                href = os.path.join(href_base, f)
-            else:
-                href = os.path.join(href_base, relpath, f)
+    if os.path.isdir(mediapath):
+        for f in os.listdir(mediapath):
+            if os.path.isdir(os.path.join(mediapath, f)):
+                if relpath is None:
+                    href = os.path.join(href_base, f)
+                else:
+                    href = os.path.join(href_base, relpath, f)
 
-            folder = {
-                    "name": f,
-                    "href": href,
-                    }
+                folder = {
+                        "name": f,
+                        "href": href,
+                        }
 
-            folders.append(folder)
+                folders.append(folder)
 
     return folders
 
