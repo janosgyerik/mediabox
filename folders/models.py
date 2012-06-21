@@ -19,12 +19,14 @@ class Album(models.Model):
 
 class AlbumSong(models.Model):
     title = models.CharField(max_length=200)
+    filename = models.CharField(max_length=200)
     album = models.ForeignKey(Album)
     track = models.IntegerField()
 
 
 class Single(models.Model):
     title = models.CharField(max_length=200)
+    filename = models.CharField(max_length=200)
     artist = models.ForeignKey(Artist)
     release_date = models.DateTimeField()
 
