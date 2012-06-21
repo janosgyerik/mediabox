@@ -36,6 +36,7 @@ def sync_music():
             genre = get_genre_by_name(audioinfo['genre'])
             artist = get_or_create_artist(audioinfo['artist'], genre)
             album = get_or_create_album(artist, audioinfo['album'], audioinfo['release_date'], audioinfo['num_tracks'])
+            get_or_create_song(album, audioinfo['title'], relpath, audioinfo['track'])
 
 
 def find_music_files():
@@ -95,6 +96,19 @@ def get_or_create_album(artist, title, release_date, num_tracks):
                 num_tracks=num_tracks)
         album.save()
         return album
+
+
+def get_or_create_song(album, title, filename, track):
+    try:
+        return AlbumSong.objects.get(album=album, title=title)
+    except AlbumSong.DoesNotExist:
+        song = AlbumSong(
+                album=album,
+                filename=filename,
+                title=title,
+                track=track)
+        song.save()
+        return song
 
 
 # eof

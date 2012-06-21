@@ -27,9 +27,9 @@ class Album(models.Model):
 
 
 class AlbumSong(models.Model):
+    album = models.ForeignKey(Album)
     title = models.CharField(max_length=200)
     filename = models.CharField(max_length=200)
-    album = models.ForeignKey(Album)
     track = models.IntegerField()
     created_dt = models.DateTimeField(auto_now_add=True, blank=True)
     updated_dt = models.DateTimeField(auto_now_add=True, blank=True)
