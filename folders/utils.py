@@ -1,6 +1,5 @@
 import os
-import mutagen
-#from datetime import datetime
+from mutagen.easyid3 import EasyID3
 
 from django.conf import settings
 
@@ -8,8 +7,13 @@ from django.conf import settings
 
 
 def sync_music():
-    for filepath in find_music_files():
-        audio = get_audio(filepath)
+    for abspath, relpath in find_music_files():
+        audioinfo = get_audioinfo(abspath)
+        audioinfo.pprint()
+        print audioinfo.keys()
+        print audioinfo['title']
+        print audioinfo['artist']
+        break
 
 
 def find_music_files():
@@ -18,12 +22,17 @@ def find_music_files():
 
     for root, dirs, files in os.walk(path):
         for filename in files:
-            filepath = os.path.join(root, filename)
-            yield filepath
+            abspath = os.path.join(root, filename)
+            relpath = abspath.replace(settings.MUSIC_ROOT, '')
+            yield (abspath, relpath)
 
 
-def get_audio(filepath):
-    pass
+def get_audioinfo(filepath):
+    audioinfo = None
+    if filepath.endswith('.mp3'):
+        audioinfo = EasyID3(filepath)
+
+    return audioinfo
 
 
 # eof
