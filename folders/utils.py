@@ -1,4 +1,5 @@
 import os
+import sys
 from datetime import datetime
 from mutagen.easyid3 import EasyID3
 
@@ -7,11 +8,33 @@ from django.conf import settings
 from folders.models import Genre, Artist, Album, AlbumSong
 
 
+def _print(*args):
+    try:
+        print ' '.join([unicode(x) for x in args])
+    except:
+        print ' '.join([str(x) for x in args])
+
+
+def info(*args):
+    _print('[info]', *args)
+
+
+def warning(*args):
+    _print('[warning]', *args)
+
+
+def error(*args):
+    _print('[error]', *args)
+    sys.exit(1)
+
+
 def sync_music():
     for abspath, relpath in find_music_files():
+        info('importing file: %s' % relpath)
         audioinfo = get_audioinfo(abspath)
-        genre = get_genre_by_name(audioinfo['genre'])
-        break
+        if audioinfo is not None:
+            genre = get_genre_by_name(audioinfo['genre'])
+            #artist = get_or_create_artist(audioinfo['artist'], genre)
 
 
 def find_music_files():
