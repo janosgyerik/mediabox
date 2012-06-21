@@ -18,8 +18,8 @@ class Artist(models.Model):
 
 
 class Album(models.Model):
-    title = models.CharField(max_length=80)
     artist = models.ForeignKey(Artist)
+    title = models.CharField(max_length=80)
     release_date = models.DateTimeField()
     num_tracks = models.IntegerField(help_text='Number of tracks')
     created_dt = models.DateTimeField(auto_now_add=True, blank=True)

@@ -35,6 +35,7 @@ def sync_music():
         if audioinfo is not None:
             genre = get_genre_by_name(audioinfo['genre'])
             artist = get_or_create_artist(audioinfo['artist'], genre)
+            album = get_or_create_album(artist, audioinfo['album'], audioinfo['release_date'], audioinfo['num_tracks'])
 
 
 def find_music_files():
@@ -58,7 +59,7 @@ def get_audioinfo(filepath):
 
 def get_audioinfo_by_easyid3(easyid3):
     (track, num_tracks) = easyid3['tracknumber'][0].split('/')
-    released_date = datetime(int(easyid3['date'][0]), 1, 1)
+    release_date = datetime(int(easyid3['date'][0]), 1, 1)
     return {
             'artist': easyid3['artist'][0],
             'genre': easyid3['genre'][0],
@@ -66,7 +67,7 @@ def get_audioinfo_by_easyid3(easyid3):
             'title': easyid3['title'][0],
             'track': track,
             'num_tracks': num_tracks,
-            'released_date': released_date,
+            'release_date': release_date,
             }
 
 
@@ -81,6 +82,19 @@ def get_or_create_artist(name, genre):
         artist = Artist(name=name, genre=genre)
         artist.save()
         return artist
+
+
+def get_or_create_album(artist, title, release_date, num_tracks):
+    try:
+        return Album.objects.get(artist=artist, title=title)
+    except Album.DoesNotExist:
+        album = Album(
+                artist=artist,
+                title=title,
+                release_date=release_date,
+                num_tracks=num_tracks)
+        album.save()
+        return album
 
 
 # eof
