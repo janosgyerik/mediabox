@@ -34,7 +34,7 @@ def sync_music():
         audioinfo = get_audioinfo(abspath)
         if audioinfo is not None:
             genre = get_genre_by_name(audioinfo['genre'])
-            #artist = get_or_create_artist(audioinfo['artist'], genre)
+            artist = get_or_create_artist(audioinfo['artist'], genre)
 
 
 def find_music_files():
@@ -72,6 +72,15 @@ def get_audioinfo_by_easyid3(easyid3):
 
 def get_genre_by_name(name):
     return Genre.objects.get(name=name)
+
+
+def get_or_create_artist(name, genre):
+    try:
+        return Artist.objects.get(name=name)
+    except Artist.DoesNotExist:
+        artist = Artist(name=name, genre=genre)
+        artist.save()
+        return artist
 
 
 # eof
