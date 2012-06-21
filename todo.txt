@@ -1,7 +1,18 @@
-/folder.latest10
+wanted
+------
+- fast navigation
+- search
+- recent albums
 
-cleanse
-	do not share "title" template param with h1
-	re-copy registration templates
-	improve create account page
+
+important
+---------
+- openid login
+- invitations
+
+
+nice to have
+------------
+- 
+
 
