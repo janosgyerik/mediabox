@@ -1,29 +1,29 @@
 from django.db import models
 
 
-class Genre:
+class Genre(models.Model):
     name = models.CharField(max_length=80)
 
 
-class Artist:
+class Artist(models.Model):
     name = models.CharField(max_length=80)
     genre = models.ForeignKey(Genre)
 
 
-class Album:
+class Album(models.Model):
     title = models.CharField(max_length=80)
     artist = models.ForeignKey(Artist)
     release_date = models.DateTimeField()
-    num_tracks = models.IntegerField(help='Number of tracks')
+    num_tracks = models.IntegerField(help_text='Number of tracks')
 
 
-class AlbumSong:
+class AlbumSong(models.Model):
     title = models.CharField(max_length=200)
     album = models.ForeignKey(Album)
     track = models.IntegerField()
 
 
-class Single:
+class Single(models.Model):
     title = models.CharField(max_length=200)
     artist = models.ForeignKey(Artist)
     release_date = models.DateTimeField()
