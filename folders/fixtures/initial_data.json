@@ -1,0 +1,1334 @@
+[
+    {
+        "pk": 1, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 0, 
+            "name": "Blues", 
+            "created_dt": "2012-06-21T19:33:06.930Z"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 1, 
+            "name": "Classic Rock", 
+            "created_dt": "2012-06-21T19:33:07.096Z"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 2, 
+            "name": "Country", 
+            "created_dt": "2012-06-21T19:33:07.222Z"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 3, 
+            "name": "Dance", 
+            "created_dt": "2012-06-21T19:33:07.349Z"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 4, 
+            "name": "Disco", 
+            "created_dt": "2012-06-21T19:33:07.426Z"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 5, 
+            "name": "Funk", 
+            "created_dt": "2012-06-21T19:33:07.603Z"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 6, 
+            "name": "Grunge", 
+            "created_dt": "2012-06-21T19:33:07.712Z"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 7, 
+            "name": "Hip-Hop", 
+            "created_dt": "2012-06-21T19:33:07.845Z"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 8, 
+            "name": "Jazz", 
+            "created_dt": "2012-06-21T19:33:07.962Z"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 9, 
+            "name": "Metal", 
+            "created_dt": "2012-06-21T19:33:08.110Z"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 10, 
+            "name": "New Age", 
+            "created_dt": "2012-06-21T19:33:08.225Z"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 11, 
+            "name": "Oldies", 
+            "created_dt": "2012-06-21T19:33:08.360Z"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 12, 
+            "name": "Other", 
+            "created_dt": "2012-06-21T19:33:08.474Z"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 13, 
+            "name": "Pop", 
+            "created_dt": "2012-06-21T19:33:08.583Z"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 14, 
+            "name": "R&B", 
+            "created_dt": "2012-06-21T19:33:08.691Z"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 15, 
+            "name": "Rap", 
+            "created_dt": "2012-06-21T19:33:08.813Z"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 16, 
+            "name": "Reggae", 
+            "created_dt": "2012-06-21T19:33:08.928Z"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 17, 
+            "name": "Rock", 
+            "created_dt": "2012-06-21T19:33:09.149Z"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 18, 
+            "name": "Techno", 
+            "created_dt": "2012-06-21T19:33:09.259Z"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 19, 
+            "name": "Industrial", 
+            "created_dt": "2012-06-21T19:33:09.369Z"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 20, 
+            "name": "Alternative", 
+            "created_dt": "2012-06-21T19:33:09.491Z"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 21, 
+            "name": "Ska", 
+            "created_dt": "2012-06-21T19:33:09.599Z"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 22, 
+            "name": "Death Metal", 
+            "created_dt": "2012-06-21T19:33:09.726Z"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 23, 
+            "name": "Pranks", 
+            "created_dt": "2012-06-21T19:33:09.849Z"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 24, 
+            "name": "Soundtrack", 
+            "created_dt": "2012-06-21T19:33:09.967Z"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 25, 
+            "name": "Euro-Techno", 
+            "created_dt": "2012-06-21T19:33:10.045Z"
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 26, 
+            "name": "Ambient", 
+            "created_dt": "2012-06-21T19:33:10.157Z"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 27, 
+            "name": "Trip-Hop", 
+            "created_dt": "2012-06-21T19:33:10.266Z"
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 28, 
+            "name": "Vocal", 
+            "created_dt": "2012-06-21T19:33:10.382Z"
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 29, 
+            "name": "Jazz+Funk", 
+            "created_dt": "2012-06-21T19:33:10.507Z"
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 30, 
+            "name": "Fusion", 
+            "created_dt": "2012-06-21T19:33:10.624Z"
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 31, 
+            "name": "Trance", 
+            "created_dt": "2012-06-21T19:33:10.775Z"
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 32, 
+            "name": "Classical", 
+            "created_dt": "2012-06-21T19:33:10.893Z"
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 33, 
+            "name": "Instrumental", 
+            "created_dt": "2012-06-21T19:33:11.023Z"
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 34, 
+            "name": "Acid", 
+            "created_dt": "2012-06-21T19:33:11.140Z"
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 35, 
+            "name": "House", 
+            "created_dt": "2012-06-21T19:33:11.249Z"
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 36, 
+            "name": "Game", 
+            "created_dt": "2012-06-21T19:33:11.381Z"
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 37, 
+            "name": "Sound Clip", 
+            "created_dt": "2012-06-21T19:33:11.533Z"
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 38, 
+            "name": "Gospel", 
+            "created_dt": "2012-06-21T19:33:11.656Z"
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 39, 
+            "name": "Noise", 
+            "created_dt": "2012-06-21T19:33:11.783Z"
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 40, 
+            "name": "AlternRock", 
+            "created_dt": "2012-06-21T19:33:11.910Z"
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 41, 
+            "name": "Bass", 
+            "created_dt": "2012-06-21T19:33:12.031Z"
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 42, 
+            "name": "Soul", 
+            "created_dt": "2012-06-21T19:33:12.157Z"
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 43, 
+            "name": "Punk", 
+            "created_dt": "2012-06-21T19:33:12.272Z"
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 44, 
+            "name": "Space", 
+            "created_dt": "2012-06-21T19:33:12.398Z"
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 45, 
+            "name": "Meditative", 
+            "created_dt": "2012-06-21T19:33:12.523Z"
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 46, 
+            "name": "Instrumental Pop", 
+            "created_dt": "2012-06-21T19:33:12.641Z"
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 47, 
+            "name": "Instrumental Rock", 
+            "created_dt": "2012-06-21T19:33:12.773Z"
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 48, 
+            "name": "Ethnic", 
+            "created_dt": "2012-06-21T19:33:12.926Z"
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 49, 
+            "name": "Gothic", 
+            "created_dt": "2012-06-21T19:33:13.034Z"
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 50, 
+            "name": "Darkwave", 
+            "created_dt": "2012-06-21T19:33:13.143Z"
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 51, 
+            "name": "Techno-Industrial", 
+            "created_dt": "2012-06-21T19:33:13.253Z"
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 52, 
+            "name": "Electronic", 
+            "created_dt": "2012-06-21T19:33:13.384Z"
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 53, 
+            "name": "Pop-Folk", 
+            "created_dt": "2012-06-21T19:33:13.501Z"
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 54, 
+            "name": "Eurodance", 
+            "created_dt": "2012-06-21T19:33:13.618Z"
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 55, 
+            "name": "Dream", 
+            "created_dt": "2012-06-21T19:33:13.726Z"
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 56, 
+            "name": "Southern Rock", 
+            "created_dt": "2012-06-21T19:33:13.860Z"
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 57, 
+            "name": "Comedy", 
+            "created_dt": "2012-06-21T19:33:13.968Z"
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 58, 
+            "name": "Cult", 
+            "created_dt": "2012-06-21T19:33:14.180Z"
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 59, 
+            "name": "Gangsta", 
+            "created_dt": "2012-06-21T19:33:14.307Z"
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 60, 
+            "name": "Top 40", 
+            "created_dt": "2012-06-21T19:33:14.425Z"
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 61, 
+            "name": "Christian Rap", 
+            "created_dt": "2012-06-21T19:33:14.494Z"
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 62, 
+            "name": "Pop/Funk", 
+            "created_dt": "2012-06-21T19:33:14.675Z"
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 63, 
+            "name": "Jungle", 
+            "created_dt": "2012-06-21T19:33:14.888Z"
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 64, 
+            "name": "Native American", 
+            "created_dt": "2012-06-21T19:33:15.054Z"
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 65, 
+            "name": "Cabaret", 
+            "created_dt": "2012-06-21T19:33:15.188Z"
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 66, 
+            "name": "New Wave", 
+            "created_dt": "2012-06-21T19:33:15.315Z"
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 67, 
+            "name": "Psychedelic", 
+            "created_dt": "2012-06-21T19:33:15.483Z"
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 68, 
+            "name": "Rave", 
+            "created_dt": "2012-06-21T19:33:15.626Z"
+        }
+    }, 
+    {
+        "pk": 70, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 69, 
+            "name": "Showtunes", 
+            "created_dt": "2012-06-21T19:33:15.762Z"
+        }
+    }, 
+    {
+        "pk": 71, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 70, 
+            "name": "Trailer", 
+            "created_dt": "2012-06-21T19:33:15.879Z"
+        }
+    }, 
+    {
+        "pk": 72, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 71, 
+            "name": "Lo-Fi", 
+            "created_dt": "2012-06-21T19:33:15.997Z"
+        }
+    }, 
+    {
+        "pk": 73, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 72, 
+            "name": "Tribal", 
+            "created_dt": "2012-06-21T19:33:16.132Z"
+        }
+    }, 
+    {
+        "pk": 74, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 73, 
+            "name": "Acid Punk", 
+            "created_dt": "2012-06-21T19:33:16.254Z"
+        }
+    }, 
+    {
+        "pk": 75, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 74, 
+            "name": "Acid Jazz", 
+            "created_dt": "2012-06-21T19:33:16.362Z"
+        }
+    }, 
+    {
+        "pk": 76, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 75, 
+            "name": "Polka", 
+            "created_dt": "2012-06-21T19:33:16.471Z"
+        }
+    }, 
+    {
+        "pk": 77, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 76, 
+            "name": "Retro", 
+            "created_dt": "2012-06-21T19:33:16.579Z"
+        }
+    }, 
+    {
+        "pk": 78, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 77, 
+            "name": "Musical", 
+            "created_dt": "2012-06-21T19:33:16.695Z"
+        }
+    }, 
+    {
+        "pk": 79, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 78, 
+            "name": "Rock & Roll", 
+            "created_dt": "2012-06-21T19:33:16.816Z"
+        }
+    }, 
+    {
+        "pk": 80, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 79, 
+            "name": "Hard Rock", 
+            "created_dt": "2012-06-21T19:33:16.950Z"
+        }
+    }, 
+    {
+        "pk": 81, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 80, 
+            "name": "Folk", 
+            "created_dt": "2012-06-21T19:33:17.066Z"
+        }
+    }, 
+    {
+        "pk": 82, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 81, 
+            "name": "Folk-Rock", 
+            "created_dt": "2012-06-21T19:33:17.208Z"
+        }
+    }, 
+    {
+        "pk": 83, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 82, 
+            "name": "National Folk", 
+            "created_dt": "2012-06-21T19:33:17.316Z"
+        }
+    }, 
+    {
+        "pk": 84, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 83, 
+            "name": "Swing", 
+            "created_dt": "2012-06-21T19:33:17.449Z"
+        }
+    }, 
+    {
+        "pk": 85, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 84, 
+            "name": "Fast Fusion", 
+            "created_dt": "2012-06-21T19:33:17.584Z"
+        }
+    }, 
+    {
+        "pk": 86, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 85, 
+            "name": "Bebob", 
+            "created_dt": "2012-06-21T19:33:17.702Z"
+        }
+    }, 
+    {
+        "pk": 87, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 86, 
+            "name": "Latin", 
+            "created_dt": "2012-06-21T19:33:17.829Z"
+        }
+    }, 
+    {
+        "pk": 88, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 87, 
+            "name": "Revival", 
+            "created_dt": "2012-06-21T19:33:17.953Z"
+        }
+    }, 
+    {
+        "pk": 89, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 88, 
+            "name": "Celtic", 
+            "created_dt": "2012-06-21T19:33:18.061Z"
+        }
+    }, 
+    {
+        "pk": 90, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 89, 
+            "name": "Bluegrass", 
+            "created_dt": "2012-06-21T19:33:18.169Z"
+        }
+    }, 
+    {
+        "pk": 91, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 90, 
+            "name": "Avantgarde", 
+            "created_dt": "2012-06-21T19:33:18.286Z"
+        }
+    }, 
+    {
+        "pk": 92, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 91, 
+            "name": "Gothic Rock", 
+            "created_dt": "2012-06-21T19:33:18.421Z"
+        }
+    }, 
+    {
+        "pk": 93, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 92, 
+            "name": "Progressive Rock", 
+            "created_dt": "2012-06-21T19:33:18.556Z"
+        }
+    }, 
+    {
+        "pk": 94, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 93, 
+            "name": "Psychedelic Rock", 
+            "created_dt": "2012-06-21T19:33:18.691Z"
+        }
+    }, 
+    {
+        "pk": 95, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 94, 
+            "name": "Symphonic Rock", 
+            "created_dt": "2012-06-21T19:33:18.848Z"
+        }
+    }, 
+    {
+        "pk": 96, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 95, 
+            "name": "Slow Rock", 
+            "created_dt": "2012-06-21T19:33:18.957Z"
+        }
+    }, 
+    {
+        "pk": 97, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 96, 
+            "name": "Big Band", 
+            "created_dt": "2012-06-21T19:33:19.065Z"
+        }
+    }, 
+    {
+        "pk": 98, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 97, 
+            "name": "Chorus", 
+            "created_dt": "2012-06-21T19:33:19.200Z"
+        }
+    }, 
+    {
+        "pk": 99, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 98, 
+            "name": "Easy Listening", 
+            "created_dt": "2012-06-21T19:33:19.373Z"
+        }
+    }, 
+    {
+        "pk": 100, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 99, 
+            "name": "Acoustic", 
+            "created_dt": "2012-06-21T19:33:19.531Z"
+        }
+    }, 
+    {
+        "pk": 101, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 100, 
+            "name": "Humour", 
+            "created_dt": "2012-06-21T19:33:19.648Z"
+        }
+    }, 
+    {
+        "pk": 102, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 101, 
+            "name": "Speech", 
+            "created_dt": "2012-06-21T19:33:19.764Z"
+        }
+    }, 
+    {
+        "pk": 103, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 102, 
+            "name": "Chanson", 
+            "created_dt": "2012-06-21T19:33:19.873Z"
+        }
+    }, 
+    {
+        "pk": 104, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 103, 
+            "name": "Opera", 
+            "created_dt": "2012-06-21T19:33:20.008Z"
+        }
+    }, 
+    {
+        "pk": 105, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 104, 
+            "name": "Chamber Music", 
+            "created_dt": "2012-06-21T19:33:20.147Z"
+        }
+    }, 
+    {
+        "pk": 106, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 105, 
+            "name": "Sonata", 
+            "created_dt": "2012-06-21T19:33:20.289Z"
+        }
+    }, 
+    {
+        "pk": 107, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 106, 
+            "name": "Symphony", 
+            "created_dt": "2012-06-21T19:33:20.414Z"
+        }
+    }, 
+    {
+        "pk": 108, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 107, 
+            "name": "Booty Bass", 
+            "created_dt": "2012-06-21T19:33:20.539Z"
+        }
+    }, 
+    {
+        "pk": 109, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 108, 
+            "name": "Primus", 
+            "created_dt": "2012-06-21T19:33:20.656Z"
+        }
+    }, 
+    {
+        "pk": 110, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 109, 
+            "name": "Porn Groove", 
+            "created_dt": "2012-06-21T19:33:20.800Z"
+        }
+    }, 
+    {
+        "pk": 111, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 110, 
+            "name": "Satire", 
+            "created_dt": "2012-06-21T19:33:20.947Z"
+        }
+    }, 
+    {
+        "pk": 112, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 111, 
+            "name": "Slow Jam", 
+            "created_dt": "2012-06-21T19:33:21.072Z"
+        }
+    }, 
+    {
+        "pk": 113, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 112, 
+            "name": "Club", 
+            "created_dt": "2012-06-21T19:33:21.180Z"
+        }
+    }, 
+    {
+        "pk": 114, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 113, 
+            "name": "Tango", 
+            "created_dt": "2012-06-21T19:33:21.297Z"
+        }
+    }, 
+    {
+        "pk": 115, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 114, 
+            "name": "Samba", 
+            "created_dt": "2012-06-21T19:33:21.405Z"
+        }
+    }, 
+    {
+        "pk": 116, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 115, 
+            "name": "Folklore", 
+            "created_dt": "2012-06-21T19:33:21.541Z"
+        }
+    }, 
+    {
+        "pk": 117, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 116, 
+            "name": "Ballad", 
+            "created_dt": "2012-06-21T19:33:21.668Z"
+        }
+    }, 
+    {
+        "pk": 118, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 117, 
+            "name": "Power Ballad", 
+            "created_dt": "2012-06-21T19:33:21.814Z"
+        }
+    }, 
+    {
+        "pk": 119, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 118, 
+            "name": "Rhythmic Soul", 
+            "created_dt": "2012-06-21T19:33:21.931Z"
+        }
+    }, 
+    {
+        "pk": 120, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 119, 
+            "name": "Freestyle", 
+            "created_dt": "2012-06-21T19:33:22.039Z"
+        }
+    }, 
+    {
+        "pk": 121, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 120, 
+            "name": "Duet", 
+            "created_dt": "2012-06-21T19:33:22.155Z"
+        }
+    }, 
+    {
+        "pk": 122, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 121, 
+            "name": "Punk Rock", 
+            "created_dt": "2012-06-21T19:33:22.280Z"
+        }
+    }, 
+    {
+        "pk": 123, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 122, 
+            "name": "Drum Solo", 
+            "created_dt": "2012-06-21T19:33:22.440Z"
+        }
+    }, 
+    {
+        "pk": 124, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 123, 
+            "name": "A capella", 
+            "created_dt": "2012-06-21T19:33:22.575Z"
+        }
+    }, 
+    {
+        "pk": 125, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 124, 
+            "name": "Euro-House", 
+            "created_dt": "2012-06-21T19:33:22.750Z"
+        }
+    }, 
+    {
+        "pk": 126, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 125, 
+            "name": "Dance Hall", 
+            "created_dt": "2012-06-21T19:33:22.877Z"
+        }
+    }, 
+    {
+        "pk": 127, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 126, 
+            "name": "Goa", 
+            "created_dt": "2012-06-21T19:33:23.001Z"
+        }
+    }, 
+    {
+        "pk": 128, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 127, 
+            "name": "Drum & Bass", 
+            "created_dt": "2012-06-21T19:33:23.125Z"
+        }
+    }, 
+    {
+        "pk": 129, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 128, 
+            "name": "Club-House", 
+            "created_dt": "2012-06-21T19:33:23.234Z"
+        }
+    }, 
+    {
+        "pk": 130, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 129, 
+            "name": "Hardcore", 
+            "created_dt": "2012-06-21T19:33:23.351Z"
+        }
+    }, 
+    {
+        "pk": 131, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 130, 
+            "name": "Terror", 
+            "created_dt": "2012-06-21T19:33:23.459Z"
+        }
+    }, 
+    {
+        "pk": 132, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 131, 
+            "name": "Indie", 
+            "created_dt": "2012-06-21T19:33:23.594Z"
+        }
+    }, 
+    {
+        "pk": 133, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 132, 
+            "name": "Britpop", 
+            "created_dt": "2012-06-21T19:33:23.717Z"
+        }
+    }, 
+    {
+        "pk": 134, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 133, 
+            "name": "Negerpunk", 
+            "created_dt": "2012-06-21T19:33:23.836Z"
+        }
+    }, 
+    {
+        "pk": 135, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 134, 
+            "name": "Polsk Punk", 
+            "created_dt": "2012-06-21T19:33:23.967Z"
+        }
+    }, 
+    {
+        "pk": 136, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 135, 
+            "name": "Beat", 
+            "created_dt": "2012-06-21T19:33:24.092Z"
+        }
+    }, 
+    {
+        "pk": 137, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 136, 
+            "name": "Christian Gangsta Rap", 
+            "created_dt": "2012-06-21T19:33:24.208Z"
+        }
+    }, 
+    {
+        "pk": 138, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 137, 
+            "name": "Heavy Metal", 
+            "created_dt": "2012-06-21T19:33:24.374Z"
+        }
+    }, 
+    {
+        "pk": 139, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 138, 
+            "name": "Black Metal", 
+            "created_dt": "2012-06-21T19:33:24.468Z"
+        }
+    }, 
+    {
+        "pk": 140, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 139, 
+            "name": "Crossover", 
+            "created_dt": "2012-06-21T19:33:24.633Z"
+        }
+    }, 
+    {
+        "pk": 141, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 140, 
+            "name": "Contemporary Christian", 
+            "created_dt": "2012-06-21T19:33:24.751Z"
+        }
+    }, 
+    {
+        "pk": 142, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 141, 
+            "name": "Christian Rock", 
+            "created_dt": "2012-06-21T19:33:24.870Z"
+        }
+    }, 
+    {
+        "pk": 143, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 142, 
+            "name": "Merengue", 
+            "created_dt": "2012-06-21T19:33:25.021Z"
+        }
+    }, 
+    {
+        "pk": 144, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 143, 
+            "name": "Salsa", 
+            "created_dt": "2012-06-21T19:33:25.195Z"
+        }
+    }, 
+    {
+        "pk": 145, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 144, 
+            "name": "Thrash Metal", 
+            "created_dt": "2012-06-21T19:33:25.303Z"
+        }
+    }, 
+    {
+        "pk": 146, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 145, 
+            "name": "Anime", 
+            "created_dt": "2012-06-21T19:33:25.422Z"
+        }
+    }, 
+    {
+        "pk": 147, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 146, 
+            "name": "JPop", 
+            "created_dt": "2012-06-21T19:33:25.545Z"
+        }
+    }, 
+    {
+        "pk": 148, 
+        "model": "folders.genre", 
+        "fields": {
+            "id3_id": 147, 
+            "name": "Synthpop", 
+            "created_dt": "2012-06-21T19:33:25.680Z"
+        }
+    }
+]

@@ -2,9 +2,12 @@ from django.db import models
 
 
 class Genre(models.Model):
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=80, unique=True)
     id3_id = models.IntegerField()
     created_dt = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Artist(models.Model):
