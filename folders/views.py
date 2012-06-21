@@ -1,14 +1,15 @@
 import os
 
-from django.http import HttpResponse
+#from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
+#from django.contrib.auth.decorators import login_required
+#from django.contrib.auth import logout
 from django.conf import settings
 
 MUSIC_ROOT = settings.MUSIC_ROOT
+
 
 #@login_required
 def index(request, relpath=None):
@@ -24,6 +25,7 @@ def index(request, relpath=None):
             "files": files(relpath),
             "locations": locations(relpath),
             }, RequestContext(request))
+
 
 def locations(relpath=None):
     if relpath is None:
@@ -57,6 +59,7 @@ def locations(relpath=None):
 
     return locations
 
+
 def folders(relpath=None):
     import django.core.urlresolvers
     href_base = django.core.urlresolvers.reverse("folders")
@@ -84,8 +87,9 @@ def folders(relpath=None):
 
     return folders
 
+
 def files(relpath=None):
-    import django.core.urlresolvers
+    #import django.core.urlresolvers
     href_base = "/static/mp3"
 
     if relpath is None:
