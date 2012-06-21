@@ -3,3 +3,4 @@
 django==1.4
 django_openid_auth>=0.4
 python-openid==2.2.5
+mutagen==1.20
