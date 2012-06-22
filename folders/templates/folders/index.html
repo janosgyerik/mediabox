@@ -15,9 +15,9 @@
     <h2>Files</h2>
     <p>Click on the links to play/pause. (Works only if you have the flash plugin.)</p>
     <ul class="album">
-	{% for file in files %}
-	    <li><a href="{{ file.href }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
-	{% endfor %}
+        {% for file in files %}
+        <li><a href="{{ file.href }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
+        {% endfor %}
     </ul>
     <p>TODO: ZIP download link here</p>
 {% endif %}
@@ -25,10 +25,23 @@
 {% if folders %}
 <h2>Folders</h2>
     <ul class="albums">
-	{% for folder in folders %}
-	    <li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
-	{% endfor %}
+        {% for folder in folders %}
+        <li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
+        {% endfor %}
     </ul>
 {% endif %}
+
+<div id="artists">
+<h2>Artists</h2>
+<div>TODO</div>
+</div>
+
+<!-- Templates -->
+
+<script type="text/template" id="artist-template">
+    <div class="view">
+      <label><%= title %></label>
+    </div>
+</script>
 
 {% endblock %}

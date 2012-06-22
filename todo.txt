@@ -3,7 +3,6 @@ wanted
 - fast navigation
 - search
 - recent albums
-- play ogg and flac too, not just mp3
 
 
 important
@@ -12,8 +11,30 @@ important
 - invitations
 
 
+backbone
+--------
+http://documentcloud.github.com/backbone/
+https://github.com/jeromegn/localtodos
+http://documentcloud.github.com/backbone/docs/todos.html
+view-source:http://documentcloud.github.com/backbone/examples/todos/index.html
+http://documentcloud.github.com/backbone/examples/todos/todos.js
+http://joshbohde.com/blog/backbonejs-and-django
+
+
 nice to have
 ------------
 - 
 
 
+sync music
+----------
+- remove from db files that disappeared
+- update relpath for files that changed
+- ogg, flac
+>>> mutagen.File("mutah_resign.mp3", easy=True)
+{'date': [u'2011'], 'album': [u'Salary man on holidays'], 'title': [u'Resign'], 'genre': [u'Trip-Hop'], 'artist': [u'Mutah']}
+>>> mutagen.File("080208workadub.ogg", easy=True)
+{'album': [u''], 'description': [u''], 'artist': [u'Mutah'], 'title': [u'Work a dub'], 'date': [u'2008'], 'genre': [u'']}
+>>> mutagen.File("01 - a custom skylark 1.flac", easy=True)
+{'album': [u'cd Bea'], 'description': [u''], 'artist': [u'kaffe matthews'], 'title': [u'a custom skylark 1'], 'tracktotal': [u'26'], 
+ 'musicbrainz_sortname': [u'kaffe matthews'], 'genre': [u'Electro Experimental'], 'tracknumber': [u'1']}
