@@ -29,7 +29,7 @@ class Album(models.Model):
 class AlbumSong(models.Model):
     album = models.ForeignKey(Album)
     title = models.CharField(max_length=200)
-    filename = models.CharField(max_length=200)
+    relpath = models.CharField(max_length=200)
     track = models.IntegerField()
     created_dt = models.DateTimeField(auto_now_add=True, blank=True)
     updated_dt = models.DateTimeField(auto_now_add=True, blank=True)
@@ -37,7 +37,7 @@ class AlbumSong(models.Model):
 
 class Single(models.Model):
     title = models.CharField(max_length=200)
-    filename = models.CharField(max_length=200)
+    relpath = models.CharField(max_length=200)
     artist = models.ForeignKey(Artist)
     release_date = models.DateTimeField()
     created_dt = models.DateTimeField(auto_now_add=True, blank=True)

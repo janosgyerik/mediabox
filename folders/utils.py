@@ -98,13 +98,13 @@ def get_or_create_album(artist, title, release_date, num_tracks):
         return album
 
 
-def get_or_create_song(album, title, filename, track):
+def get_or_create_song(album, title, relpath, track):
     try:
         return AlbumSong.objects.get(album=album, title=title)
     except AlbumSong.DoesNotExist:
         song = AlbumSong(
                 album=album,
-                filename=filename,
+                relpath=relpath,
                 title=title,
                 track=track)
         song.save()
