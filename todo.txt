@@ -3,6 +3,7 @@ wanted
 - fast navigation
 - search
 - recent albums
+- play ogg and flac too, not just mp3
 
 
 important
