@@ -3,12 +3,18 @@ import os
 #from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-
 #from django.contrib.auth.decorators import login_required
 #from django.contrib.auth import logout
 from django.conf import settings
 
+from folders.models import AlbumSong
+from services.handler import encode
+
 MUSIC_ROOT = settings.MUSIC_ROOT
+
+
+def album_songs_to_json():
+    return encode(list(AlbumSong.objects.all()))
 
 
 #@login_required
@@ -17,6 +23,7 @@ def index(request, relpath=None):
         return render_to_response('folders/index.html', {
             "foldername": "Music Library",
             "folders": folders(relpath),
+            "albumSongs": album_songs_to_json,
             }, RequestContext(request))
     else:
         return render_to_response('folders/index.html', {
@@ -24,6 +31,7 @@ def index(request, relpath=None):
             "folders": folders(relpath),
             "files": files(relpath),
             "locations": locations(relpath),
+            "albumSongs": album_songs_to_json,
             }, RequestContext(request))
 
 

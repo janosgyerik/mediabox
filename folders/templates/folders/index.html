@@ -36,7 +36,25 @@
 <div>TODO</div>
 </div>
 
+<div id="searchbox">
+    <h2>Search</h2>
+    <input type="text" class="search-text" />
+    <ul class="search-results"></ul>
+</div>
+
+<!-- data -->
+
+<script type="text/javascript">
+    var albumSongs_raw = {{ albumSongs|safe }};
+</script>
+
 <!-- Templates -->
+
+<script type="text/template" id="album-song-template">
+    <div class="view">
+        <a href="{{STATIC_URL}}mp3<%= relpath %>">#<%= track %> - <%= title %></a>
+    </div>
+</script>
 
 <script type="text/template" id="artist-template">
     <div class="view">

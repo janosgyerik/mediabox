@@ -23,7 +23,7 @@ http://joshbohde.com/blog/backbonejs-and-django
 
 nice to have
 ------------
-- 
+- playlist editor, store in localStore
 
 
 sync music
