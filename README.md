@@ -36,6 +36,17 @@ Setup
 8. Visit http://localhost:8000/folders/
 
 
+Live demos
+----------
+- http://dev.musiclibrary.titan2x.com/folders/
+
+
+Screenshots
+-----------
+![Folders](https://github.com/websitedevops/musiclibrary/raw/master/static/screenshots/folders.png)
+![Albums](https://github.com/websitedevops/musiclibrary/raw/master/static/screenshots/album.png)
+
+
 Features
 --------
 - Traverse directory of music files
@@ -74,3 +85,4 @@ Planned features (most important at the top)
 - Add support for more audio formats: ogg, flac
   Note: the webplayer probably cannot play anything but mp3.
   A pure HTML5 player should have no problem with that.
+
