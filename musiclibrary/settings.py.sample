@@ -160,7 +160,7 @@ LOGGING = {
 
 ### project specific custom settings
 
-MUSIC_ROOT = os.path.join(DIRNAME, '..', 'static', 'mp3')
+MUSIC_ROOT = os.path.join(DIRNAME, '..', 'static', 'music')
 
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 

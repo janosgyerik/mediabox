@@ -19,7 +19,7 @@ Setup
 
 4. Create a symbolic link to your music collection inside static/
 
-        ln -s /path/to/mp3/collection static/mp3
+        ln -s /path/to/music/collection static/music
 
 5. Import ID3 genre data to use as canonical genre meta data
 

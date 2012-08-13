@@ -1,3 +1,4 @@
 *.pyc
 musiclibrary/settings.py
 sqlite3.db
+static/music/
