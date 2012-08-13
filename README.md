@@ -58,10 +58,12 @@ Technologies used or planned (for aspiring contributors)
 - mutagen: used to get music file meta data, supports many audio formats
 - webplayer by Yahoo!: the current media player, but it would be great to change this
   to a pure html5 implementation without Flash
+- openid + whitelisting + invites: only invited ppl can login, via openid
 
 
-Planned features
-----------------
+Planned features (most important at the top)
+--------------------------------------------
+- openid + whitelisting + invites: only invited ppl can login, via openid
 - Change the navigation: instead of page reloads folder by folder, load the entire
   collection on the client side into backbone objects and use js to navigate artists and albums.
 - Search!
