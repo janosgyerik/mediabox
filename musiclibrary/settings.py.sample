@@ -161,6 +161,7 @@ LOGGING = {
 ### project specific custom settings
 
 MUSIC_ROOT = os.path.join(DIRNAME, '..', 'static', 'music')
+MUSIC_WWWROOT = '/static/music'
 
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 

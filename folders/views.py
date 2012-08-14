@@ -11,6 +11,7 @@ from folders.models import AlbumSong
 from services.handler import encode
 
 MUSIC_ROOT = settings.MUSIC_ROOT
+MUSIC_WWWROOT = settings.MUSIC_WWWROOT
 
 
 def album_songs_to_json():
@@ -40,13 +41,13 @@ def locations(relpath=None):
         return
 
     import django.core.urlresolvers
-    href_base = django.core.urlresolvers.reverse("folders")
+    wwwroot = django.core.urlresolvers.reverse("folders")
 
     locations = []
     head = relpath
     while True:
         (head, tail) = os.path.split(head)
-        href = os.path.join(href_base, head, tail)
+        href = os.path.join(wwwroot, head, tail)
 
         item = {
                 "name": tail,
@@ -61,7 +62,7 @@ def locations(relpath=None):
     locations[0]["last"] = True
     locations.append({
         "name": "Top",
-        "href": href_base,
+        "href": wwwroot,
         })
     locations.reverse()
 
@@ -70,7 +71,7 @@ def locations(relpath=None):
 
 def folders(relpath=None):
     import django.core.urlresolvers
-    href_base = django.core.urlresolvers.reverse("folders")
+    wwwroot = django.core.urlresolvers.reverse("folders")
 
     if relpath is None:
         mediapath = MUSIC_ROOT
@@ -82,9 +83,9 @@ def folders(relpath=None):
         for f in os.listdir(mediapath):
             if os.path.isdir(os.path.join(mediapath, f)):
                 if relpath is None:
-                    href = os.path.join(href_base, f)
+                    href = os.path.join(wwwroot, f)
                 else:
-                    href = os.path.join(href_base, relpath, f)
+                    href = os.path.join(wwwroot, relpath, f)
 
                 folder = {
                         "name": f,
@@ -98,7 +99,7 @@ def folders(relpath=None):
 
 def files(relpath=None):
     #import django.core.urlresolvers
-    href_base = "/static/mp3"
+    wwwroot = MUSIC_WWWROOT
 
     if relpath is None:
         mediapath = MUSIC_ROOT
@@ -112,9 +113,9 @@ def files(relpath=None):
     for f in os.listdir(mediapath):
         if os.path.isfile(os.path.join(mediapath, f)):
             if relpath is None:
-                href = os.path.join(href_base, f)
+                href = os.path.join(wwwroot, f)
             else:
-                href = os.path.join(href_base, relpath, f)
+                href = os.path.join(wwwroot, relpath, f)
 
             file = {
                     "name": f,
