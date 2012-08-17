@@ -6,7 +6,7 @@
 
 {% if locations %}
 <div class="location">Location: {% for loc in locations %}
-<a href="{{ loc.href }}" title="{{ loc.name }}">{{ loc.name }}</a>
+<a href="{{ loc.href|urlencode }}" title="{{ loc.name }}">{{ loc.name }}</a>
 {% if not loc.last %} / {% endif %}
 {% endfor %}</div>
 {% endif %}
@@ -16,7 +16,7 @@
     <p>Click on the links to play/pause. (Works only if you have the flash plugin.)</p>
     <ul class="album">
         {% for file in files %}
-        <li><a href="{{ file.href }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
+        <li><a href="{{ file.href|urlencode }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
         {% endfor %}
     </ul>
     <!-- todo
