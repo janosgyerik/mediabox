@@ -94,7 +94,7 @@ def folders(relpath=None):
 
                 folders.append(folder)
 
-    return folders
+    return sorted(folders, key=lambda x: x['name'])
 
 
 def files(relpath=None):
@@ -125,7 +125,7 @@ def files(relpath=None):
 
             files.append(file)
 
-    return files
+    return sorted(files, key=lambda x: x['name'])
 
 
 # eof
