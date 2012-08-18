@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Personal Music Library by websitedevops</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/websitedevops/musiclibrary">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/websitedevops/musiclibrary/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/websitedevops/musiclibrary/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Personal Music Library</h1>
+          <p>A simple web interface to listen to your music anywhere.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/websitedevops">websitedevops</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Music Library</h1>
+
+<p>A simple web interface to listen to your music anywhere.</p>
+
+<h2>Setup</h2>
+
+<ol>
+<li>
+<p>Install required python modules</p>
+
+<pre><code>pip install -r pip.txt
+</code></pre>
+</li>
+<li>
+<p>Create settings.py from sample</p>
+
+<pre><code>cp musiclibrary/settings.py.sample musiclibrary/settings.py
+</code></pre>
+</li>
+<li>
+<p>Create database (sqlite3 for the moment, redis/mongo document based in <em>mid-dev</em> as a option soon ) , and admin account</p>
+
+<pre><code>./manage.py syncdb
+</code></pre>
+</li>
+<li>
+<p>Create a symbolic link to your music collection inside static/</p>
+
+<pre><code>ln -s /path/to/music/collection static/music
+</code></pre>
+</li>
+<li>
+<p>Import ID3 genre data to use as canonical genre meta data</p>
+
+<pre><code>./manage.py import_id3_genres
+</code></pre>
+</li>
+<li>
+<p>Synchronize meta data of music files from the filesystem into the database</p>
+
+<pre><code>./manage.py sync_music
+</code></pre>
+</li>
+<li>
+<p>Start local website on localhost:8000</p>
+
+<pre><code>./manage.py runserver
+</code></pre>
+</li>
+<li><p>Visit http://localhost:8000/folders/</p></li>
+</ol><h2>Live demos</h2>
+
+<ul>
+<li><a href="http://dev.musiclibrary.titan2x.com/folders/">http://dev.musiclibrary.titan2x.com/folders/</a></li>
+</ul><h2>Screenshots</h2>
+
+<p><img src="https://github.com/websitedevops/musiclibrary/raw/master/static/screenshots/folders.png" alt="Folders"><img src="https://github.com/websitedevops/musiclibrary/raw/master/static/screenshots/album.png" alt="Albums"></p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Traverse directory of music files</li>
+<li>Music files are playable in the browser using the Yahoo! WebPlayer</li>
+</ul><p>Well that's pretty much it for now. And it's working fine like that. But that's not great.</p>
+
+<p>Work in progress: (stuff that's working but not really used yet) </p>
+
+<ul>
+<li>Import meta data from music files and store in a local database cache for fast access</li>
+<li>
+<p>Supported audio formats:</p>
+
+<ul>
+<li>mp3</li>
+<li>(more are coming soon, can be added easily using <code>mutagen</code>)</li>
+</ul>
+</li>
+</ul><h2>Technologies used or planned (for aspiring contributors)</h2>
+
+<ul>
+<li>django/python: database not used yet, but will be used to replace folder traversal</li>
+<li>a versioned and defined and stable ReST server as well to allow add-on's and alternate front-ends in the future, while not in code now it is thought about as features are added</li>
+<li>_, Backbone, jQ.tpl all powerhousing the new responsive Bootstrap Framework based set of theme(s) </li>
+<li>multiple views per artist, album, playlist, etc all graceful as one would expect </li>
+<li>mutagen: used to get music file meta data, supports many audio formats</li>
+<li>webplayer by Yahoo!: the current media player, but it would be great to change this
+to a pure html5 implementation without Flash</li>
+<li>openid + whitelisting + invites: only invited ppl can login, via openid</li>
+</ul><h2>Planned features (most important at the top)</h2>
+
+<ul>
+<li>openid + whitelisting + invites: only invited ppl can login, via openid</li>
+<li>Change the navigation: instead of page reloads folder by folder, load the entire
+collection on the client side into backbone objects and use js to navigate artists and albums.</li>
+<li>Search!</li>
+<li>Recently listened to</li>
+<li>Count how many times I listen to the same stuff</li>
+<li>Favoriting: albums, artists, songs</li>
+<li>Playlists!</li>
+<li>Add support for more audio formats: ogg, flac
+Note: the webplayer probably cannot play anything but mp3.
+A pure HTML5 player should have no problem with that.</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
