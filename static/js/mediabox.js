@@ -1,9 +1,9 @@
 /*!
- * Music Library JavaScript Library v0.1
- * http://musiclibrary.titan2x.com/
+ * MediaBox JavaScript Library v0.1
+ * http://mediabox.titan2x.com/
  *
  * Copyright 2012, Janos Gyerik
- * http://musiclibrary.titan2x.com/LICENSE
+ * http://mediabox.titan2x.com/LICENSE
  *
  * Date: Thu Jun 21 20:31:54 CEST 2012
  */

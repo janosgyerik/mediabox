@@ -40,13 +40,13 @@ def sync_music():
 
 
 def find_music_files():
-    """ returns absolute paths of music files under settings.MUSIC_ROOT """
-    path = settings.MUSIC_ROOT
+    """ returns absolute paths of music files under settings.MEDIA_ROOT """
+    path = settings.MEDIA_ROOT
 
     for root, dirs, files in os.walk(path):
         for filename in files:
             abspath = os.path.join(root, filename)
-            relpath = abspath.replace(settings.MUSIC_ROOT, '')
+            relpath = abspath.replace(path, '')
             yield (abspath, relpath)
 
 

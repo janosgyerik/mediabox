@@ -10,8 +10,8 @@ from django.conf import settings
 from folders.models import AlbumSong
 from services.handler import encode
 
-MUSIC_ROOT = settings.MUSIC_ROOT
-MUSIC_WWWROOT = settings.MUSIC_WWWROOT
+MEDIA_ROOT = settings.MEDIA_ROOT
+MEDIA_WWWROOT = settings.MEDIA_WWWROOT
 
 
 def album_songs_to_json():
@@ -22,7 +22,7 @@ def album_songs_to_json():
 def index(request, relpath=None):
     if relpath is None:
         return render_to_response('folders/index.html', {
-            "foldername": "Music Library",
+            "foldername": "Media Box",
             "folders": folders(relpath),
             "albumSongs": album_songs_to_json,
             }, RequestContext(request))
@@ -74,9 +74,9 @@ def folders(relpath=None):
     wwwroot = django.core.urlresolvers.reverse("folders")
 
     if relpath is None:
-        mediapath = MUSIC_ROOT
+        mediapath = MEDIA_ROOT
     else:
-        mediapath = os.path.join(MUSIC_ROOT, relpath)
+        mediapath = os.path.join(MEDIA_ROOT, relpath)
 
     folders = []
     if os.path.isdir(mediapath):
@@ -99,12 +99,12 @@ def folders(relpath=None):
 
 def files(relpath=None):
     #import django.core.urlresolvers
-    wwwroot = MUSIC_WWWROOT
+    wwwroot = MEDIA_WWWROOT
 
     if relpath is None:
-        mediapath = MUSIC_ROOT
+        mediapath = MEDIA_ROOT
     else:
-        mediapath = os.path.join(MUSIC_ROOT, relpath)
+        mediapath = os.path.join(MEDIA_ROOT, relpath)
 
     if not os.path.isdir(mediapath):
         return
