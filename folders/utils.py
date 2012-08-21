@@ -59,7 +59,10 @@ def get_audioinfo(filepath):
 
 
 def get_audioinfo_by_easyid3(easyid3):
-    (track, num_tracks) = easyid3['tracknumber'][0].split('/')
+    try:
+        track, num_tracks = easyid3['tracknumber'][0].split('/', 1)
+    except:
+        track, num_tracks = easyid3['tracknumber'][0], 0
     release_date = datetime(int(easyid3['date'][0]), 1, 1)
     return {
             'artist': easyid3['artist'][0],
