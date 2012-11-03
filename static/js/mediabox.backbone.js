@@ -160,6 +160,7 @@ function onDomReady() {
     App.mediaList.add({title: 'Get Out', artist: 'Faith No More', album: 'King For A Day'});
     App.mediaList.add({title: 'The Gentle Art Of Making Enemies', artist: 'Faith No More', album: 'King For A Day'});
     App.mediaList.add({title: 'Digging The Grave', artist: 'Faith No More', album: 'King For A Day'});
+
     App.filter.trigger('change');
 
     // other initialization
