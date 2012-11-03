@@ -211,6 +211,7 @@ function onDomReady() {
     new App.ModelLogger({model: App.filter});
 
     App.albumsView.select('Roots');
+    App.albumsView.select('Prophecy');
     //App.filter.addFilter('artist', 'Metallica');
     //App.filter.addFilter('album', 'Master Of Puppets');
 
