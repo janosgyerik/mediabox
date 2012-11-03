@@ -38,11 +38,7 @@ App.MediaView = Backbone.View.extend({
 });
 
 App.MediaList = Backbone.Collection.extend({
-    model: App.Media,
-    filtered: function() {
-        var filter = function(item) { return true; };
-        return this.filter(filter);
-    }
+    model: App.Media
 });
 
 /*
@@ -68,15 +64,41 @@ App.KeywordView = Backbone.View.extend({
 
 App.Filter = Backbone.Model.extend({
     defaults: {
-        genre: [],
-        artist: [],
-        album: []
+        filters: {}
+    },
+    addFilter: function(name, value) {
+        var filters = this.get('filters');
+        if (filters.hasOwnProperty(name)) {
+            filters[name].push(value);
+        }
+        else {
+            filters[name] = [value];
+        }
+        this.trigger('change');
+    },
+    toString: function() {
+        return JSON.stringify(this.get('filters'));
+    },
+    getFiltered: function() {
+        var list = this.get('list');
+        var filter = function(item) { return true; };
+        return list.filter(filter);
+    }
+});
+
+App.ModelLogger = Backbone.View.extend({
+    initialize: function() {
+        var logger = function(what) {
+            return function() {
+                console.log(what, ':', this.model.toString());
+            };
+        };
+        this.model.bind('change', logger('change'), this);
     }
 });
 
 App.FieldView = Backbone.View.extend({
     initialize: function(options) {
-        this.mediaList = options.list;
         this.model.bind('change', this.render, this);
         this.view = this.$('.list');
     },
@@ -85,7 +107,7 @@ App.FieldView = Backbone.View.extend({
         var html = this.$('.list');
         var fieldName = this.fieldName();
         var pluck = function(item) { return item.get(fieldName); }
-        var items = _.uniq(_.map(this.mediaList.filtered(), pluck));
+        var items = _.uniq(_.map(this.model.getFiltered(), pluck));
         _.each(items, function(item) {
             html.append($('<li/>').append(item));
         });
@@ -107,12 +129,11 @@ App.MediaListView = Backbone.View.extend({
     template: _.template($('#medialist-template').html()),
     initialize: function(options) {
         this.model.bind('change', this.render, this);
-        this.mediaList = options.list;
     },
     render: function() {
         this.$el.html(this.template(this.model.toJSON()));
         var html = this.$('.list');
-        _.each(this.mediaList.filtered(), function(item) {
+        _.each(this.model.getFiltered(), function(item) {
             var view = new App.MediaView({model: item});
             html.append(view.render().el);
         });
@@ -123,26 +144,25 @@ App.MediaListView = Backbone.View.extend({
 function onDomReady() {
     // instances
     // TODO: put in setup.js
-    App.filter = new App.Filter();
-
     App.mediaList = new App.MediaList();
+
+    App.filter = new App.Filter({
+        list: App.mediaList
+    });
 
     App.artistsView = new App.ArtistsView({
         el: '#artists',
-        model: App.filter,
-        list: App.mediaList
+        model: App.filter
     });
 
     App.albumsView = new App.AlbumsView({
         el: '#albums',
-        model: App.filter,
-        list: App.mediaList
+        model: App.filter
     });
 
     App.mediaListView = new App.MediaListView({
         el: '#medialist',
-        model: App.filter,
-        list: App.mediaList
+        model: App.filter
     });
 
     App.mediaList.add({title: 'Battery', artist: 'Metallica', album: 'Master Of Puppets'});
@@ -161,7 +181,11 @@ function onDomReady() {
     App.mediaList.add({title: 'The Gentle Art Of Making Enemies', artist: 'Faith No More', album: 'King For A Day'});
     App.mediaList.add({title: 'Digging The Grave', artist: 'Faith No More', album: 'King For A Day'});
 
+    new App.ModelLogger({model: App.filter});
+
     App.filter.trigger('change');
+
+    App.filter.addFilter('artist', 'Metallica');
 
     // other initialization
     //App.keywordsView.input.focus();
