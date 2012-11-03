@@ -158,6 +158,7 @@ App.AlbumsView = Backbone.View.extend({
         _.each(albums, function(item) {
             html.append($('<li/>').append(item));
         });
+        html.filterpanel();
         this.$el.append(html);
         return this;
     }
