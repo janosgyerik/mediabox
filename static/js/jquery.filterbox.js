@@ -42,6 +42,31 @@
         return _items()[num];
     }
 
+    function _unselect(name) {
+        if (name) {
+            var unselect = function() {
+                if ($(this).text() == name) {
+                    $(this).removeClass('selected');
+                }
+            };
+            obj.find('li').each(select);
+        }
+        else {
+            obj.find('li').removeClass('selected');
+        }
+        return this;
+    }
+
+    function _select(name) {
+        var select = function() {
+            if ($(this).text() == name) {
+                $(this).addClass('selected');
+            }
+        };
+        obj.find('li').each(select);
+        return this;
+    }
+
     function _selectedItems() {
         return obj.find('li.selected').map(function() { return $(this).text(); });
     }
@@ -85,6 +110,8 @@
         length: _length,
         item: _item,
         items: _items,
+        unselect: _unselect,
+        select: _select,
         selectedItems: _selectedItems,
         visibleItems: _visibleItems,
         toggleItem: _toggleItem,

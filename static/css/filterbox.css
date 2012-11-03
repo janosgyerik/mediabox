@@ -1,0 +1,12 @@
+/* 
+ * File: css/filterbox.css
+ * Purpose: stylesheet for filterbox
+ *
+ * */
+
+.selected {
+    border-left: 4px solid red;
+    font-weight: bold;
+}
+
+/* eof */

@@ -41,6 +41,13 @@ test('toggle items', function() {
     ok(obj.filterbox('selectedItems').length == 2);
 });
 
+test('select items', function() {
+    obj.filterbox('unselect');
+    ok(obj.filterbox('selectedItems').length == 0);
+    obj.filterbox('select', 'Roots');
+    ok(obj.filterbox('selectedItems').length > 0);
+});
+
 test('apply filter', function() {
     ok(obj.filterbox('length') > 2);
     var text = obj.filterbox('item', 0).substr(2).toUpperCase();
