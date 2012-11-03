@@ -28,6 +28,15 @@ App.Media = Backbone.Model.extend({
     }
 });
 
+App.MediaView = Backbone.View.extend({
+    tagName: 'li',
+    template: _.template($('#media-template').html()),
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    },
+});
+
 App.MediaList = Backbone.Collection.extend({
     model: App.Media,
     filtered: function() {
@@ -159,7 +168,8 @@ App.MediaListView = Backbone.View.extend({
         this.$el.html(this.template(this.model.toJSON()));
         var html = this.$('.list');
         _.each(this.mediaList.filtered(), function(item) {
-            html.append($('<li/>').append(item.get('title')));
+            var view = new App.MediaView({model: item});
+            html.append(view.render().el);
         });
         return this;
     }
