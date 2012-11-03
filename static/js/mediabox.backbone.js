@@ -113,17 +113,28 @@ App.FieldView = Backbone.View.extend({
     initialize: function(options) {
         this.model.bind('change', this.render, this);
         this.view = this.$('.list');
+        this.$el.html(this.template(this.model.toJSON()));
+        this.$el.filterbox();
+        this.selected = {};
     },
     render: function() {
-        this.$el.html(this.template(this.model.toJSON()));
         var html = this.$('.list');
+        html.empty();
         var fieldName = this.fieldName();
         var pluck = function(item) { return item.get(fieldName); }
         var items = _.uniq(_.map(this.model.getFiltered(fieldName), pluck));
         _.each(items, function(item) {
             html.append($('<li/>').append(item));
         });
+        for (name in this.selected) {
+            this.$el.filterbox('select', name);
+        }
         return this;
+    },
+    select: function(name) {
+        this.selected[name] = true;
+        this.$el.filterbox('select', name);
+        this.model.addFilter(this.fieldName(), name);
     }
 });
 
@@ -199,8 +210,9 @@ function onDomReady() {
 
     new App.ModelLogger({model: App.filter});
 
-    App.filter.addFilter('artist', 'Metallica');
-    App.filter.addFilter('album', 'Master Of Puppets');
+    App.albumsView.select('Roots');
+    //App.filter.addFilter('artist', 'Metallica');
+    //App.filter.addFilter('album', 'Master Of Puppets');
 
     // other initialization
     // force all views based on the filter to render
