@@ -128,15 +128,13 @@ App.FieldView = Backbone.View.extend({
     },
     render: function() {
         this.$el.html(this.template(this.model.toJSON()));
-        this.view = this.$('.list');
-        var html = $('<ul/>');
+        var html = this.$('.list');
         var fieldName = this.fieldName();
         var pluck = function(item) { return item.get(fieldName); }
         var items = _.uniq(_.map(this.mediaList.filtered(), pluck));
         _.each(items, function(item) {
             html.append($('<li/>').append(item));
         });
-        this.$el.append(html);
         return this;
     }
 });
@@ -159,12 +157,10 @@ App.MediaListView = Backbone.View.extend({
     },
     render: function() {
         this.$el.html(this.template(this.model.toJSON()));
-        this.view = this.$('.list');
-        var html = $('<ul/>');
+        var html = this.$('.list');
         _.each(this.mediaList.filtered(), function(item) {
             html.append($('<li/>').append(item.get('title')));
         });
-        this.$el.append(html);
         return this;
     }
 });
