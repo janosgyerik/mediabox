@@ -120,9 +120,7 @@ App.KeywordsView = Backbone.View.extend({
     }
 });
 
-App.ArtistsView = Backbone.View.extend({
-    el: '#artists',
-    template: _.template($('#artists-template').html()),
+App.FieldView = Backbone.View.extend({
     initialize: function(options) {
         this.mediaList = options.list;
         this.model.bind('change', this.render, this);
@@ -132,9 +130,10 @@ App.ArtistsView = Backbone.View.extend({
         this.$el.html(this.template(this.model.toJSON()));
         this.view = this.$('.list');
         var html = $('<ul/>');
-        var pluck = function(item) { return item.get('artist'); }
-        var artists = _.uniq(_.map(this.mediaList.filtered(), pluck));
-        _.each(artists, function(item) {
+        var fieldName = this.fieldName();
+        var pluck = function(item) { return item.get(fieldName); }
+        var items = _.uniq(_.map(this.mediaList.filtered(), pluck));
+        _.each(items, function(item) {
             html.append($('<li/>').append(item));
         });
         this.$el.append(html);
@@ -142,30 +141,17 @@ App.ArtistsView = Backbone.View.extend({
     }
 });
 
-App.AlbumsView = Backbone.View.extend({
-    el: '#albums',
+App.ArtistsView = App.FieldView.extend({
+    template: _.template($('#artists-template').html()),
+    fieldName: function() { return 'artist'; }
+});
+
+App.AlbumsView = App.FieldView.extend({
     template: _.template($('#albums-template').html()),
-    initialize: function(options) {
-        this.model.bind('change', this.render, this);
-        this.mediaList = options.list;
-    },
-    render: function() {
-        this.$el.html(this.template(this.model.toJSON()));
-        this.view = this.$('.list');
-        var html = $('<ul/>');
-        var pluck = function(item) { return item.get('album'); }
-        var albums = _.uniq(_.map(this.mediaList.filtered(), pluck));
-        _.each(albums, function(item) {
-            html.append($('<li/>').append(item));
-        });
-        html.filterbox();
-        this.$el.append(html);
-        return this;
-    }
+    fieldName: function() { return 'album'; }
 });
 
 App.MediaListView = Backbone.View.extend({
-    el: '#medialist',
     template: _.template($('#medialist-template').html()),
     initialize: function(options) {
         this.model.bind('change', this.render, this);
@@ -191,16 +177,19 @@ function onDomReady() {
     App.mediaList = new App.MediaList();
 
     App.artistsView = new App.ArtistsView({
+        el: '#artists',
         model: App.filter,
         list: App.mediaList
     });
 
     App.albumsView = new App.AlbumsView({
+        el: '#albums',
         model: App.filter,
         list: App.mediaList
     });
 
     App.mediaListView = new App.MediaListView({
+        el: '#medialist',
         model: App.filter,
         list: App.mediaList
     });
