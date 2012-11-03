@@ -1,11 +1,11 @@
 /*!
- * PROEJCT backbone JavaScript Library v0.1
+ * MediaBox backbone JavaScript Library v0.1
  * http://.../
  *
  * Copyright 2012, NAME
  * http://.../license
  *
- * Date: Fri Nov  2 19:02:58 CET 2012
+ * Date: Fri Nov  2 19:32:58 CET 2012
  */
 
 
@@ -13,59 +13,26 @@
 // TODO: put in app.js
 window.App = {};
 
-_.templateSettings = { interpolate: /\{\{(.+?)\}\}/g };
+//_.templateSettings = { interpolate: /\{\{(.+?)\}\}/g };
 
 // classes
 // TODO: put in app/*.js
 
 
-App.Model = Backbone.Model.extend({
+App.Media = Backbone.Model.extend({
     defaults: {
-    },
-    initialize: function() {
-        this.on('change:original', this.onOriginalUpdated, this);
-        this.on('change:keywords', this.onKeywordsUpdated, this);
-    },
-    updateWords: function() {
-        var words = {};
-        _.each(this.get('original').split(/\W+/), function(word) {
-            word = word.toLowerCase();
-            words[word] = (words[word] || 0) + 1;
-        });
-        this.set({words: words});
-    },
-    updateHighlighted: function() {
-        var highlighted = this.escape('original');
-        var cnt = 1;
-        _.each(this.get('keywords'), function(keyword) {
-            var pattern = '\\b' + keyword;
-            var cname = 'hlt' + cnt++;
-            highlighted = highlighted.replace(new RegExp(pattern, 'gi'), '<span class="' + cname + '">' + keyword + '</span>');
-        });
-        this.set({highlighted: highlighted});
-    },
-    onOriginalUpdated: function() {
-        this.updateWords();
-        this.updateHighlighted();
-    },
-    onKeywordsUpdated: function() {
-        this.updateHighlighted();
-    },
-    getCount: function(word) {
-        var pattern = '\\b' + word;
-        var matches = this.get('original').match(new RegExp(pattern, 'gi'));
-        return matches ? matches.length : 0;
+        genre: 'GENRE',
+        artist: 'ARTIST',
+        album: 'ALBUM',
+        title: 'TITLE'
     }
 });
 
-App.Keyword = Backbone.Model.extend({
-    defaults: {
-        keyword: 'empty keyword...',
-        count: 0,
-        index: 1
-    },
-    clear: function() {
-        this.destroy();
+App.MediaList = Backbone.Collection.extend({
+    model: App.Media,
+    filtered: function() {
+        var filter = function(item) { return true; };
+        return this.filter(filter);
     }
 });
 
@@ -87,16 +54,6 @@ App.KeywordView = Backbone.View.extend({
         this.input = this.$('.edit');
         return this;
     },
-    edit: function() {
-        this.$el.addClass('editing');
-        this.input.focus();
-    },
-    close: function() {
-        var value = this.input.val();
-        if (!value) this.clear();
-        this.model.set({keyword: value});
-        this.$el.removeClass('editing');
-    },
     updateOnEnter: function(e) {
         if (e.keyCode == 13) this.close();
     },
@@ -105,22 +62,15 @@ App.KeywordView = Backbone.View.extend({
     }
 });
 
-App.KeywordList = Backbone.Collection.extend({
-    model: App.Keyword,
-    localStorage: new Store('highlighter-backbone'),
-    initialize: function() {
-        this.on('add', this.onChange, this);
-        this.on('remove', this.onChange, this);
-        this.on('reset', this.onChange, this);
-    },
-    onChange: function() {
-        var keywords = this.pluck('keyword');
-        App.model.set({keywords: keywords});
-        App.highlightedTab.activate();
+App.Filter = Backbone.Model.extend({
+    defaults: {
+        genre: [],
+        artist: [],
+        album: []
     }
 });
 
-App.KeywordListView = Backbone.View.extend({
+App.KeywordsView = Backbone.View.extend({
     el: '#keywords',
     events: {
         'keypress .keyword': 'createOnEnter',
@@ -170,29 +120,143 @@ App.KeywordListView = Backbone.View.extend({
     }
 });
 
+App.ArtistsView = Backbone.View.extend({
+    el: '#artists',
+    initialize: function(options) {
+        this.mediaList = options.list;
+        this.model.bind('change', this.render, this);
+        this.view = this.$('.list');
+    },
+    render: function() {
+        // todo: get filtered list from model
+        // param: field to pluck = 'artist'
+        // todo: generalize this in a parent class
+        // todo: update dom with results, do not rewrite
+        // or, merge results with the model that tracks Artist selection state
+        this.view.empty();
+        var html = $('<ul/>');
+        var items;
+        items = this.mediaList.toArray();
+        // matches all objects that are Metallica
+        items = this.mediaList.where({artist: 'Metallica'});
+        // ... AND Sanitarium
+        items = this.mediaList.where({artist: 'Metallica', title: 'Sanitarium'});
+        _.each(items, function(item) {
+            html.append($('<li/>').append(item.get('title')));
+        });
+        this.$el.append(html);
+        html = $('<ol/>');
+        items = _.uniq(this.mediaList.pluck('artist'));
+        _.each(items, function(item) {
+            html.append($('<li/>').append(item));
+        });
+        this.$el.append(html);
+    }
+});
+
+App.AlbumsView = Backbone.View.extend({
+    el: '#albums',
+    template: _.template($('#albums-template').html()),
+    initialize: function(options) {
+        this.model.bind('change', this.render, this);
+        this.mediaList = options.list;
+    },
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+        this.view = this.$('.list');
+        var html = $('<ul/>');
+        _.each(this.mediaList.filtered(), function(item) {
+            html.append($('<li/>').append(item.get('album')));
+        });
+        this.$el.append(html);
+        return this;
+    }
+});
+
+App.MediaListView = Backbone.View.extend({
+    el: '#medialist',
+    template: _.template($('#medialist-template').html()),
+    initialize: function(options) {
+        this.model.bind('change', this.render, this);
+        this.mediaList = options.list;
+    },
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+        this.view = this.$('.list');
+        var html = $('<ul/>');
+        _.each(this.mediaList.filtered(), function(item) {
+            html.append($('<li/>').append(item.get('title')));
+        });
+        this.$el.append(html);
+        return this;
+    }
+});
+
 function onDomReady() {
     // instances
     // TODO: put in setup.js
-    //App.model = new App.Model();
+    App.filter = new App.Filter();
 
-    //App.keywordListView = new App.KeywordListView({
-        //model: App.model,
-        //list: App.keywordList
-    //});
+    App.mediaList = new App.MediaList();
+
+    App.artistsView = new App.ArtistsView({
+        model: App.filter,
+        list: App.mediaList
+    });
+
+    App.albumsView = new App.AlbumsView({
+        model: App.filter,
+        list: App.mediaList
+    });
+
+    App.mediaListView = new App.MediaListView({
+        model: App.filter,
+        list: App.mediaList
+    });
+
+    App.mediaList.add({title: 'Sanitarium', artist: 'Metallica', album: 'Master Of Puppets'});
+    App.mediaList.add({title: 'Enter Sandman', artist: 'Metallica', album: 'Black Album'});
+    App.mediaList.add({title: 'Biotech', artist: 'Sepultura', album: 'Chaos A.D.'});
+    App.filter.trigger('change');
 
     // other initialization
-    //App.keywordListView.input.focus();
+    //App.keywordsView.input.focus();
     //App.model.set({original: App.originalTab.text.text()});
 
     // debugging
-    //App.highlightedTab.activate();
-    //App.keywordListView.create('lorem');
-    //App.keywordListView.create('pharet');
-    //App.keywordListView.create('sollicit');
+    //App.keywordsView.create('sollicit');
 }
 
 $(function() {
     onDomReady();
 });
+
+// eof
+
+
+
+////MediaCollection
+//-> media objects // constant
+
+////FilteredMediaCollection
+//-> sub-set of objects as matched by filter
+// affect by filter
+
+////UniqueProjection
+////-> the unique values of a field=artist,album,...
+// shows values based on FilteredMediaCollection
+// also affected by local filter
+// local filter does not trigger model change
+// only clicks trigger model change
+// hide/unhide, do NOT recreate dom
+
+////filtered media list
+// also a projection
+// items not clickable, not trigger filter
+// local filter allowed
+
+////qunit
+// select x -> check result list
+
 
 // eof
