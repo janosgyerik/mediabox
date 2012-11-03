@@ -24,7 +24,8 @@ App.Media = Backbone.Model.extend({
         genre: 'GENRE',
         artist: 'ARTIST',
         album: 'ALBUM',
-        title: 'TITLE'
+        title: 'TITLE',
+        url: 'file.mp3',
     }
 });
 
@@ -148,6 +149,10 @@ App.MediaListView = Backbone.View.extend({
             var view = new App.MediaView({model: item});
             html.append(view.render().el);
         });
+        var player = this.model.get('player');
+        if (player) {
+            player.addTracks('#medialist');
+        }
         return this;
     }
 });
@@ -205,8 +210,27 @@ function onDomReady() {
     //App.keywordsView.create('sollicit');
 }
 
+function onPlayerReady() {
+    console.log('onPlayerReady');
+    var player = YAHOO.MediaPlayer;
+    window.player = player;
+    App.filter.set('player', player);
+    var play = function() {
+        console.log('play');
+        player.play();
+        player.play();
+    };
+    var onPlaylistUpdate = function() {
+        console.log('onPlaylistUpdate');
+        console.log(player);
+        setTimeout(play, 1000);
+    };
+    player.onPlaylistUpdate.subscribe(onPlaylistUpdate);
+};
+
 $(function() {
     onDomReady();
+    YAHOO.MediaPlayer.onAPIReady.subscribe(onPlayerReady);
 });
 
 // eof

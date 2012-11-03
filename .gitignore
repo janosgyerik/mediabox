@@ -2,3 +2,4 @@
 mediabox/settings.py
 sqlite3.db
 static/media/
+file.mp3

@@ -65,6 +65,7 @@
                     <div id="artists" class="span3"></div>
                     <div id="albums" class="span3"></div>
                     <div id="medialist" class="span6"></div>
+                    <a class="playme" href="file.mp3">test</a>
                 </div>
             </div>
           </div><!--/.tabbable -->
@@ -115,13 +116,28 @@
     <script src="static/js/backbone-min.js"></script>
     <script src="static/js/backbone-localstorage.js"></script>
     <script src="static/js/jquery.filterbox.js"></script>
-    <script type="text/javascript">
-        var YWPParams = {
-            parse: false
-        };
-    </script>
     <script type="text/javascript" src="http://webplayer.yahooapis.com/player.js"></script> 
-    <script src="static/js/mediabox.backbone.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var onDomReady = function() {
+                console.log('onDomReady');
+                var player = YAHOO.MediaPlayer;
+                window.player = player;
+                var play = function() {
+                    console.log('play');
+                    player.play();
+                    player.play();
+                };
+                var onPlaylistUpdate = function() {
+                    console.log('onPlaylistUpdate');
+                    console.log(player);
+                    setTimeout(play, 1000);
+                };
+                player.onPlaylistUpdate.subscribe(onPlaylistUpdate);
+            };
+            YAHOO.MediaPlayer.onAPIReady.subscribe(onDomReady);
+        });
+    </script>
 
   </body>
 </html>
