@@ -40,7 +40,9 @@
   <!-- All JavaScript at the bottom, except for Modernizr / Respond.
        Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
        For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+       <!--
     <script src="{{ STATIC_URL }}js/libs/modernizr-2.0.6.min.js"></script>
+    -->
 </head>
 
 <body>
@@ -68,15 +70,13 @@
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"><\/script>')</script>
-  <script>document.write('<script src="{{ STATIC_URL }}js/jquery-ui-1.8.17.custom.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-min.js"><\/script>')</script>
 
 
   <!-- scripts concatenated and minified via ant build script-->
   <script defer src="{{ STATIC_URL }}js/plugins.js"></script>
-  <script defer src="{{ STATIC_URL }}js/json2.js"></script>
-  <script defer src="{{ STATIC_URL }}js/underscore-1.3.3-min.js"></script>
-  <script defer src="{{ STATIC_URL }}js/backbone-0.9.2-min.js"></script>
+  <script defer src="{{ STATIC_URL }}js/underscore-min.js"></script>
+  <script defer src="{{ STATIC_URL }}js/backbone-min.js"></script>
   <script defer src="{{ STATIC_URL }}js/backbone-localStorage-min.js"></script>
   <script defer src="{{ STATIC_URL }}js/mediabox.js"></script>
   <script type="text/javascript" src="http://webplayer.yahooapis.com/player.js"></script> 
@@ -91,12 +91,14 @@
     </script>
 	
   <!-- Change UA-XXXXX-X to be your site's ID -->
+      <!--
   <script>
     window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
     Modernizr.load({
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });
   </script>
+  -->
 
 
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.

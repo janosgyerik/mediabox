@@ -1,5 +1,6 @@
 *.pyc
 mediabox/settings.py
 sqlite3.db
-static/media/
+static/media
 file.mp3
+run.sh
