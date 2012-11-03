@@ -79,9 +79,20 @@ App.Filter = Backbone.Model.extend({
     toString: function() {
         return JSON.stringify(this.get('filters'));
     },
-    getFiltered: function() {
+    getFiltered: function(filterToSkip) {
         var list = this.get('list');
-        var filter = function(item) { return true; };
+        var filters = this.get('filters');
+        var filter = function(item) {
+            for (var name in filters) {
+                if (name == filterToSkip) {
+                    continue;
+                }
+                if (!_.contains(filters[name], item.get(name))) {
+                    return false;
+                }
+            }
+            return true;
+        };
         return list.filter(filter);
     }
 });
@@ -107,7 +118,7 @@ App.FieldView = Backbone.View.extend({
         var html = this.$('.list');
         var fieldName = this.fieldName();
         var pluck = function(item) { return item.get(fieldName); }
-        var items = _.uniq(_.map(this.model.getFiltered(), pluck));
+        var items = _.uniq(_.map(this.model.getFiltered(fieldName), pluck));
         _.each(items, function(item) {
             html.append($('<li/>').append(item));
         });
@@ -183,13 +194,12 @@ function onDomReady() {
 
     new App.ModelLogger({model: App.filter});
 
-    App.filter.trigger('change');
-
     App.filter.addFilter('artist', 'Metallica');
+    App.filter.addFilter('album', 'Master Of Puppets');
 
     // other initialization
-    //App.keywordsView.input.focus();
-    //App.model.set({original: App.originalTab.text.text()});
+    // force all views based on the filter to render
+    App.filter.trigger('change');
 
     // debugging
     //App.keywordsView.create('sollicit');
