@@ -45,9 +45,8 @@ App.MediaList = Backbone.Collection.extend({
     }
 });
 
+/*
 App.KeywordView = Backbone.View.extend({
-    tagName: 'tr',
-    //template: _.template($('#keyword-template').html()),
     events: {
         'dblclick .view': 'edit',
         'click a.destroy': 'clear',
@@ -58,11 +57,6 @@ App.KeywordView = Backbone.View.extend({
         this.model.bind('change', this.render, this);
         this.model.bind('destroy', this.remove, this);
     },
-    render: function() {
-        this.$el.html(this.template(this.model.toJSON()));
-        this.input = this.$('.edit');
-        return this;
-    },
     updateOnEnter: function(e) {
         if (e.keyCode == 13) this.close();
     },
@@ -70,62 +64,13 @@ App.KeywordView = Backbone.View.extend({
         this.model.clear();
     }
 });
+*/
 
 App.Filter = Backbone.Model.extend({
     defaults: {
         genre: [],
         artist: [],
         album: []
-    }
-});
-
-App.KeywordsView = Backbone.View.extend({
-    el: '#keywords',
-    events: {
-        'keypress .keyword': 'createOnEnter',
-        'click th a.destroy': 'clear'
-    },
-    initialize: function(options) {
-        this.keywords = options.list;
-        this.input = this.$('.keyword');
-        this.keywords.bind('add', this.add, this);
-        this.keywords.bind('reset', this.reset, this);
-        this.keywords.fetch();
-        if (this.keywords.length) {
-            this.keywords.each(this.add);
-        }
-        else {
-            this.create('lorem');
-            this.create('ipsum');
-            this.create('dolor');
-        }
-    },
-    add: function(keyword) {
-        var view = new App.KeywordView({model: keyword});
-        this.$('#keyword-list').append(view.render().el);
-    },
-    reset: function() {
-        this.$('#keyword-list').empty();
-    },
-    createOnEnter: function(e) {
-        if (e.keyCode != 13) return;
-        if (!this.input.val()) return;
-        var keyword = this.input.val();
-        this.create(keyword);
-        this.input.val('');
-    },
-    create: function(keyword) {
-        var index = this.keywords.length + 1;
-        this.keywords.create({keyword: keyword, index: index});
-    },
-    clear: function() {
-        // todo: isn't there a better way?
-        var i = 0;
-        var maxiter = 10;
-        while (true) {
-            this.keywords.invoke('destroy');
-            if (!this.keywords.length || ++i > maxiter) break;
-        }
     }
 });
 
@@ -228,33 +173,5 @@ function onDomReady() {
 $(function() {
     onDomReady();
 });
-
-// eof
-
-
-
-////MediaCollection
-//-> media objects // constant
-
-////FilteredMediaCollection
-//-> sub-set of objects as matched by filter
-// affect by filter
-
-////UniqueProjection
-////-> the unique values of a field=artist,album,...
-// shows values based on FilteredMediaCollection
-// also affected by local filter
-// local filter does not trigger model change
-// only clicks trigger model change
-// hide/unhide, do NOT recreate dom
-
-////filtered media list
-// also a projection
-// items not clickable, not trigger filter
-// local filter allowed
-
-////qunit
-// select x -> check result list
-
 
 // eof
