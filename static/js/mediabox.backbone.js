@@ -122,35 +122,23 @@ App.KeywordsView = Backbone.View.extend({
 
 App.ArtistsView = Backbone.View.extend({
     el: '#artists',
+    template: _.template($('#artists-template').html()),
     initialize: function(options) {
         this.mediaList = options.list;
         this.model.bind('change', this.render, this);
         this.view = this.$('.list');
     },
     render: function() {
-        // todo: get filtered list from model
-        // param: field to pluck = 'artist'
-        // todo: generalize this in a parent class
-        // todo: update dom with results, do not rewrite
-        // or, merge results with the model that tracks Artist selection state
-        this.view.empty();
+        this.$el.html(this.template(this.model.toJSON()));
+        this.view = this.$('.list');
         var html = $('<ul/>');
-        var items;
-        items = this.mediaList.toArray();
-        // matches all objects that are Metallica
-        items = this.mediaList.where({artist: 'Metallica'});
-        // ... AND Sanitarium
-        items = this.mediaList.where({artist: 'Metallica', title: 'Sanitarium'});
-        _.each(items, function(item) {
-            html.append($('<li/>').append(item.get('title')));
-        });
-        this.$el.append(html);
-        html = $('<ol/>');
-        items = _.uniq(this.mediaList.pluck('artist'));
-        _.each(items, function(item) {
+        var pluck = function(item) { return item.get('artist'); }
+        var artists = _.uniq(_.map(this.mediaList.filtered(), pluck));
+        _.each(artists, function(item) {
             html.append($('<li/>').append(item));
         });
         this.$el.append(html);
+        return this;
     }
 });
 
@@ -165,8 +153,10 @@ App.AlbumsView = Backbone.View.extend({
         this.$el.html(this.template(this.model.toJSON()));
         this.view = this.$('.list');
         var html = $('<ul/>');
-        _.each(this.mediaList.filtered(), function(item) {
-            html.append($('<li/>').append(item.get('album')));
+        var pluck = function(item) { return item.get('album'); }
+        var albums = _.uniq(_.map(this.mediaList.filtered(), pluck));
+        _.each(albums, function(item) {
+            html.append($('<li/>').append(item));
         });
         this.$el.append(html);
         return this;
@@ -214,9 +204,21 @@ function onDomReady() {
         list: App.mediaList
     });
 
+    App.mediaList.add({title: 'Battery', artist: 'Metallica', album: 'Master Of Puppets'});
     App.mediaList.add({title: 'Sanitarium', artist: 'Metallica', album: 'Master Of Puppets'});
-    App.mediaList.add({title: 'Enter Sandman', artist: 'Metallica', album: 'Black Album'});
-    App.mediaList.add({title: 'Biotech', artist: 'Sepultura', album: 'Chaos A.D.'});
+    App.mediaList.add({title: 'Enter Sandman', artist: 'Metallica', album: 'Metallica'});
+    App.mediaList.add({title: 'Wherever I May Roam', artist: 'Metallica', album: 'Metallica'});
+    App.mediaList.add({title: 'Propaganda', artist: 'Sepultura', album: 'Chaos A.D.'});
+    App.mediaList.add({title: 'Biotech Is Godzilla', artist: 'Sepultura', album: 'Chaos A.D.'});
+    App.mediaList.add({title: 'Nomad', artist: 'Sepultura', album: 'Chaos A.D.'});
+    App.mediaList.add({title: 'Roots', artist: 'Sepultura', album: 'Roots'});
+    App.mediaList.add({title: 'Spit', artist: 'Sepultura', album: 'Roots'});
+    App.mediaList.add({title: 'Endangered Species', artist: 'Sepultura', album: 'Roots'});
+    App.mediaList.add({title: 'Moses', artist: 'Soulfly', album: 'Prophecy'});
+    App.mediaList.add({title: 'Porrada', artist: 'Soulfly', album: 'Prophecy'});
+    App.mediaList.add({title: 'Get Out', artist: 'Faith No More', album: 'King For A Day'});
+    App.mediaList.add({title: 'The Gentle Art Of Making Enemies', artist: 'Faith No More', album: 'King For A Day'});
+    App.mediaList.add({title: 'Digging The Grave', artist: 'Faith No More', album: 'King For A Day'});
     App.filter.trigger('change');
 
     // other initialization
