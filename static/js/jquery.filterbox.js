@@ -1,5 +1,5 @@
 /*!
- * jQuery filterpanel Plugin v1.0
+ * jQuery filterbox Plugin v1.0
  *
  * Filter panel widget.
  *
@@ -97,14 +97,14 @@
 
     function _destroy() {
         return this.each(function() {
-            $(window).unbind('.filterpanel');
-            //var $this = $(this), data = $this.data('filterpanel');
-            ////data.filterpanel.remove();
-            ////$this.removeData('filterpanel');
+            $(window).unbind('.filterbox');
+            //var $this = $(this), data = $this.data('filterbox');
+            ////data.filterbox.remove();
+            ////$this.removeData('filterbox');
         });
     }
 
-    $.fn.filterpanel = function(method) {  
+    $.fn.filterbox = function(method) {  
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         }
@@ -112,7 +112,7 @@
             return methods.init.apply(this, arguments);
         }
         else {
-            $.error('Method ' + method + ' does not exist on jQuery.filterpanel');
+            $.error('Method ' + method + ' does not exist on jQuery.filterbox');
         }
     };  
 })(jQuery);
