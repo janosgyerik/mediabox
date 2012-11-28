@@ -4,3 +4,4 @@ sqlite3.db
 static/media
 file.mp3
 run.sh
+tmp

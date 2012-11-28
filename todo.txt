@@ -8,7 +8,6 @@ wanted
 movies
 ------
 - import movies from filesystem
-    ? subtitle files
     - handle if files were moved or deleted
         - try to match moved files
     - detect movie name and year
@@ -18,6 +17,10 @@ movies
         - otherwise
             - cache imdb info
             - link to cached imdb info
+    - detect subtitle files
+        - movie file + .srt or .sub
+        - subdiretory of the movie directory
+    - detect split movie files and offer to paste together
 - find movies by name pattern
 - find recently added movies
 - find movies by tags

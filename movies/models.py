@@ -3,14 +3,18 @@ from django.utils import timezone
 
 
 class File(models.Model):
-    path = models.CharField(max_length=200)
+    path = models.CharField(max_length=200, unique=True)
     filename = models.CharField(max_length=100)
     orig_filename = models.CharField(max_length=100)
     filetype = models.CharField(max_length=20)
     filesize = models.IntegerField()
-    quality = models.IntegerField()
-    created_dt = models.DateField()
-    updated_dt = models.DateField()
+    quality = models.IntegerField(default=0)
+    cdate = models.DateField()
+    mdate = models.DateField()
+    cached_query_result = models.TextField()
+
+    def __unicode__(self):
+        return '%s %s' % (self.filename, self.filesize)
 
 
 class Movie(models.Model):
