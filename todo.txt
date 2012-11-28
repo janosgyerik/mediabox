@@ -5,6 +5,32 @@ wanted
 - recent albums
 
 
+movies
+------
+- import movies from filesystem
+    ? subtitle files
+    - handle if files were moved or deleted
+        - try to match moved files
+    - detect movie name and year
+    - try to download imdb info
+        - automatically link if perfect match found
+            - rename file
+        - otherwise
+            - cache imdb info
+            - link to cached imdb info
+- find movies by name pattern
+- find recently added movies
+- find movies by tags
+- tag categories
+    - imdb
+    - mike
+    - jack
+- order by
+    - date added
+    - name
+- add tag, with category
+
+
 important
 ---------
 - openid login
