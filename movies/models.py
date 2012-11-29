@@ -11,7 +11,6 @@ class File(models.Model):
     quality = models.IntegerField(default=0)
     cdate = models.DateField()
     mdate = models.DateField()
-    cached_query_result = models.TextField()
 
     def __unicode__(self):
         return '%s %s' % (self.filename, self.filesize)
@@ -21,7 +20,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=100)
     summary = models.TextField()
     year = models.IntegerField()
-    released = models.DateField()
+    released = models.DateField(null=True)
     runtime = models.CharField(max_length=20)
     rated = models.CharField(max_length=20)
     homepage = models.URLField()
@@ -66,6 +65,19 @@ class ImdbInfo(models.Model):
     votes = models.IntegerField()
     created_dt = models.DateField(default=timezone.now)
     updated_dt = models.DateField(default=timezone.now)
+
+
+class QueryCache(models.Model):
+    file = models.ForeignKey(File)
+    source = models.CharField(max_length=20)
+    url = models.URLField()
+    result = models.TextField()
+    created_dt = models.DateField(default=timezone.now)
+    updated_dt = models.DateField(default=timezone.now)
+
+    class Meta:
+        unique_together = (('file', 'source',),)
+
 
 '''
 class MovieDirector(models.Model):

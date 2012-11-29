@@ -7,12 +7,15 @@ from django.utils import simplejson as json
 from django.db.utils import IntegrityError
 
 from movies.models import File, Movie, MovieFile, Tag, MovieTag
+from movies.models import QueryCache
+
+omdbapi_url = 'http://www.omdbapi.com/?'
 
 
 def next_movie_file(path):
     for dirpath, dirnames, filenames in os.walk(path):
         for filename in filenames:
-            # todo: match against extension
+            # todo: filter out junk, for example by extension
             yield os.path.join(dirpath, filename)
 
 
@@ -37,41 +40,77 @@ def import_movie_file(path):
         pass
 
 
-baseurl = 'http://www.omdbapi.com/?'
+def get_omdbapi_info(mfile):
+    source = 'omdbapi'
+    try:
+        cache = QueryCache.objects.get(file=mfile, source=source)
+        rawinfo = cache.result
+    except QueryCache.DoesNotExist:
+        title, tmp = os.path.splitext(mfile.filename)
+        url = omdbapi_url + 't=' + title
+        rawinfo = urllib2.urlopen(url).read()
+        QueryCache(
+                file=mfile,
+                source=source,
+                url=url,
+                result=rawinfo,
+                ).save()
+    rawinfo = json.loads(rawinfo)
+    print json.dumps(rawinfo, indent=4)
+    if rawinfo['Response'] == 'True':
+        is_ok = True
+        info = {
+                'title': rawinfo['Title'],
+                'summary': rawinfo['Plot'],
+                'year': int(rawinfo['Year']),
+                'runtime': rawinfo['Runtime'],
+                'rated': rawinfo['Rated'],
+                'source': source,
+                'tags': [],
+                }
+        try:
+            released = datetime.strptime(rawinfo['Released'], '%d %b %Y')
+            info['released'] = released
+        except ValueError:
+            pass
+        for genre in rawinfo['Genre'].split(', '):
+            try:
+                tag = Tag.objects.get(category=source, name=genre)
+            except Tag.DoesNotExist:
+                tag = Tag(category=source, name=genre)
+                tag.save()
+            info['tags'].append(tag)
+    else:
+        is_ok, info = False, None
+    return is_ok, info
 
-def fetch_imdb_info():
+
+def import_new_movies():
     for mfile in File.objects.filter(moviefile__isnull=True):
-        if not mfile.cached_query_result:
-            title, tmp = os.path.splitext(mfile.filename)
-            url = '%st=%s' % (baseurl, title)
-            response = urllib2.urlopen(url).read()
-            mfile.cached_query_result = response
-            mfile.save()
-        info = json.loads(mfile.cached_query_result)
-        print json.dumps(info, indent=4)
-        if info['Response'] == 'True':
-            movie = Movie(
-                    title=info['Title'],
-                    summary=info['Plot'],
-                    year=info['Year'],
-                    released=datetime.strptime(info['Released'], '%d %b %Y'),
-                    runtime=info['Runtime'],
-                    rated=info['Rated'],
-                    source=baseurl,
-                    )
-            movie.save()
-            MovieFile(file=mfile, movie=movie).save()
-            for genre in info['Genre'].split(', '):
-                try:
-                    tag = Tag.objects.get(category='imdb', name=genre)
-                except Tag.DoesNotExist:
-                    tag = Tag(category='imdb', name=genre)
-                    tag.save()
-                try:
-                    MovieTag(movie=movie, tag=tag).save()
-                except IntegrityError:
-                    pass
+        is_ok, info = get_omdbapi_info(mfile)
+        if is_ok:
+            import_movie(mfile, info)
         break
+
+
+def import_movie(mfile, info):
+    movie = Movie(
+            title=info['title'],
+            summary=info['summary'],
+            year=info['year'],
+            runtime=info['runtime'],
+            rated=info['rated'],
+            source=info['source'],
+            )
+    if 'released' in info:
+        movie.released = info['released']
+    movie.save()
+    MovieFile(file=mfile, movie=movie).save()
+    for tag in info['tags']:
+        try:
+            MovieTag(movie=movie, tag=tag).save()
+        except IntegrityError:
+            pass
 
 
 class Command(BaseCommand):
@@ -82,7 +121,7 @@ class Command(BaseCommand):
             if os.path.isdir(path):
                 for path in next_movie_file(path):
                     import_movie_file(path)
-                fetch_imdb_info()
+                import_new_movies()
 
 
 # eof
