@@ -11,6 +11,7 @@ class File(models.Model):
     quality = models.IntegerField(default=0)
     cdate = models.DateField()
     mdate = models.DateField()
+    is_confirmed = models.BooleanField(default=False)
 
     def __unicode__(self):
         return '%s %s' % (self.filename, self.filesize)
