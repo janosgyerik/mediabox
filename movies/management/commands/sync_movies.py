@@ -1,4 +1,5 @@
 import os
+import re
 import urllib2
 import logging
 from datetime import datetime
@@ -47,6 +48,11 @@ def import_movie_file(path):
 def download_url(url):
     logger.info('fetching url %s ...' % url)
     return urllib2.urlopen(url).read()
+
+
+def normalized_title(title):
+    title = re.sub(r'^[\W_]+', '', title)
+    return title
 
 
 def get_omdbapi_info(mfile):
@@ -103,6 +109,7 @@ def get_imdbapi_info(mfile):
         logger.info('using cached result for %s' % mfile.filename)
     except QueryCache.DoesNotExist:
         title, tmp = os.path.splitext(mfile.filename)
+        title = normalized_title(title)
         url = imdbapi_url + 'q=' + title
         rawinfo = download_url(url)
         QueryCache(
