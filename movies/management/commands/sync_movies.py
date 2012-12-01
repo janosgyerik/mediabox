@@ -109,6 +109,7 @@ def get_imdbapi_info(mfile):
         logger.info('using cached result for %s' % mfile.filename)
     except QueryCache.DoesNotExist:
         title, tmp = os.path.splitext(mfile.filename)
+        title = title.replace(' ', '.')
         title = normalized_title(title)
         url = imdbapi_url + 'q=' + title
         rawinfo = download_url(url)
