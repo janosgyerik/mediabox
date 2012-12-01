@@ -10,6 +10,7 @@ from movies.models import File, Movie, MovieFile, Tag, MovieTag
 from movies.models import QueryCache
 
 omdbapi_url = 'http://www.omdbapi.com/?'
+imdbapi_url = 'http://www.imdbapi.org/?'
 
 
 def next_movie_file(path):
@@ -85,9 +86,54 @@ def get_omdbapi_info(mfile):
     return is_ok, info
 
 
+def get_imdbapi_info(mfile):
+    source = 'imdbapi'
+    try:
+        cache = QueryCache.objects.get(file=mfile, source=source)
+        rawinfo = cache.result
+    except QueryCache.DoesNotExist:
+        title, tmp = os.path.splitext(mfile.filename)
+        url = imdbapi_url + 'q=' + title
+        rawinfo = urllib2.urlopen(url).read()
+        QueryCache(
+                file=mfile,
+                source=source,
+                url=url,
+                result=rawinfo,
+                ).save()
+    rawinfo = json.loads(rawinfo)
+    print json.dumps(rawinfo, indent=4)
+    if 'error' not in rawinfo:
+        is_ok = True
+        try:
+            info = {
+                    'title': rawinfo['title'],
+                    'summary': rawinfo['plot_simple'],
+                    'year': rawinfo['year'],
+                    'released': datetime.strptime(str(rawinfo['release_date']), '%Y%m%d'),
+                    'runtime': rawinfo['runtime'],
+                    'rated': rawinfo['rated'],
+                    'source': source,
+                    'tags': [],
+                    }
+            if 'genres' in rawinfo:
+                for genre in rawinfo['genres']:
+                    try:
+                        tag = Tag.objects.get(category=source, name=genre)
+                    except Tag.DoesNotExist:
+                        tag = Tag(category=source, name=genre)
+                        tag.save()
+                    info['tags'].append(tag)
+        except KeyError:
+            is_ok, info = False, None
+    else:
+        is_ok, info = False, None
+    return is_ok, info
+
+
 def import_new_movies():
     for mfile in File.objects.filter(moviefile__isnull=True):
-        is_ok, info = get_omdbapi_info(mfile)
+        is_ok, info = get_imdbapi_info(mfile)
         if is_ok:
             import_movie(mfile, info)
         break
