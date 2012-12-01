@@ -143,6 +143,9 @@ def get_imdbapi_info(mfile):
         except KeyError:
             print json.dumps(rawinfo, indent=4)
             is_ok, info = False, None
+        except ValueError:
+            print json.dumps(rawinfo, indent=4)
+            is_ok, info = False, None
     else:
         is_ok, info = False, None
     return is_ok, info
