@@ -20,7 +20,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=100)
     summary = models.TextField()
     year = models.IntegerField()
-    released = models.DateField(null=True)
+    released = models.DateField()
     runtime = models.CharField(max_length=20)
     rated = models.CharField(max_length=20)
     homepage = models.URLField()
