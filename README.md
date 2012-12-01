@@ -11,31 +11,37 @@ Setup
 
         pip install -r pip.txt
 
-2. Create settings.py from sample
-
-        cp mediabox/settings.py.sample mediabox/settings.py
-
-3. Create database (sqlite3), and admin account
+2. Create database (sqlite3), and admin account
 
         ./manage.py syncdb
 
-4. Create a symbolic link to your media collection inside static/
+3. Create a symbolic link to your media collection inside static/
 
         ln -s /path/to/media/collection static/media
 
-5. Import ID3 genre data to use as canonical genre meta data
+4. Import ID3 genre data to use as canonical genre meta data
 
         ./manage.py import_id3_genres
 
-6. Synchronize meta data of media files from the filesystem into the database
+5. Synchronize meta data of media files from the filesystem into the database
 
         ./manage.py sync_media
 
-7. Start local website on localhost:8000
+6. Start local website on localhost:8000
 
         ./manage.py runserver
 
-8. Visit http://localhost:8000/
+7. Visit http://localhost:8000/
+
+
+Local settings
+--------------
+The default settings.py is suitable for development. To override some
+settings, especially DATABASES and SECRET_KEY, create a custom
+local_settings.py file, based on the included local_settings.py.sample
+and call manage.py like this:
+
+    ./manage cmd --settings=local_settings
 
 
 Live demos
