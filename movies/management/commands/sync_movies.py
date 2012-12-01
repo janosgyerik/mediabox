@@ -112,7 +112,6 @@ def get_imdbapi_info(mfile):
                 result=rawinfo,
                 ).save()
     rawinfo = json.loads(rawinfo)
-    print json.dumps(rawinfo, indent=4)
     if 'error' not in rawinfo:
         is_ok = True
         try:
@@ -135,6 +134,7 @@ def get_imdbapi_info(mfile):
                         tag.save()
                     info['tags'].append(tag)
         except KeyError:
+            print json.dumps(rawinfo, indent=4)
             is_ok, info = False, None
     else:
         is_ok, info = False, None
@@ -146,7 +146,6 @@ def import_new_movies():
         is_ok, info = get_imdbapi_info(mfile)
         if is_ok:
             import_movie(mfile, info)
-        break
 
 
 def import_movie(mfile, info):
