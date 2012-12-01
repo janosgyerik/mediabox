@@ -1,5 +1,6 @@
 import os
 import urllib2
+import logging
 from datetime import datetime
 
 from django.core.management.base import BaseCommand
@@ -11,6 +12,8 @@ from movies.models import QueryCache
 
 omdbapi_url = 'http://www.omdbapi.com/?'
 imdbapi_url = 'http://www.imdbapi.org/?'
+
+logger = logging.getLogger(__name__)
 
 
 def next_movie_file(path):
@@ -41,15 +44,21 @@ def import_movie_file(path):
         pass
 
 
+def download_url(url):
+    logger.info('fetching url %s ...' % url)
+    return urllib2.urlopen(url).read()
+
+
 def get_omdbapi_info(mfile):
     source = 'omdbapi'
     try:
         cache = QueryCache.objects.get(file=mfile, source=source)
         rawinfo = cache.result
+        logger.info('using cached query result for file %s' % mfile.filename)
     except QueryCache.DoesNotExist:
         title, tmp = os.path.splitext(mfile.filename)
         url = omdbapi_url + 't=' + title
-        rawinfo = urllib2.urlopen(url).read()
+        rawinfo = download_url(url)
         QueryCache(
                 file=mfile,
                 source=source,
@@ -91,10 +100,11 @@ def get_imdbapi_info(mfile):
     try:
         cache = QueryCache.objects.get(file=mfile, source=source)
         rawinfo = cache.result
+        logger.info('using cached result for %s' % mfile.filename)
     except QueryCache.DoesNotExist:
         title, tmp = os.path.splitext(mfile.filename)
         url = imdbapi_url + 'q=' + title
-        rawinfo = urllib2.urlopen(url).read()
+        rawinfo = download_url(url)
         QueryCache(
                 file=mfile,
                 source=source,
