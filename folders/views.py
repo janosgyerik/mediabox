@@ -1,3 +1,4 @@
+from urllib import unquote
 import os
 
 #from django.http import HttpResponse
@@ -27,6 +28,7 @@ def index(request, relpath=None):
             "albumSongs": album_songs_to_json,
             }, RequestContext(request))
     else:
+        relpath = unquote(relpath)
         return render_to_response('folders/index.html', {
             "foldername": os.path.basename(relpath),
             "folders": folders(relpath),
