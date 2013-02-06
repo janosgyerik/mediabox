@@ -17,7 +17,7 @@ Setup
 
 3. Create a symbolic link to your media collection inside static/
 
-        ln -s /path/to/media/collection static/media
+        ln -s /path/to/media/collection common/static/media
 
 4. Import ID3 genre data to use as canonical genre meta data
 
@@ -51,8 +51,8 @@ Live demos
 
 Screenshots
 -----------
-![Folders](https://github.com/websitedevops/mediabox/raw/master/static/screenshots/folders.png)
-![Albums](https://github.com/websitedevops/mediabox/raw/master/static/screenshots/album.png)
+![Folders](https://github.com/janosgyerik/mediabox/raw/master/common/static/screenshots/folders.png)
+![Albums](https://github.com/janosgyerik/mediabox/raw/master/common/static/screenshots/album.png)
 
 
 Features

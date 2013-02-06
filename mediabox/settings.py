@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django_openid_auth',
+    'common',
     'folders',
     'movies',
 )
@@ -175,7 +176,7 @@ LOGGING = {
 
 ### project specific custom settings
 
-MEDIA_ROOT = os.path.join(DIRNAME, '..', 'static', 'media')
+MEDIA_ROOT = os.path.join(DIRNAME, '..', 'common', 'static', 'media')
 MEDIA_WWWROOT = '/static/media'
 
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'

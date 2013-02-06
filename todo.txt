@@ -1,18 +1,27 @@
 cleaning up
 -----------
+- rename 'folders' to 'explorer'
 - show album art
 - hide .id3tag.sh, missing, *.m3u
-- authentication
-    - openid -> copy accounts from mapium
-    - whitelisting
-    - login page
-- move static/* where it belongs
-- enable search interface
-- track recently listened albums
+
+
+new ui with bootstrap
+---------------------
+- add bootstrap dark
+- update pages
+
+
+authentication
+--------------
+- openid -> copy accounts from mapium
+- whitelisting
+- login page
 
 
 wanted
 ------
+- enable search interface
+- track recently listened albums
 - fast navigation
 - search
 - recent albums
