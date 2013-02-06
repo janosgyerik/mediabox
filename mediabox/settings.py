@@ -127,7 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django_openid_auth',
     'common',
-    'folders',
+    'explorer',
     'movies',
 )
 

@@ -1,6 +1,5 @@
 cleaning up
 -----------
-- rename 'folders' to 'explorer'
 - show album art
 - hide .id3tag.sh, missing, *.m3u
 
@@ -20,6 +19,7 @@ authentication
 
 wanted
 ------
+- create common
 - enable search interface
 - track recently listened albums
 - fast navigation

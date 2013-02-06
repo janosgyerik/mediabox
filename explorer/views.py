@@ -8,7 +8,7 @@ from django.template import RequestContext
 #from django.contrib.auth import logout
 from django.conf import settings
 
-from folders.models import AlbumSong
+from explorer.models import AlbumSong
 from services.handler import encode
 
 MEDIA_ROOT = settings.MEDIA_ROOT
@@ -43,7 +43,7 @@ def locations(relpath=None):
         return
 
     import django.core.urlresolvers
-    wwwroot = django.core.urlresolvers.reverse("folders")
+    wwwroot = django.core.urlresolvers.reverse("explorer")
 
     locations = []
     head = relpath
@@ -73,7 +73,7 @@ def locations(relpath=None):
 
 def folders(relpath=None):
     import django.core.urlresolvers
-    wwwroot = django.core.urlresolvers.reverse("folders")
+    wwwroot = django.core.urlresolvers.reverse("explorer")
 
     if relpath is None:
         mediapath = MEDIA_ROOT

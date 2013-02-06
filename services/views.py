@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from folders.models import Genre, Artist, Album, AlbumSong, Single
+from explorer.models import Genre, Artist, Album, AlbumSong, Single
 
 from services.handler import model_service
 

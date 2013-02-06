@@ -5,7 +5,7 @@ from mutagen.easyid3 import EasyID3
 
 from django.conf import settings
 
-from folders.models import Genre, Artist, Album, AlbumSong
+from explorer.models import Genre, Artist, Album, AlbumSong
 
 
 def _print(*args):
