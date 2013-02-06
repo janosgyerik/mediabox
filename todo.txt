@@ -1,3 +1,16 @@
+cleaning up
+-----------
+- show album art
+- hide .id3tag.sh, missing, *.m3u
+- authentication
+    - openid -> copy accounts from mapium
+    - whitelisting
+    - login page
+- move static/* where it belongs
+- enable search interface
+- track recently listened albums
+
+
 wanted
 ------
 - fast navigation
