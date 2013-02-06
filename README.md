@@ -1,8 +1,8 @@
 MediaBox
 ========
-A simple web interface to listen to your media anywhere.
-
-GitHub MediaBox Project Website: http://www.websitedevops.com/mediabox/
+A simple web interface to access to your media from anywhere.  Open ID
+login with whitelisting. Open-source project, using Django, Python,
+Backbone.js, HTML5, Bootstrap from Twitter.
 
 
 Setup
