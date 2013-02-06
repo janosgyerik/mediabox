@@ -13,6 +13,7 @@ from services.handler import encode
 
 MEDIA_ROOT = settings.MEDIA_ROOT
 MEDIA_WWWROOT = settings.MEDIA_WWWROOT
+MEDIA_EXT = settings.MEDIA_EXT
 
 
 def album_songs_to_json():
@@ -100,7 +101,6 @@ def folders(relpath=None):
 
 
 def files(relpath=None):
-    #import django.core.urlresolvers
     wwwroot = MEDIA_WWWROOT
 
     if relpath is None:
@@ -112,20 +112,27 @@ def files(relpath=None):
         return
 
     files = []
-    for f in os.listdir(mediapath):
-        if os.path.isfile(os.path.join(mediapath, f)):
-            if relpath is None:
-                href = os.path.join(wwwroot, f)
-            else:
-                href = os.path.join(wwwroot, relpath, f)
+    for filename in os.listdir(mediapath):
+        if os.path.isfile(os.path.join(mediapath, filename)):
+            if filename.startswith('.'):
+                continue
 
-            file = {
-                    "name": f,
+            ext = os.path.splitext(filename)[1][1:].lower()
+            if not ext in MEDIA_EXT:
+                continue
+
+            if relpath is None:
+                href = os.path.join(wwwroot, filename)
+            else:
+                href = os.path.join(wwwroot, relpath, filename)
+
+            fileinfo = {
+                    "name": filename,
                     "href": href,
-                    "size": os.path.getsize(os.path.join(mediapath, f)),
+                    "size": os.path.getsize(os.path.join(mediapath, filename)),
                     }
 
-            files.append(file)
+            files.append(fileinfo)
 
     return sorted(files, key=lambda x: x['name'])
 

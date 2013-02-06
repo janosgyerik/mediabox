@@ -178,6 +178,7 @@ LOGGING = {
 
 MEDIA_ROOT = os.path.join(DIRNAME, '..', 'common', 'static', 'media')
 MEDIA_WWWROOT = '/static/media'
+MEDIA_EXT = ('mp3', 'ogg')
 
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 

@@ -1,7 +1,7 @@
 cleaning up
 -----------
 - show album art
-- hide .id3tag.sh, missing, *.m3u
+- pep8
 
 
 new ui with bootstrap
