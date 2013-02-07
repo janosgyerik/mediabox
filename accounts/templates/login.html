@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1>Login</h1>
+
+<!--
+<div class="alert alert-info">
+    <strong class="alert-heading">Note:</strong>
+    OpenID login is the only login method we support,
+    in the best interest of our users.
+</div>
+-->
+<div class="alert alert-info">
+    <strong class="alert-heading">Note:</strong>
+    You must be invited first to be able to login.
+</div>
+
+<div class="row-fluid">
+    <form class="openid-form form-inline" method="post" action="/openid/login/">
+	<fieldset>
+	    {% csrf_token %}
+	    <input type="hidden" name="openid_identifier" value="https://www.google.com/accounts/o8/id"/>
+        <label class="span1"><strong>Gmail</strong></label>
+	    <label class="span4">https://www.google.com/accounts/o8/id</label>
+	    <input name="bsignin" type="submit" value="Login" class="btn btn-primary span2" />
+	</fieldset>
+    </form>
+</div>
+
+<div class="row-fluid">
+    <form class="openid-form form-inline" method="post" action="/openid/login/">
+	<fieldset>
+	    {% csrf_token %}
+	    <input type="hidden" name="openid_identifier" value="http://yahoo.com"/>
+        <label class="span1"><strong>Yahoo</strong></label>
+	    <label class="span4">http://yahoo.com</label>
+	    <input name="bsignin" type="submit" value="Login" class="btn btn-primary span2" />
+	</fieldset>
+    </form>
+</div>
+
+<!--
+<div class="row-fluid">
+    <form class="openid-form form-inline" method="post" action="/openid/login/">
+	<fieldset>
+	    {% csrf_token %}
+	    <input type="hidden" name="openid_identifier" value="__username__.wordpress.com"/>
+        <label class="span1" for="wordpress-username"><strong>Wordpress</strong></label>
+        <div class="span4 input-append">
+            <input class="username" type="text" placeholder="username" id="wordpress-username"/>
+            <span class="add-on">.wordpress.com</span>
+        </div>
+	    <input name="bsignin" type="submit" value="Login" class="btn btn-primary span2" />
+	</fieldset>
+    </form>
+</div>
+
+<div class="row-fluid">
+    <form class="openid-form form-inline" method="post" action="/openid/login/">
+	<fieldset>
+	    {% csrf_token %}
+	    <input type="hidden" name="openid_identifier" value="__username__.myopenid.com"/>
+        <label class="span1" for="myopenid-username"><strong>MyOpenID</strong></label>
+        <div class="span4 input-append">
+            <input class="username" type="text" placeholder="username" id="myopenid-username"/>
+            <span class="add-on">.myopenid.com</span>
+        </div>
+	    <input name="bsignin" type="submit" value="Login" class="btn btn-primary span2" />
+	</fieldset>
+    </form>
+</div>
+
+<div class="row-fluid">
+    <form class="openid-form form-inline" method="post" action="/openid/login/">
+	<fieldset>
+	    {% csrf_token %}
+	    <input type="hidden" name="openid_identifier" value="__username__.livejournal.com"/>
+        <label class="span1" for="livejournal-username"><strong>LiveJournal</strong></label>
+        <div class="span4 input-append">
+            <input class="username" type="text" placeholder="username" id="livejournal-username"/>
+            <span class="add-on">.livejournal.com</span>
+        </div>
+	    <input name="bsignin" type="submit" value="Login" class="btn btn-primary span2" />
+	</fieldset>
+    </form>
+</div>
+
+<div class="row-fluid">
+    <form class="openid-form form-inline" method="post" action="/openid/login/">
+	<fieldset>
+	    {% csrf_token %}
+	    <input type="hidden" name="openid_identifier" value="myspace.com/__username__"/>
+        <label class="span1" for="myspace-username"><strong>MySpace</strong></label>
+        <div class="span4 input-prepend">
+            <span class="add-on">myspace.com/</span>
+            <input class="username" type="text" placeholder="username" id="myspace-username" />
+        </div>
+	    <input name="bsignin" type="submit" value="Login" class="btn btn-primary span2" />
+	</fieldset>
+    </form>
+</div>
+
+<div class="row-fluid">
+    <form class="openid-form form-inline" method="post" action="/openid/login/">
+	<fieldset>
+	    {% csrf_token %}
+	    <input type="hidden" name="openid_identifier" value="launchpad.net/~__username__"/>
+        <label class="span1" for="launchpad-username"><strong>Launchpad</strong></label>
+        <div class="span4 input-prepend">
+            <span class="add-on">launchpad.net/~</span>
+            <input class="username" type="text" placeholder="username" id="launchpad-username" />
+        </div>
+	    <input name="bsignin" type="submit" value="Login" class="btn btn-primary span2" />
+	</fieldset>
+    </form>
+</div>
+
+<div class="row-fluid">
+    <p>If your favourite OpenID provider is not in the list above, you can enter its URL directly:</p>
+    <form id="openid-form-other" method="post" action="/openid/login/" class="form-inline">
+        <fieldset>
+        {% csrf_token %}
+        <label class="span1" for="id_openid_identifier"><strong>URL</strong></label>
+        <div class="span4">
+            <input type="text" id="id_openid_identifier" class="openid span11" name="openid_identifier" maxlength="255" />
+        </div>
+        <input class="btn btn-primary span2" name="bsignin" type="submit" value="Login" />
+        </fieldset>
+    </form>
+</div>
+
+<div class="row-fluid">
+    <p class="help-block">if you don't know the URL of your OpenID provider, this page might help: {{ 'http://en.wikipedia.org/wiki/OpenID'|urlize }}</p>
+</div>
+-->
+
+{% endblock %}
+
+{% block ready %}
+$('.openid-form').bind('submit', function(e) {
+    var username = $(this).find('input.username').val();
+    var openid_provider_url = $(this).find('input[name="openid_identifier"]').val().replace('__username__', username);
+    $(this).find('input[name="openid_identifier"]').val(openid_provider_url);
+    //e.preventDefault();
+});
+{% endblock %}

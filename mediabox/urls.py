@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^explorer/', include('explorer.urls')),
     url(r'^api/', include('services.urls')),
 
+    url(r'accounts/', include('accounts.urls')),
     url(r'openid/', include('django_openid_auth.urls')),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

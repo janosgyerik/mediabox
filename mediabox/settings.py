@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django_openid_auth',
+    'accounts',
     'common',
     'explorer',
     'movies',
@@ -183,7 +184,8 @@ MEDIA_EXT = ('mp3', 'ogg')
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
 AUTHENTICATION_BACKENDS = (
-        'django_openid_auth.auth.OpenIDBackend',
+        #'django_openid_auth.auth.OpenIDBackend',
+        'accounts.auth.WhitelistedOpenIDBackend',
         'django.contrib.auth.backends.ModelBackend',
         )
 

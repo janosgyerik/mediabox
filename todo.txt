@@ -1,14 +1,8 @@
 authentication
 --------------
-- link to login page in navbar
-- login page -> copy from Mapium
-- openid -> copy accounts/ from mapium
-- whitelisting
 - require login
-- admin link in navbar
-- add whitelist to admin
-- test login with gmail
-- test login with yahoo
+- test successful login with yahoo
+- make whitelisted privileges work even after account already exists
 - add friends
 - invite friends
 - clean up unused images
