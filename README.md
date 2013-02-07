@@ -57,8 +57,9 @@ Screenshots
 
 Features
 --------
-- Traverse directory of music files
-- mp3 files are playable in the browser using the Yahoo! WebPlayer
+- Browse directory of music files
+- mp3 files are playable in the browser using Yahoo! WebPlayer
+  (looking for a suitable alternative, implemented in pure html5)
 
 Well that's pretty much it for now. And it's working fine like that. But that's not great.
 

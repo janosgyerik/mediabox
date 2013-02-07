@@ -4,7 +4,7 @@ import os
 #from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-#from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 #from django.contrib.auth import logout
 from django.conf import settings
 
@@ -20,7 +20,7 @@ def album_songs_to_json():
     return encode(list(AlbumSong.objects.all()))
 
 
-#@login_required
+@login_required
 def index(request, relpath=None):
     if relpath is None:
         return render_to_response('folders/index.html', {

@@ -1,13 +1,19 @@
-authentication
---------------
-- require login
-- add friends
+release
+-------
+- add friends from musiclibrary
+- setup and test mediabox.titan2x.com
 - invite friends
+
+
+cleaning
+--------
 - clean up unused images
+- reduce code duplication in explorer.views
 
 
 wanted
 ------
+- public collection / private collection
 - enable search interface
 - track recently listened albums
 - fast navigation
@@ -46,7 +52,6 @@ movies
 
 important
 ---------
-- openid login
 - invitations
 
 
