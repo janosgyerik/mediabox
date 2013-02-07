@@ -12,11 +12,13 @@ ul.albums li {
 ul.album {
     list-style: none;
     padding-left: 0;
+    margin-left: 0;
 }
 
 ul.images {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 ul.images li {
@@ -25,8 +27,9 @@ ul.images li {
 
 ul.images img {
     height: 100px;
+    width: 100px;
     padding: 2px;
-    border: 2px groove black;
+    border: 1px groove gray;
     margin-right: 1em;
 }
 

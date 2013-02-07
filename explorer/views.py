@@ -65,7 +65,7 @@ def locations(relpath=None):
 
     locations[0]["last"] = True
     locations.append({
-        "name": "Top",
+        "name": "Home",
         "href": wwwroot,
         })
     locations.reverse()

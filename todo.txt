@@ -1,23 +1,17 @@
-cleaning up
------------
-- pep8
-
-
-new ui with bootstrap
----------------------
-- add bootstrap dark
-- update pages
-- clean up css
-- admin link
-
-
 authentication
 --------------
-- openid -> copy accounts from mapium
+- link to login page in navbar
+- login page -> copy from Mapium
+- openid -> copy accounts/ from mapium
 - whitelisting
-- login page
 - require login
+- admin link in navbar
 - add whitelist to admin
+- test login with gmail
+- test login with yahoo
+- add friends
+- invite friends
+- clean up unused images
 
 
 wanted

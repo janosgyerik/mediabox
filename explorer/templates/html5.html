@@ -25,13 +25,10 @@
 
   <!-- CSS: implied media=all -->
   <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" /> 
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" /> 
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/nav.css" /> 
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/messages.css" /> 
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/folder.css" /> 
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/forms.css" /> 
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" /> 
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/mediabox.css" /> 
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/explorer.css" /> 
 
   <!-- end CSS-->
 
@@ -55,9 +52,7 @@
     </header>
 
     <section id="main" role="main">
-    <div class="container">
     {% block main %}{% endblock %}
-    </div>
     </section>
 
     <footer class="footer">
@@ -74,6 +69,7 @@
 
 
   <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="{{ STATIC_URL }}bootstrap/js/boostrap.min.js"></script>
   <script defer src="{{ STATIC_URL }}js/plugins.js"></script>
   <script defer src="{{ STATIC_URL }}js/underscore-min.js"></script>
   <script defer src="{{ STATIC_URL }}js/backbone-min.js"></script>

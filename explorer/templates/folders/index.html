@@ -5,15 +5,24 @@
 {% block content %}
 
 {% if locations %}
-<div class="location">Location: {% for loc in locations %}
-<a href="{{ loc.href|urlencode }}" title="{{ loc.name }}">{{ loc.name }}</a>
-{% if not loc.last %} / {% endif %}
-{% endfor %}</div>
+<ul class="breadcrumb">
+    {% for loc in locations %}
+    <li><a href="{{ loc.href|urlencode }}" title="{{ loc.name }}">{{ loc.name }}</a> {% if not loc.last %}<span class="divider">/</span>{% endif %}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if folders %}
+    <h2>{{ foldername }}</h2>
+    <ul class="albums">
+        {% for folder in folders %}
+        <li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
+        {% endfor %}
+    </ul>
 {% endif %}
 
 {% if files %}
-    <h2>Files</h2>
-    <p>Click on the links to play/pause. (Works only if you have the flash plugin.)</p>
+    <h2>{{ foldername }}</h2>
     {% if images %}
     <ul class="images">
         {% for file in images %}
@@ -29,15 +38,6 @@
     <!-- todo
     <p>TODO: ZIP download link here</p>
     -->
-{% endif %}
-
-{% if folders %}
-<h2>Folders</h2>
-    <ul class="albums">
-        {% for folder in folders %}
-        <li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
-        {% endfor %}
-    </ul>
 {% endif %}
 
 <!-- TODO
