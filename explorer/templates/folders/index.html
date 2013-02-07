@@ -14,7 +14,14 @@
 {% if files %}
     <h2>Files</h2>
     <p>Click on the links to play/pause. (Works only if you have the flash plugin.)</p>
-    <ul class="album">
+    {% if images %}
+    <ul class="images">
+        {% for file in images %}
+        <li><img src="{{ file.href|urlencode }}" title="{{ file.name }}" /></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <ul class="album files">
         {% for file in files %}
         <li><a href="{{ file.href|urlencode }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
         {% endfor %}

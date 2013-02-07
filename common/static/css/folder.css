@@ -14,11 +14,24 @@ ul.album {
     padding-left: 0;
 }
 
-.album-images img {
+ul.images {
+    list-style: none;
+    padding: 0;
+}
+
+ul.images li {
+    float: left;
+}
+
+ul.images img {
     height: 100px;
     padding: 2px;
     border: 2px groove black;
     margin-right: 1em;
+}
+
+ul.files {
+    clear: both;
 }
 
 /**/

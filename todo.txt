@@ -1,6 +1,7 @@
 cleaning up
 -----------
-- show album art
+- move models to common
+- css
 - pep8
 
 
@@ -8,6 +9,7 @@ new ui with bootstrap
 ---------------------
 - add bootstrap dark
 - update pages
+- admin link
 
 
 authentication
@@ -15,11 +17,12 @@ authentication
 - openid -> copy accounts from mapium
 - whitelisting
 - login page
+- require login
+- add whitelist to admin
 
 
 wanted
 ------
-- create common
 - enable search interface
 - track recently listened albums
 - fast navigation

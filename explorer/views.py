@@ -34,6 +34,7 @@ def index(request, relpath=None):
             "foldername": os.path.basename(relpath),
             "folders": folders(relpath),
             "files": files(relpath),
+            "images": images(relpath),
             "locations": locations(relpath),
             "albumSongs": album_songs_to_json,
             }, RequestContext(request))
@@ -130,6 +131,42 @@ def files(relpath=None):
                     "name": filename,
                     "href": href,
                     "size": os.path.getsize(os.path.join(mediapath, filename)),
+                    }
+
+            files.append(fileinfo)
+
+    return sorted(files, key=lambda x: x['name'])
+
+
+def images(relpath=None):
+    wwwroot = MEDIA_WWWROOT
+
+    if relpath is None:
+        mediapath = MEDIA_ROOT
+    else:
+        mediapath = os.path.join(MEDIA_ROOT, relpath)
+
+    if not os.path.isdir(mediapath):
+        return
+
+    files = []
+    for filename in os.listdir(mediapath):
+        if os.path.isfile(os.path.join(mediapath, filename)):
+            if filename.startswith('.'):
+                continue
+
+            ext = os.path.splitext(filename)[1][1:].lower()
+            if not ext in ('jpg', 'jpeg', 'png'):
+                continue
+
+            if relpath is None:
+                href = os.path.join(wwwroot, filename)
+            else:
+                href = os.path.join(wwwroot, relpath, filename)
+
+            fileinfo = {
+                    "name": filename,
+                    "href": href,
                     }
 
             files.append(fileinfo)
