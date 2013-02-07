@@ -30,7 +30,8 @@ ul.images img {
     width: 100px;
     padding: 2px;
     border: 1px groove gray;
-    margin-right: 1em;
+    margin-right: .5em;
+    margin-bottom: .5em;
 }
 
 ul.files {
