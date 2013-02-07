@@ -1,5 +1,7 @@
 release
 -------
+- public collection / private collection
+- recent albums box using localstorage
 - add friends from musiclibrary
 - setup and test mediabox.titan2x.com
 - invite friends
@@ -8,16 +10,12 @@ release
 cleaning
 --------
 - reduce code duplication in explorer.views
+- pep8
 
 
-wanted
-------
-- public collection / private collection
+next
+----
 - enable search interface
-- track recently listened albums
-- fast navigation
-- search
-- recent albums
 
 
 movies
