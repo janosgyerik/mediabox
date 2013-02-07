@@ -12,33 +12,44 @@
 </ul>
 {% endif %}
 
-{% if folders %}
-    <h2>{{ foldername }}</h2>
-    <ul class="albums">
-        {% for folder in folders %}
-        <li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
-        {% endfor %}
-    </ul>
-{% endif %}
+<div class="row-fluid">
+    <div class="span4">
+        <h2>{{ foldername }}</h2>
 
-{% if files %}
-    <h2>{{ foldername }}</h2>
-    {% if images %}
-    <ul class="images">
-        {% for file in images %}
-        <li><img src="{{ file.href|urlencode }}" title="{{ file.name }}" /></li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <ul class="album files">
-        {% for file in files %}
-        <li><a href="{{ file.href|urlencode }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
-        {% endfor %}
-    </ul>
-    <!-- todo
-    <p>TODO: ZIP download link here</p>
-    -->
-{% endif %}
+        {% if folders %}
+            <ul class="albums">
+                {% for folder in folders %}
+                <li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if files %}
+            {% if images %}
+            <ul class="images">
+                {% for file in images %}
+                <li><img src="{{ file.href|urlencode }}" title="{{ file.name }}" /></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <ul class="album files">
+                {% for file in files %}
+                <li><a href="{{ file.href|urlencode }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
+                {% endfor %}
+            </ul>
+            <!-- todo
+            <p>TODO: ZIP download link here</p>
+            -->
+        {% endif %}
+
+    </div>
+
+    <div id="recent-folders" class="span4 gone">
+        <h2>Recent folders</h2>
+        <ul class="list">
+        </ul>
+    </div>
+</div>
 
 <!-- TODO
 <div id="artists">
@@ -71,6 +82,14 @@
     <div class="view">
       <label><%= title %></label>
     </div>
+</script>
+
+<script type="text/template" id="folder-template">
+    <a href="<%= href %>"><%= name %></a>
+</script>
+
+<script type="text/template" id="foldername">
+    {{ foldername }}
 </script>
 
 {% endblock %}

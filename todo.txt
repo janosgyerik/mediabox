@@ -1,7 +1,6 @@
 release
 -------
 - public collection / private collection
-- recent albums box using localstorage
 - add friends from musiclibrary
 - setup and test mediabox.titan2x.com
 - invite friends
@@ -9,6 +8,7 @@ release
 
 cleaning
 --------
+- move the explorer-specific html into explorer-specific template
 - reduce code duplication in explorer.views
 - pep8
 

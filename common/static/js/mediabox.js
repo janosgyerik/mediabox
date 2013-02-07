@@ -8,114 +8,89 @@
  * Date: Thu Jun 21 20:31:54 CEST 2012
  */
 
+window.App = {};
+
+// app constants
+App.MAX_RECENT_FOLDERS = 15;
+
+App.Folder = Backbone.Model.extend({
+    defaults: {
+        name: null,
+        href: null
+    }
+});
+
+App.FolderView = Backbone.View.extend({
+    tagName: 'li',
+    template: _.template($('#folder-template').html()),
+    events: {
+        'click a.destroy': 'clear'
+    },
+    initialize: function() {
+        this.model.bind('destroy', this.remove, this);
+    },
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    },
+    clear: function() {
+        this.model.clear();
+    }
+});
+
+App.RecentFolderList = Backbone.Collection.extend({
+    model: App.Folder,
+    localStorage: new Store('mediabox-recent-folders'),
+    addCustom: function(obj) {
+        var filter = function(item) {
+            return item.get('name') == obj.name;
+        };
+        var remove = function(item) {
+            item.destroy();
+        };
+        _.each(this.filter(filter), remove);
+        this.create(obj);
+        var itemsToSlice = this.length - App.MAX_RECENT_FOLDERS;
+        if (itemsToSlice > 0) {
+            _.each(this.toArray().slice(itemsToSlice), remove);
+        }
+        this.trigger('updated');
+    }
+});
+
+App.RecentFolderListView = Backbone.View.extend({
+    el: '#recent-folders',
+    initialize: function(options) {
+        this.list = options.list;
+        this.list.bind('reset', this.render, this);
+        this.list.bind('updated', this.render, this);
+        this.list.fetch();
+    },
+    render: function() {
+        this.$('.list').empty();
+        this.list.each(this.add);
+        if (this.list.length) {
+            this.$el.removeClass('gone');
+        }
+        else {
+            this.$el.addClass('gone');
+        }
+    },
+    add: function(folder) {
+        var view = new App.FolderView({model: folder});
+        this.$('.list').prepend(view.render().el);
+    }
+});
+
+function onDomReady() {
+    App.recentFolderList = new App.RecentFolderList();
+    App.recentFolderListView = new App.RecentFolderListView({
+        list: App.recentFolderList
+    });
+    var foldername = $('#foldername').text().trim();
+    App.recentFolderList.addCustom({name: foldername, href: document.location.href});
+}
+
 $(function() {
-    var Genre = Backbone.Model.extend({
-    });
-
-    var Artist = Backbone.Model.extend({
-    });
-
-    var Album = Backbone.Model.extend({
-    });
-
-    var ArtistList = Backbone.Collection.extend({
-        model: Artist,
-        localStorage: new Store("artists-backbone"),
-    });
-
-    var artists = new ArtistList;
-
-    var ArtistView = Backbone.View.extend({
-        tagName: "li",
-        template: _.template($('#artist-template').html()),
-        events: {
-        },
-        render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
-            return this;
-        }
-    });
-
-    var AlbumSong = Backbone.Model.extend({
-    });
-
-    var AlbumSongView = Backbone.View.extend({
-        tagName: 'li',
-        template: _.template($('#album-song-template').html()),
-        events: {
-        },
-        render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
-            return this;
-        }
-    });
-
-    var AlbumSongList = Backbone.Collection.extend({
-        model: AlbumSong
-    });
-
-    var albumSongs = new AlbumSongList(albumSongs_raw);
-    window.albumSongs = albumSongs;
-
-    var searchResults = new AlbumSongList();
-    window.searchResults = searchResults;
-
-    var SearchBox = Backbone.View.extend({
-        el: $('#searchbox'),
-        events: {
-            'keypress .search-text': 'applyFilterOnEnter'
-        },
-        initialize: function() {
-            this.input = this.$('.search-text');
-
-            searchResults.bind('add', this.addOne, this);
-            searchResults.bind('reset', this.reset, this);
-            searchResults.bind('all', this.render, this);
-        },
-        render: function() {
-        },
-        addOne: function(albumSong) {
-            var view = new AlbumSongView({model: albumSong});
-            this.$(".search-results").append(view.render().el);
-        },
-        reset: function() {
-            this.$(".search-results").empty();
-        },
-        applyFilter: function(text) {
-            text = text.toLowerCase();
-            searchResults.reset();
-            searchResults.add(
-                    _.chain(albumSongs.filter(function() { return true }))
-                    .filter(function(albumSong) {
-                        return albumSong.get('relpath').toLowerCase().indexOf(text) > -1;
-                    })
-                    .sortBy(function(albumSong) {
-                        return albumSong.get('relpath');
-                    })
-                    .value()
-                    );
-            YAHOO.MediaPlayer.addTracks($('.search-results'), 0, true);
-        },
-        applyFilterOnEnter: function(e) {
-            if (e.keyCode != 13) return;
-            if (!this.input.val()) return;
-            this.applyFilter(this.input.val());
-        }
-    });
-
-    var searchbox = new SearchBox;
-    searchbox.input.focus();
-
-    /*
-    var AppView = Backbone.View.extend({
-        initialize: function() {
-            this.searchbox = new SearchBox();
-        },
-        render: function() {
-            //this.searchbox.show();
-        }
-    });
-
-    var app = new AppView;
-    */
+    onDomReady();
 });
