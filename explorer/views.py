@@ -8,7 +8,7 @@ from django.template import RequestContext
 #from django.contrib.auth import logout
 from django.conf import settings
 
-from explorer.models import AlbumSong
+from common.models import AlbumSong
 from services.handler import encode
 
 MEDIA_ROOT = settings.MEDIA_ROOT

@@ -1,7 +1,7 @@
 [
     {
         "pk": 1, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 0, 
             "name": "Blues", 
@@ -10,7 +10,7 @@
     }, 
     {
         "pk": 2, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 1, 
             "name": "Classic Rock", 
@@ -19,7 +19,7 @@
     }, 
     {
         "pk": 3, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 2, 
             "name": "Country", 
@@ -28,7 +28,7 @@
     }, 
     {
         "pk": 4, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 3, 
             "name": "Dance", 
@@ -37,7 +37,7 @@
     }, 
     {
         "pk": 5, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 4, 
             "name": "Disco", 
@@ -46,7 +46,7 @@
     }, 
     {
         "pk": 6, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 5, 
             "name": "Funk", 
@@ -55,7 +55,7 @@
     }, 
     {
         "pk": 7, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 6, 
             "name": "Grunge", 
@@ -64,7 +64,7 @@
     }, 
     {
         "pk": 8, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 7, 
             "name": "Hip-Hop", 
@@ -73,7 +73,7 @@
     }, 
     {
         "pk": 9, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 8, 
             "name": "Jazz", 
@@ -82,7 +82,7 @@
     }, 
     {
         "pk": 10, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 9, 
             "name": "Metal", 
@@ -91,7 +91,7 @@
     }, 
     {
         "pk": 11, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 10, 
             "name": "New Age", 
@@ -100,7 +100,7 @@
     }, 
     {
         "pk": 12, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 11, 
             "name": "Oldies", 
@@ -109,7 +109,7 @@
     }, 
     {
         "pk": 13, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 12, 
             "name": "Other", 
@@ -118,7 +118,7 @@
     }, 
     {
         "pk": 14, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 13, 
             "name": "Pop", 
@@ -127,7 +127,7 @@
     }, 
     {
         "pk": 15, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 14, 
             "name": "R&B", 
@@ -136,7 +136,7 @@
     }, 
     {
         "pk": 16, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 15, 
             "name": "Rap", 
@@ -145,7 +145,7 @@
     }, 
     {
         "pk": 17, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 16, 
             "name": "Reggae", 
@@ -154,7 +154,7 @@
     }, 
     {
         "pk": 18, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 17, 
             "name": "Rock", 
@@ -163,7 +163,7 @@
     }, 
     {
         "pk": 19, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 18, 
             "name": "Techno", 
@@ -172,7 +172,7 @@
     }, 
     {
         "pk": 20, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 19, 
             "name": "Industrial", 
@@ -181,7 +181,7 @@
     }, 
     {
         "pk": 21, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 20, 
             "name": "Alternative", 
@@ -190,7 +190,7 @@
     }, 
     {
         "pk": 22, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 21, 
             "name": "Ska", 
@@ -199,7 +199,7 @@
     }, 
     {
         "pk": 23, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 22, 
             "name": "Death Metal", 
@@ -208,7 +208,7 @@
     }, 
     {
         "pk": 24, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 23, 
             "name": "Pranks", 
@@ -217,7 +217,7 @@
     }, 
     {
         "pk": 25, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 24, 
             "name": "Soundtrack", 
@@ -226,7 +226,7 @@
     }, 
     {
         "pk": 26, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 25, 
             "name": "Euro-Techno", 
@@ -235,7 +235,7 @@
     }, 
     {
         "pk": 27, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 26, 
             "name": "Ambient", 
@@ -244,7 +244,7 @@
     }, 
     {
         "pk": 28, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 27, 
             "name": "Trip-Hop", 
@@ -253,7 +253,7 @@
     }, 
     {
         "pk": 29, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 28, 
             "name": "Vocal", 
@@ -262,7 +262,7 @@
     }, 
     {
         "pk": 30, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 29, 
             "name": "Jazz+Funk", 
@@ -271,7 +271,7 @@
     }, 
     {
         "pk": 31, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 30, 
             "name": "Fusion", 
@@ -280,7 +280,7 @@
     }, 
     {
         "pk": 32, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 31, 
             "name": "Trance", 
@@ -289,7 +289,7 @@
     }, 
     {
         "pk": 33, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 32, 
             "name": "Classical", 
@@ -298,7 +298,7 @@
     }, 
     {
         "pk": 34, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 33, 
             "name": "Instrumental", 
@@ -307,7 +307,7 @@
     }, 
     {
         "pk": 35, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 34, 
             "name": "Acid", 
@@ -316,7 +316,7 @@
     }, 
     {
         "pk": 36, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 35, 
             "name": "House", 
@@ -325,7 +325,7 @@
     }, 
     {
         "pk": 37, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 36, 
             "name": "Game", 
@@ -334,7 +334,7 @@
     }, 
     {
         "pk": 38, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 37, 
             "name": "Sound Clip", 
@@ -343,7 +343,7 @@
     }, 
     {
         "pk": 39, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 38, 
             "name": "Gospel", 
@@ -352,7 +352,7 @@
     }, 
     {
         "pk": 40, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 39, 
             "name": "Noise", 
@@ -361,7 +361,7 @@
     }, 
     {
         "pk": 41, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 40, 
             "name": "AlternRock", 
@@ -370,7 +370,7 @@
     }, 
     {
         "pk": 42, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 41, 
             "name": "Bass", 
@@ -379,7 +379,7 @@
     }, 
     {
         "pk": 43, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 42, 
             "name": "Soul", 
@@ -388,7 +388,7 @@
     }, 
     {
         "pk": 44, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 43, 
             "name": "Punk", 
@@ -397,7 +397,7 @@
     }, 
     {
         "pk": 45, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 44, 
             "name": "Space", 
@@ -406,7 +406,7 @@
     }, 
     {
         "pk": 46, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 45, 
             "name": "Meditative", 
@@ -415,7 +415,7 @@
     }, 
     {
         "pk": 47, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 46, 
             "name": "Instrumental Pop", 
@@ -424,7 +424,7 @@
     }, 
     {
         "pk": 48, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 47, 
             "name": "Instrumental Rock", 
@@ -433,7 +433,7 @@
     }, 
     {
         "pk": 49, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 48, 
             "name": "Ethnic", 
@@ -442,7 +442,7 @@
     }, 
     {
         "pk": 50, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 49, 
             "name": "Gothic", 
@@ -451,7 +451,7 @@
     }, 
     {
         "pk": 51, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 50, 
             "name": "Darkwave", 
@@ -460,7 +460,7 @@
     }, 
     {
         "pk": 52, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 51, 
             "name": "Techno-Industrial", 
@@ -469,7 +469,7 @@
     }, 
     {
         "pk": 53, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 52, 
             "name": "Electronic", 
@@ -478,7 +478,7 @@
     }, 
     {
         "pk": 54, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 53, 
             "name": "Pop-Folk", 
@@ -487,7 +487,7 @@
     }, 
     {
         "pk": 55, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 54, 
             "name": "Eurodance", 
@@ -496,7 +496,7 @@
     }, 
     {
         "pk": 56, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 55, 
             "name": "Dream", 
@@ -505,7 +505,7 @@
     }, 
     {
         "pk": 57, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 56, 
             "name": "Southern Rock", 
@@ -514,7 +514,7 @@
     }, 
     {
         "pk": 58, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 57, 
             "name": "Comedy", 
@@ -523,7 +523,7 @@
     }, 
     {
         "pk": 59, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 58, 
             "name": "Cult", 
@@ -532,7 +532,7 @@
     }, 
     {
         "pk": 60, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 59, 
             "name": "Gangsta", 
@@ -541,7 +541,7 @@
     }, 
     {
         "pk": 61, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 60, 
             "name": "Top 40", 
@@ -550,7 +550,7 @@
     }, 
     {
         "pk": 62, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 61, 
             "name": "Christian Rap", 
@@ -559,7 +559,7 @@
     }, 
     {
         "pk": 63, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 62, 
             "name": "Pop/Funk", 
@@ -568,7 +568,7 @@
     }, 
     {
         "pk": 64, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 63, 
             "name": "Jungle", 
@@ -577,7 +577,7 @@
     }, 
     {
         "pk": 65, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 64, 
             "name": "Native American", 
@@ -586,7 +586,7 @@
     }, 
     {
         "pk": 66, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 65, 
             "name": "Cabaret", 
@@ -595,7 +595,7 @@
     }, 
     {
         "pk": 67, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 66, 
             "name": "New Wave", 
@@ -604,7 +604,7 @@
     }, 
     {
         "pk": 68, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 67, 
             "name": "Psychedelic", 
@@ -613,7 +613,7 @@
     }, 
     {
         "pk": 69, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 68, 
             "name": "Rave", 
@@ -622,7 +622,7 @@
     }, 
     {
         "pk": 70, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 69, 
             "name": "Showtunes", 
@@ -631,7 +631,7 @@
     }, 
     {
         "pk": 71, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 70, 
             "name": "Trailer", 
@@ -640,7 +640,7 @@
     }, 
     {
         "pk": 72, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 71, 
             "name": "Lo-Fi", 
@@ -649,7 +649,7 @@
     }, 
     {
         "pk": 73, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 72, 
             "name": "Tribal", 
@@ -658,7 +658,7 @@
     }, 
     {
         "pk": 74, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 73, 
             "name": "Acid Punk", 
@@ -667,7 +667,7 @@
     }, 
     {
         "pk": 75, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 74, 
             "name": "Acid Jazz", 
@@ -676,7 +676,7 @@
     }, 
     {
         "pk": 76, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 75, 
             "name": "Polka", 
@@ -685,7 +685,7 @@
     }, 
     {
         "pk": 77, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 76, 
             "name": "Retro", 
@@ -694,7 +694,7 @@
     }, 
     {
         "pk": 78, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 77, 
             "name": "Musical", 
@@ -703,7 +703,7 @@
     }, 
     {
         "pk": 79, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 78, 
             "name": "Rock & Roll", 
@@ -712,7 +712,7 @@
     }, 
     {
         "pk": 80, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 79, 
             "name": "Hard Rock", 
@@ -721,7 +721,7 @@
     }, 
     {
         "pk": 81, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 80, 
             "name": "Folk", 
@@ -730,7 +730,7 @@
     }, 
     {
         "pk": 82, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 81, 
             "name": "Folk-Rock", 
@@ -739,7 +739,7 @@
     }, 
     {
         "pk": 83, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 82, 
             "name": "National Folk", 
@@ -748,7 +748,7 @@
     }, 
     {
         "pk": 84, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 83, 
             "name": "Swing", 
@@ -757,7 +757,7 @@
     }, 
     {
         "pk": 85, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 84, 
             "name": "Fast Fusion", 
@@ -766,7 +766,7 @@
     }, 
     {
         "pk": 86, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 85, 
             "name": "Bebob", 
@@ -775,7 +775,7 @@
     }, 
     {
         "pk": 87, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 86, 
             "name": "Latin", 
@@ -784,7 +784,7 @@
     }, 
     {
         "pk": 88, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 87, 
             "name": "Revival", 
@@ -793,7 +793,7 @@
     }, 
     {
         "pk": 89, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 88, 
             "name": "Celtic", 
@@ -802,7 +802,7 @@
     }, 
     {
         "pk": 90, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 89, 
             "name": "Bluegrass", 
@@ -811,7 +811,7 @@
     }, 
     {
         "pk": 91, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 90, 
             "name": "Avantgarde", 
@@ -820,7 +820,7 @@
     }, 
     {
         "pk": 92, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 91, 
             "name": "Gothic Rock", 
@@ -829,7 +829,7 @@
     }, 
     {
         "pk": 93, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 92, 
             "name": "Progressive Rock", 
@@ -838,7 +838,7 @@
     }, 
     {
         "pk": 94, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 93, 
             "name": "Psychedelic Rock", 
@@ -847,7 +847,7 @@
     }, 
     {
         "pk": 95, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 94, 
             "name": "Symphonic Rock", 
@@ -856,7 +856,7 @@
     }, 
     {
         "pk": 96, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 95, 
             "name": "Slow Rock", 
@@ -865,7 +865,7 @@
     }, 
     {
         "pk": 97, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 96, 
             "name": "Big Band", 
@@ -874,7 +874,7 @@
     }, 
     {
         "pk": 98, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 97, 
             "name": "Chorus", 
@@ -883,7 +883,7 @@
     }, 
     {
         "pk": 99, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 98, 
             "name": "Easy Listening", 
@@ -892,7 +892,7 @@
     }, 
     {
         "pk": 100, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 99, 
             "name": "Acoustic", 
@@ -901,7 +901,7 @@
     }, 
     {
         "pk": 101, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 100, 
             "name": "Humour", 
@@ -910,7 +910,7 @@
     }, 
     {
         "pk": 102, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 101, 
             "name": "Speech", 
@@ -919,7 +919,7 @@
     }, 
     {
         "pk": 103, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 102, 
             "name": "Chanson", 
@@ -928,7 +928,7 @@
     }, 
     {
         "pk": 104, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 103, 
             "name": "Opera", 
@@ -937,7 +937,7 @@
     }, 
     {
         "pk": 105, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 104, 
             "name": "Chamber Music", 
@@ -946,7 +946,7 @@
     }, 
     {
         "pk": 106, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 105, 
             "name": "Sonata", 
@@ -955,7 +955,7 @@
     }, 
     {
         "pk": 107, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 106, 
             "name": "Symphony", 
@@ -964,7 +964,7 @@
     }, 
     {
         "pk": 108, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 107, 
             "name": "Booty Bass", 
@@ -973,7 +973,7 @@
     }, 
     {
         "pk": 109, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 108, 
             "name": "Primus", 
@@ -982,7 +982,7 @@
     }, 
     {
         "pk": 110, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 109, 
             "name": "Porn Groove", 
@@ -991,7 +991,7 @@
     }, 
     {
         "pk": 111, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 110, 
             "name": "Satire", 
@@ -1000,7 +1000,7 @@
     }, 
     {
         "pk": 112, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 111, 
             "name": "Slow Jam", 
@@ -1009,7 +1009,7 @@
     }, 
     {
         "pk": 113, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 112, 
             "name": "Club", 
@@ -1018,7 +1018,7 @@
     }, 
     {
         "pk": 114, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 113, 
             "name": "Tango", 
@@ -1027,7 +1027,7 @@
     }, 
     {
         "pk": 115, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 114, 
             "name": "Samba", 
@@ -1036,7 +1036,7 @@
     }, 
     {
         "pk": 116, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 115, 
             "name": "Folklore", 
@@ -1045,7 +1045,7 @@
     }, 
     {
         "pk": 117, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 116, 
             "name": "Ballad", 
@@ -1054,7 +1054,7 @@
     }, 
     {
         "pk": 118, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 117, 
             "name": "Power Ballad", 
@@ -1063,7 +1063,7 @@
     }, 
     {
         "pk": 119, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 118, 
             "name": "Rhythmic Soul", 
@@ -1072,7 +1072,7 @@
     }, 
     {
         "pk": 120, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 119, 
             "name": "Freestyle", 
@@ -1081,7 +1081,7 @@
     }, 
     {
         "pk": 121, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 120, 
             "name": "Duet", 
@@ -1090,7 +1090,7 @@
     }, 
     {
         "pk": 122, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 121, 
             "name": "Punk Rock", 
@@ -1099,7 +1099,7 @@
     }, 
     {
         "pk": 123, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 122, 
             "name": "Drum Solo", 
@@ -1108,7 +1108,7 @@
     }, 
     {
         "pk": 124, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 123, 
             "name": "A capella", 
@@ -1117,7 +1117,7 @@
     }, 
     {
         "pk": 125, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 124, 
             "name": "Euro-House", 
@@ -1126,7 +1126,7 @@
     }, 
     {
         "pk": 126, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 125, 
             "name": "Dance Hall", 
@@ -1135,7 +1135,7 @@
     }, 
     {
         "pk": 127, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 126, 
             "name": "Goa", 
@@ -1144,7 +1144,7 @@
     }, 
     {
         "pk": 128, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 127, 
             "name": "Drum & Bass", 
@@ -1153,7 +1153,7 @@
     }, 
     {
         "pk": 129, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 128, 
             "name": "Club-House", 
@@ -1162,7 +1162,7 @@
     }, 
     {
         "pk": 130, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 129, 
             "name": "Hardcore", 
@@ -1171,7 +1171,7 @@
     }, 
     {
         "pk": 131, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 130, 
             "name": "Terror", 
@@ -1180,7 +1180,7 @@
     }, 
     {
         "pk": 132, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 131, 
             "name": "Indie", 
@@ -1189,7 +1189,7 @@
     }, 
     {
         "pk": 133, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 132, 
             "name": "Britpop", 
@@ -1198,7 +1198,7 @@
     }, 
     {
         "pk": 134, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 133, 
             "name": "Negerpunk", 
@@ -1207,7 +1207,7 @@
     }, 
     {
         "pk": 135, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 134, 
             "name": "Polsk Punk", 
@@ -1216,7 +1216,7 @@
     }, 
     {
         "pk": 136, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 135, 
             "name": "Beat", 
@@ -1225,7 +1225,7 @@
     }, 
     {
         "pk": 137, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 136, 
             "name": "Christian Gangsta Rap", 
@@ -1234,7 +1234,7 @@
     }, 
     {
         "pk": 138, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 137, 
             "name": "Heavy Metal", 
@@ -1243,7 +1243,7 @@
     }, 
     {
         "pk": 139, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 138, 
             "name": "Black Metal", 
@@ -1252,7 +1252,7 @@
     }, 
     {
         "pk": 140, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 139, 
             "name": "Crossover", 
@@ -1261,7 +1261,7 @@
     }, 
     {
         "pk": 141, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 140, 
             "name": "Contemporary Christian", 
@@ -1270,7 +1270,7 @@
     }, 
     {
         "pk": 142, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 141, 
             "name": "Christian Rock", 
@@ -1279,7 +1279,7 @@
     }, 
     {
         "pk": 143, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 142, 
             "name": "Merengue", 
@@ -1288,7 +1288,7 @@
     }, 
     {
         "pk": 144, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 143, 
             "name": "Salsa", 
@@ -1297,7 +1297,7 @@
     }, 
     {
         "pk": 145, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 144, 
             "name": "Thrash Metal", 
@@ -1306,7 +1306,7 @@
     }, 
     {
         "pk": 146, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 145, 
             "name": "Anime", 
@@ -1315,7 +1315,7 @@
     }, 
     {
         "pk": 147, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 146, 
             "name": "JPop", 
@@ -1324,7 +1324,7 @@
     }, 
     {
         "pk": 148, 
-        "model": "explorer.genre", 
+        "model": "common.genre", 
         "fields": {
             "id3_id": 147, 
             "name": "Synthpop", 
