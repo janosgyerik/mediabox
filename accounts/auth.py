@@ -7,6 +7,23 @@ from accounts.models import Whitelisted
 
 class WhitelistedOpenIDBackend(OpenIDBackend):
 
+    def authenticate(self, **kwargs):
+        user = super(WhitelistedOpenIDBackend, self).authenticate(**kwargs)
+        whitelisted = self.get_whitelisted(user.email)
+        if whitelisted is None:
+            return None
+        else:
+            if whitelisted.is_active != user.is_active:
+                user.is_active = not user.is_active
+                user.save()
+            if whitelisted.is_staff != user.is_staff:
+                user.is_staff = not user.is_staff
+                user.save()
+            if whitelisted.is_superuser != user.is_superuser:
+                user.is_superuser = not user.is_superuser
+                user.save()
+            return user
+
     def create_user_from_openid(self, openid_response):
         details = self._extract_user_details(openid_response)
 

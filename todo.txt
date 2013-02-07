@@ -1,8 +1,6 @@
 authentication
 --------------
 - require login
-- test successful login with yahoo
-- make whitelisted privileges work even after account already exists
 - add friends
 - invite friends
 - clean up unused images
