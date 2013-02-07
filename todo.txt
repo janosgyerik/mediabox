@@ -7,7 +7,6 @@ release
 
 cleaning
 --------
-- clean up unused images
 - reduce code duplication in explorer.views
 
 
