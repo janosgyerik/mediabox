@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Explorer{% endblock %}
+
+{% block main %}
+
+<div class="row-fluid">
+    <div class="span4">
+        <h2>About MediaBox</h2>
+        <p>Welcome to MediaBox! This site is essentially a software to listen to your media collection from anywhere using just a browser, without having to install any other software on your computer. To avoid copyright issues, the content on this site is mostly private, a <a href="">public area</a> exists for the purpose of demonstration only.</p>
+    </div>
+    <div class="span4">
+        <h2>About the media player</h2>
+        <p>The site uses the <a href="http://webplayer.yahoo.com/">Yahoo! Web Player</a> to play music files in your browser. It's not great, because it uses Flash, so you need to have the Flash plugin correctly installed in your browser. If you know a good alternative implemented in pure HTML5 please let me know and I'll be happy to change it.</p>
+    </div>
+    <div class="span4">
+        <h2>About your account</h2>
+        <p>If you have been invited, you can login to the <a href="">private area</a> using OpenID. <a href="http://en.wikipedia.org/wiki/Openid">OpenID</a> is a great technology, the way it works is, to put it really simply, this site can ask your email provider if you are logged in there. If the provider says yes, that confirms to this site that you are really you. You do not need a password for this site itself, and your email password never passes through this site.</p>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span4">
+        <h2>The future of this site</h2>
+        <p>I use this site every day to listen to my favourite music while doing boring tasks that don't need much mind work. I occasionally add new features to make it easier to use. If you have suggestions, or discover problems that should be fixed, do let me know.</p>
+    </div>
+    <div class="span4">
+        <h2>Having <em>your own</em> MediaBox</h2>
+        <p>Obviously our musical taste is different, and nobody will ever enjoy this site as much as I do... If you want to have your very own MediaBox, you can! This software is open-source, you can get it from <a href="https://github.com/janosgyerik/mediabox">GitHub</a> and install on your own server. If you need help setting it up I'll be more than happy to help, just ask!</p>
+    </div>
+</div>
+
+{% endblock %}

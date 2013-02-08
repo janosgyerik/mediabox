@@ -1,8 +1,11 @@
 release
 -------
+- change to responsive system
 - public collection / private collection
+- update screenshots
 - add friends from musiclibrary
 - setup and test mediabox.titan2x.com
+    - make sure the player works
 - invite friends
 
 

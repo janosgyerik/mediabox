@@ -22,15 +22,25 @@ def album_songs_to_json():
 
 @login_required
 def index(request, relpath=None):
+    return render_to_response('explorer/index.html', {
+        "foldername": "Home",
+        }, RequestContext(request))
+
+
+def explore_public(request, relpath=None):
+    pass
+
+
+def explore_private(request, relpath=None):
     if relpath is None:
-        return render_to_response('folders/index.html', {
+        return render_to_response('explorer/folders.html', {
             "foldername": "Media Box",
             "folders": folders(relpath),
             "albumSongs": album_songs_to_json,
             }, RequestContext(request))
     else:
         relpath = unquote(relpath)
-        return render_to_response('folders/index.html', {
+        return render_to_response('explorer/folders.html', {
             "foldername": os.path.basename(relpath),
             "folders": folders(relpath),
             "files": files(relpath),

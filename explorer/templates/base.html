@@ -16,6 +16,7 @@
                 {% if user.is_superuser %}
                 <li><a href="/admin/">Admin</a></li>
                 {% endif %}
+                <li><a href="/explorer/">Private</a></li>
             </ul>
             <p class="navbar-text pull-right">
             {% if user.is_authenticated %}

@@ -89,7 +89,6 @@ Planned features (most important at the top)
 - Change the navigation: instead of page reloads folder by folder, load the entire
   collection on the client side into backbone objects and use js to navigate artists and albums.
 - Search!
-- Recently listened to
 - Count how many times I listen to the same stuff
 - Favoriting: albums, artists, songs
 - Playlists!
