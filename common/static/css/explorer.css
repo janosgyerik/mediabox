@@ -5,8 +5,10 @@ ul.albums {
 }
 
 ul.albums li {
-    background: url(../images/bullet1.png) no-repeat left;
-    padding-left: 1.5em;
+}
+
+ul.albums li i {
+    margin-right: .5em;
 }
 
 ul.album {

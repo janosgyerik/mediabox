@@ -19,7 +19,7 @@
         {% if folders %}
             <ul class="albums">
                 {% for folder in folders %}
-                <li><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
+                <li><i class="icon-folder-close"></i><a href="{{ folder.href }}" title="{{ folder.name }}">{{ folder.name }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}
