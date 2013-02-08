@@ -15,9 +15,10 @@ Setup
 
         ./manage.py syncdb
 
-3. Create a symbolic link to your media collection inside static/
+3. Create a symbolic links to your media collections:
 
-        ln -s /path/to/media/collection common/static/media
+        ln -s /path/to/public/collection common/static/media/
+        ln -s /path/to/private/collection common/static/media/
 
 4. Import ID3 genre data to use as canonical genre meta data
 

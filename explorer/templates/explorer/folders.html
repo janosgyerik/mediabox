@@ -7,14 +7,14 @@
 {% if locations %}
 <ul class="breadcrumb">
     {% for loc in locations %}
-    <li><a href="{{ loc.href|urlencode }}" title="{{ loc.name }}">{{ loc.name }}</a> {% if not loc.last %}<span class="divider">/</span>{% endif %}</li>
+    <li><a href="{{ loc.href|urlencode }}" title="{{ loc.name }}">{{ loc.name|capfirst }}</a> {% if not loc.last %}<span class="divider">/</span>{% endif %}</li>
     {% endfor %}
 </ul>
 {% endif %}
 
 <div class="row">
     <div class="span4">
-        <h2>{{ foldername }}</h2>
+        <h2>{{ foldername|capfirst }}</h2>
 
         {% if folders %}
             <ul class="albums">
@@ -89,7 +89,7 @@
 </script>
 
 <script type="text/template" id="foldername">
-    {{ foldername }}
+    {{ foldername|capfirst }}
 </script>
 
 {% endblock %}

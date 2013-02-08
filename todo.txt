@@ -1,11 +1,11 @@
 release
 -------
-- public collection / private collection
 - update screenshots
-- add friends from musiclibrary
+- add friends from musiclibrary to local whitelist
 - setup and test mediabox.titan2x.com
     - make sure the player works
-- invite friends
+- install local whitelist on server
+- send release email to friends (everybody in the whitelist)
 
 
 cleaning

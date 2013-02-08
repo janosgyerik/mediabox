@@ -7,7 +7,7 @@
 <div class="row">
     <div class="span4">
         <h2>About MediaBox</h2>
-        <p>Welcome to MediaBox! This site is essentially a software to listen to your media collection from anywhere using just a browser, without having to install any other software on your computer. To avoid copyright issues, the content on this site is mostly private, a <a href="">public area</a> exists for the purpose of demonstration only.</p>
+        <p>Welcome to MediaBox! This site is essentially a software to listen to your media collection from anywhere using just a browser, without having to install any other software on your computer. To avoid copyright issues, the content on this site is mostly private, a <a href="{% url explore_public '' %}">public area</a> exists for the purpose of demonstration only.</p>
     </div>
     <div class="span4">
         <h2>About the media player</h2>
@@ -15,7 +15,7 @@
     </div>
     <div class="span4">
         <h2>About your account</h2>
-        <p>If you have been invited, you can login to the <a href="">private area</a> using OpenID. <a href="http://en.wikipedia.org/wiki/Openid">OpenID</a> is a great technology, the way it works is, to put it really simply, this site can ask your email provider if you are logged in there. If the provider says yes, that confirms to this site that you are really you. You do not need a password for this site itself, and your email password never passes through this site.</p>
+        <p>If you have been invited, you can login to the <a href="{% url explore_private '' %}">private area</a> using OpenID. <a href="http://en.wikipedia.org/wiki/Openid">OpenID</a> is a great technology, the way it works is, to put it really simply, this site can ask your email provider if you are logged in there. If the provider says yes, that confirms to this site that you are really you. You do not need a password for this site itself, and your email password never passes through this site.</p>
     </div>
 </div>
 

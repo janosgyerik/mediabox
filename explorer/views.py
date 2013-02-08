@@ -20,34 +20,39 @@ def album_songs_to_json():
     return encode(list(AlbumSong.objects.all()))
 
 
-@login_required
 def index(request, relpath=None):
     return render_to_response('explorer/index.html', {
         "foldername": "Home",
         }, RequestContext(request))
 
 
-def explore_public(request, relpath=None):
-    pass
+def explore_common(request, relpath):
+    relpath = unquote(relpath)
+    return render_to_response('explorer/folders.html', {
+        "foldername": os.path.basename(relpath),
+        "folders": folders(relpath),
+        "files": files(relpath),
+        "images": images(relpath),
+        "locations": locations(relpath),
+        "albumSongs": album_songs_to_json,
+        }, RequestContext(request))
 
 
-def explore_private(request, relpath=None):
-    if relpath is None:
-        return render_to_response('explorer/folders.html', {
-            "foldername": "Media Box",
-            "folders": folders(relpath),
-            "albumSongs": album_songs_to_json,
-            }, RequestContext(request))
+def explore_public(request, relpath=''):
+    if relpath is None or relpath == '':
+        relpath = 'public'
     else:
-        relpath = unquote(relpath)
-        return render_to_response('explorer/folders.html', {
-            "foldername": os.path.basename(relpath),
-            "folders": folders(relpath),
-            "files": files(relpath),
-            "images": images(relpath),
-            "locations": locations(relpath),
-            "albumSongs": album_songs_to_json,
-            }, RequestContext(request))
+        relpath = 'public/' + relpath
+    return explore_common(request, relpath)
+
+
+@login_required
+def explore_private(request, relpath=None):
+    if relpath is None or relpath == '':
+        relpath = 'private'
+    else:
+        relpath = 'private/' + relpath
+    return explore_common(request, relpath)
 
 
 def locations(relpath=None):

@@ -1,6 +1,7 @@
 *.pyc
 sqlite3.db
-static/media
+common/static/media/public
+common/static/media/private
 file.mp3
 run.sh
 tmp
