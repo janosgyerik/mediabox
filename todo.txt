@@ -1,6 +1,5 @@
 release
 -------
-- change to responsive system
 - public collection / private collection
 - update screenshots
 - add friends from musiclibrary
