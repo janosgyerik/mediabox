@@ -1,7 +1,7 @@
 release
 -------
-- update screenshots
 - add friends from musiclibrary to local whitelist
+- update dev.mediabox.titan2x.com
 - setup and test mediabox.titan2x.com
     - make sure the player works
 - install local whitelist on server

@@ -52,8 +52,8 @@ Live demos
 
 Screenshots
 -----------
-![Folders](https://github.com/janosgyerik/mediabox/raw/master/common/static/screenshots/folders.png)
-![Albums](https://github.com/janosgyerik/mediabox/raw/master/common/static/screenshots/album.png)
+![Folders](https://github.com/janosgyerik/mediabox/raw/master/common/static/screenshots/folders1.png)
+![Albums](https://github.com/janosgyerik/mediabox/raw/master/common/static/screenshots/album1.png)
 
 
 Features
