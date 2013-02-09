@@ -48,7 +48,7 @@ and call manage.py like this:
 
 Live demos
 ----------
-- http://dev.mediabox.titan2x.com/
+- http://mediabox.janosgyerik.com/
 
 
 Screenshots

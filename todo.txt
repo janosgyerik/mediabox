@@ -1,13 +1,3 @@
-release
--------
-- re-take screenshots, add border
-- update dev.mediabox.titan2x.com
-- setup and test mediabox.titan2x.com
-    - make sure the player works
-- install local whitelist on server
-- send release email to friends (everybody in the whitelist)
-
-
 cleaning
 --------
 - rename MEDIA_ROOT as it clashes with django stuff
