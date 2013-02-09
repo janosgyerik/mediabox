@@ -17,8 +17,9 @@ Setup
 
 3. Create a symbolic links to your media collections:
 
-        ln -s /path/to/public/collection common/static/media/
-        ln -s /path/to/private/collection common/static/media/
+        mkdir static/media
+        ln -s /path/to/public/collection static/media/public
+        ln -s /path/to/private/collection static/media/private
 
 4. Import ID3 genre data to use as canonical genre meta data
 

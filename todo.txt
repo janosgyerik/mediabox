@@ -1,6 +1,6 @@
 release
 -------
-- add friends from musiclibrary to local whitelist
+- re-take screenshots, add border
 - update dev.mediabox.titan2x.com
 - setup and test mediabox.titan2x.com
     - make sure the player works
@@ -10,6 +10,7 @@ release
 
 cleaning
 --------
+- rename MEDIA_ROOT as it clashes with django stuff
 - move the explorer-specific html into explorer-specific template
 - reduce code duplication in explorer.views
 - pep8
