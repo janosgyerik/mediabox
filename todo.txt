@@ -2,7 +2,6 @@ cleaning
 --------
 - move the front page content to dedicated about content
 - make the public page the new front page
-- change page title to MediaBox::...
 - add some interesting graphics
     - ~/Downloads/record*
     - ~/Downloads/speaker*
