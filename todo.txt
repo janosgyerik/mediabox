@@ -1,9 +1,24 @@
 cleaning
 --------
+- move the front page content to dedicated about content
+- make the public page the new front page
+- change page title to MediaBox::...
+- add some interesting graphics
+    - ~/Downloads/record*
+    - ~/Downloads/speaker*
+    - add album covers, max 50
+- use icons for openid login
+- add a red record as favicon
+- show album songs on a record background
+    - only if there is at least one music file
+    - center on the record background with semi-transparency
+- validate html5 with w3c
 - rename MEDIA_ROOT as it clashes with django stuff
 - move the explorer-specific html into explorer-specific template
 - reduce code duplication in explorer.views
+- migrate to django 1.5
 - pep8
+- announce again
 
 
 next

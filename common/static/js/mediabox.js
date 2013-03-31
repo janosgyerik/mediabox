@@ -11,7 +11,7 @@
 window.App = {};
 
 // app constants
-App.MAX_RECENT_FOLDERS = 15;
+App.MAX_RECENT_FOLDERS = 30;
 
 App.Folder = Backbone.Model.extend({
     defaults: {
