@@ -16,6 +16,7 @@
                 {% if user.is_superuser %}
                 <li><a href="/admin/">Admin</a></li>
                 {% endif %}
+                <li><a href="{% url explorer_about %}">About</a></li>
                 <li><a href="{% url explore_public '' %}">Public</a></li>
                 <li><a href="{% url explore_private '' %}">Private</a></li>
             </ul>

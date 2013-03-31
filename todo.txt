@@ -1,6 +1,5 @@
 cleaning
 --------
-- move the front page content to dedicated about content
 - make the public page the new front page
 - add some interesting graphics
     - ~/Downloads/record*

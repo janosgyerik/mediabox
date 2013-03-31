@@ -26,6 +26,12 @@ def index(request, relpath=None):
         }, RequestContext(request))
 
 
+def about(request):
+    return render_to_response('explorer/about.html', {
+        "foldername": "Home",
+        }, RequestContext(request))
+
+
 def explore_common(request, relpath):
     relpath = unquote(relpath)
     return render_to_response('explorer/folders.html', {
