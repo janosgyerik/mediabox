@@ -16,15 +16,15 @@
                 {% if user.is_superuser %}
                 <li><a href="/admin/">Admin</a></li>
                 {% endif %}
-                <li><a href="{% url explorer_about %}">About</a></li>
-                <li><a href="{% url explore_public '' %}">Public</a></li>
-                <li><a href="{% url explore_private '' %}">Private</a></li>
+                <li><a href="{% url 'explorer_about' %}">About</a></li>
+                <li><a href="{% url 'explore_public' '' %}">Public</a></li>
+                <li><a href="{% url 'explore_private' '' %}">Private</a></li>
             </ul>
             <p class="navbar-text pull-right">
             {% if user.is_authenticated %}
-            Logged in as {{ user }}&mdash;<a href="{% url accounts.views.logout %}">Logout</a>
+            Logged in as {{ user }}&mdash;<a href="{% url 'accounts.views.logout' %}">Logout</a>
             {% else %}
-            <a href="{% url accounts.views.login %}">Login</a>
+            <a href="{% url 'accounts.views.login' %}">Login</a>
             {% endif %}
             </p>
           </div>
