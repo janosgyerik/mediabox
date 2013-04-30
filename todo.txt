@@ -1,11 +1,14 @@
 cleaning
 --------
-- make the public page the new front page
+- use icons for openid login
+- more user-friendly rejection if unauthorized login
 - add some interesting graphics
+    - icon in title
+        - folder if no music files
+        - record if it has music files
     - ~/Downloads/record*
     - ~/Downloads/speaker*
     - add album covers, max 50
-- use icons for openid login
 - add a red record as favicon
 - show album songs on a record background
     - only if there is at least one music file
@@ -14,7 +17,6 @@ cleaning
 - rename MEDIA_ROOT as it clashes with django stuff
 - move the explorer-specific html into explorer-specific template
 - reduce code duplication in explorer.views
-- migrate to django 1.5
 - pep8
 - announce again
 

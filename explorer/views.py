@@ -20,10 +20,8 @@ def album_songs_to_json():
     return encode(list(AlbumSong.objects.all()))
 
 
-def index(request, relpath=None):
-    return render_to_response('explorer/index.html', {
-        "foldername": "Home",
-        }, RequestContext(request))
+def index(request):
+    return explore_public(request)
 
 
 def about(request):
