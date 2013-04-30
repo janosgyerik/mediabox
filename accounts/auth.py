@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 
 from django_openid_auth.auth import OpenIDBackend
+from django_openid_auth.exceptions import DjangoOpenIDException
+
 
 from accounts.models import Whitelisted
 
@@ -11,7 +13,7 @@ class WhitelistedOpenIDBackend(OpenIDBackend):
         user = super(WhitelistedOpenIDBackend, self).authenticate(**kwargs)
         whitelisted = self.get_whitelisted(user.email)
         if whitelisted is None:
-            return None
+            raise NonListedException()
         else:
             if whitelisted.is_active != user.is_active:
                 user.is_active = not user.is_active
@@ -46,7 +48,7 @@ class WhitelistedOpenIDBackend(OpenIDBackend):
             user.is_superuser = whitelisted.is_superuser
             user.save()
         else:
-            user = None
+            raise NonListedException()
 
         return user
 
@@ -55,5 +57,9 @@ class WhitelistedOpenIDBackend(OpenIDBackend):
             return Whitelisted.objects.get(email=email)
         except Whitelisted.DoesNotExist:
             return None
+
+
+class NonListedException(DjangoOpenIDException):
+    pass
 
 # eof

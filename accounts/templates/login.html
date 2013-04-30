@@ -63,13 +63,28 @@
 
       <hr>
       
+      {% if message %}
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>Error!</h4>
+        {% if message == 'nonlisted' %}
+        Your email address is not on our whitelist.
+        Note that this is normal if the site owners have not
+        invited you explicitly.
+        This is a private site.
+        {% else %}
+        {{ message }}
+        {% endif %}
+      </div>
+      {% endif %}
+
       <div class="alert">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Warning!</strong> This site is strictly invitation only,
         as the project is designed for private use (due to copyright reasons).
         If you haven't been invited, you won't be able to login.
         However, the software running this site is <a href="https://github.com/janosgyerik/mediabox">open-source</a>,
-        and you are free to roll your own MediaBox site.
+        and you are free to roll your own MediaBox!
       </div>
 
       <div class="span3 pull-right well">

@@ -190,6 +190,8 @@ AUTHENTICATION_BACKENDS = (
 
 OPENID_CREATE_USERS = True
 OPENID_UPDATE_DETAILS_FROM_SREG = True
+from accounts.views import render_failure
+OPENID_RENDER_FAILURE = render_failure
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'

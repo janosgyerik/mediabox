@@ -1,6 +1,5 @@
 cleaning
 --------
-- more user-friendly rejection if unauthorized login
 - add some interesting graphics
     - icon in title
         - folder if no music files
