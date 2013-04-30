@@ -1,6 +1,5 @@
 cleaning
 --------
-- use icons for openid login
 - more user-friendly rejection if unauthorized login
 - add some interesting graphics
     - icon in title
