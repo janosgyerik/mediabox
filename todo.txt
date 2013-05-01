@@ -1,10 +1,6 @@
 release
 -------
 - add footer with album covers montage, 10 fav albums, repeating
-- show album songs on a record background
-    - only if there is at least one music file
-    - center on the record background with semi-transparency
-- add more padding at the bottom of song list to prevent player overlap
 
 
 cleaning

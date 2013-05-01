@@ -45,23 +45,22 @@
 
 <body>
     
-  <div id="container">
+  <div id="wrap">
     {% block navbar %}{% endblock %}
 
-    <header>
-    {% block header %}{% endblock %}
-    </header>
-
-    <section id="main">
     <div class="container">
     {% block main %}{% endblock %}
     </div>
-    </section>
 
-    <footer class="footer">
-    {% block footer %}{% endblock %}
-    </footer>
-  </div> <!--! end of #container -->
+    <div id="push"></div>
+  </div> <!--! end of #wrap -->
+
+  <div id="footer">
+      <div class="container">
+          {% block footer %}{% endblock %}
+          <p class="muted credit">Fork me on <a href="https://github.com/janosgyerik/mediabox">GitHub</a></p>
+      </div>
+  </div>
 
 
   <!-- JavaScript at the bottom for fast page loading -->
