@@ -3,4 +3,5 @@ sqlite3.db
 file.mp3
 run.sh
 tmp
-static
+/static
+.DS_Store
