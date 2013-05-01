@@ -11,7 +11,6 @@ cleaning
 - show album songs on a record background
     - only if there is at least one music file
     - center on the record background with semi-transparency
-- validate html5 with w3c
 - rename MEDIA_ROOT as it clashes with django stuff
 - move the explorer-specific html into explorer-specific template
 - reduce code duplication in explorer.views
