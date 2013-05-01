@@ -12,6 +12,8 @@
 </ul>
 {% endif %}
 
+{% block custom-message %}{% endblock %}
+
 <div class="row">
     <div class="span4 {% if files %}album{% endif %}">
         <h2>{{ foldername|capfirst }}</h2>

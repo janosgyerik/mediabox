@@ -1,6 +1,5 @@
 release
 -------
-- add info message on public that this is for demo
 - add footer with album covers montage, 10 fav albums, repeating
 - show album songs on a record background
     - only if there is at least one music file

@@ -30,9 +30,9 @@ def about(request):
         }, RequestContext(request))
 
 
-def explore_common(request, relpath):
+def explore_common(request, relpath, template='explorer/folders.html'):
     relpath = unquote(relpath)
-    return render_to_response('explorer/folders.html', {
+    return render_to_response(template, {
         "foldername": os.path.basename(relpath),
         "folders": folders(relpath),
         "files": files(relpath),
@@ -47,7 +47,7 @@ def explore_public(request, relpath=''):
         relpath = 'public'
     else:
         relpath = 'public/' + relpath
-    return explore_common(request, relpath)
+    return explore_common(request, relpath, template='explorer/public.html')
 
 
 @login_required
