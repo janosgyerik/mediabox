@@ -1,6 +1,6 @@
 release
 -------
-- add footer with album covers montage, 10 fav albums, repeating
+- fix the huge padding at the top of login
 
 
 cleaning
