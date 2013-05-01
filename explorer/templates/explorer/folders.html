@@ -13,7 +13,7 @@
 {% endif %}
 
 <div class="row">
-    <div class="span4">
+    <div class="span4 {% if files %}album{% endif %}">
         <h2>{{ foldername|capfirst }}</h2>
 
         {% if folders %}

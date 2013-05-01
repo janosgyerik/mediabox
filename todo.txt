@@ -1,15 +1,15 @@
-cleaning
---------
-- add some interesting graphics
-    - icon in title
-        - folder if no music files
-        - record if it has music files
-    - ~/Downloads/record*
-    - ~/Downloads/speaker*
-    - add album covers, max 50
+release
+-------
+- add info message on public that this is for demo
+- add footer with album covers montage, 10 fav albums, repeating
 - show album songs on a record background
     - only if there is at least one music file
     - center on the record background with semi-transparency
+- add more padding at the bottom of song list to prevent player overlap
+
+
+cleaning
+--------
 - rename MEDIA_ROOT as it clashes with django stuff
 - move the explorer-specific html into explorer-specific template
 - reduce code duplication in explorer.views

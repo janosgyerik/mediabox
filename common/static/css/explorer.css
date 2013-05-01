@@ -40,4 +40,9 @@ ul.files {
     clear: both;
 }
 
+.album h2 {
+    background: url(/static/images/album.png) no-repeat left;
+    padding-left: 36px;
+}
+
 /**/
