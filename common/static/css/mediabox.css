@@ -39,6 +39,11 @@ html, body {
     margin: 20px 0;
 }
 
+.navbar .brand {
+    background: url(/static/images/brand.png) no-repeat left;
+    padding-left: 32px;
+}
+
 .gone {
     display: none ! important;
 }
