@@ -12,12 +12,14 @@ Author URI: http://www.porkhead.org
 general
 ***************************************/
 .projekktor {
-    background-color: #000; 
+    background-color: #fff;
+    border: 1px solid #000;
     font-family: 'Lucida Grande', 'Trebuchet MS', Arial, Sans-Serif;
     font-size: 12px;
     font-weight: bold;
     text-transform:uppercase;
     padding:0;
+    margin: 10px 0;
     display:block;
     position: relative;
     overflow: hidden;
@@ -34,12 +36,11 @@ general
 }
 
 .pptestcard p {
-    width: 90%;
+    width: 100%;
     margin: auto;
     line-height: 14px;
-    height: 28px;
     position: relative;
-    padding: 5px;
+    padding: 5px 0;
     text-align: center;
 }
 
@@ -48,7 +49,7 @@ general
 display plugin
 ***************************************/
 .ppdisplay {
-    background-color: #000; 
+    background-color: #fff; 
     position: relative !important;
     top: 0;
     left: 0;
@@ -69,20 +70,14 @@ display plugin
     position: absolute;
     left: 50%;
     bottom: 50%;
-    margin-left:-45px;
-    margin-bottom: -38px;
+    margin-left:-16px;
+    margin-bottom: -18px;
     cursor: pointer;
-    height: 84px;
-    width: 84px;
+    height: 36px;
+    width: 31px;
     display: block;
     padding: 0px;
     background: url("start.png") no-repeat left top transparent;
-}
-.ppstart:hover {
-    background: url("start.png") no-repeat left bottom transparent;
-}
-.ppstart:active {
-    background: url("start.png") no-repeat left -169px transparent;
 }
 
 .ppbuffering {    
@@ -159,18 +154,8 @@ controlbar plugin
 }
 
 
-.ppcontrols.inactive {
-    filter: alpha(opacity=0);        
-    -moz-opacity: 0;
-    -khtml-opacity: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform:translate3d(0,0,0);    
-    -webkit-transition: opacity 0.5s linear;
-    -moz-transition: opacity 0.5s linear;
-    -o-transition: opacity 0.5s linear;
-    transition: opacity 0.5s linear;
+.ppstateidle .ppcontrols.inactive {
+    display: none;
 }
 
 .ppcontrols ul {

@@ -18,6 +18,10 @@
     <div class="span4 {% if files %}album{% endif %}">
         <h2>{{ foldername|capfirst }}</h2>
 
+        {% if files %}
+            <div id="audioplayer" class="projekktor"></div>
+        {% endif %}
+
         {% if folders %}
             <ul class="albums">
                 {% for folder in folders %}
@@ -39,7 +43,6 @@
                 <li><a href="{{ file.href|urlencode }}" title="{{ file.name }}">{{ file.name }}</a> ({{ file.size|filesizeformat }})</li>
                 {% endfor %}
             </ul>
-            <div id="audioplayer" class="projekktor"></div>
             <!-- todo
             <p>TODO: ZIP download link here</p>
             -->
@@ -106,12 +109,12 @@ projekktor(
         /* http://www.projekktor.com/docs/configuration */
         /* http://www.projekktor.com/docs/playlists */
         controls: true,
-        autoplay: true,
+        autoplay: false,
         continuous: true,
         loop: true,
         enableFullscreen: false,
         height: 38,
-        width: 370,
+        width: 368,
         /* path to the Flash-player fallback component */
         playerFlashMP4: '{{ STATIC_URL }}projekktor/jarisplayer.swf',
         playerFlashMP3: '{{ STATIC_URL }}projekktor/jarisplayer.swf',
