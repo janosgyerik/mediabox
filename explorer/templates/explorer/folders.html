@@ -40,38 +40,6 @@
                 {% endfor %}
             </ul>
 			<div id="audioplayer" class="projekktor"></div>
-		    <script type="text/javascript">
-            $(document).ready(function() {
-                projekktor(
-                    '#audioplayer',
-                    {
-                        /* Docs about how to use projekktor */
-                        /* http://www.projekktor.com/docs/quickinstall */
-                        /* http://www.projekktor.com/docs/configuration */
-                        /* http://www.projekktor.com/docs/playlists */
-                        volume: 0.8,
-                        controls: true,
-                        autoplay: true,
-                        continuous: true,
-                        loop: true,
-                        enableFullscreen: false,
-                        height: 38,
-                        width: 370,
-                        /* path to the Flash-player fallback component */
-                        playerFlashMP4: '{{ STATIC_URL }}projekktor/jarisplayer.swf',
-                        playerFlashMP3: '{{ STATIC_URL }}projekktor/jarisplayer.swf',
-                        playlist: [
-						{% for file in files %}
-						{
-                            0:{src:'{{ file.href|urlencode }}', type: 'audio/mp3'},
-		                	config: {title: '{{ file.name }}'}
-		                },
-		                {% endfor %}
-		                ]
-		            }
-			    );
-			});
-		    </script>
             <!-- todo
             <p>TODO: ZIP download link here</p>
             -->
@@ -127,4 +95,34 @@
     {{ foldername|capfirst }}
 </script>
 
+{% endblock %}
+
+{% block ready %}
+projekktor(
+    '#audioplayer',
+    {
+        /* Docs about how to use projekktor */
+        /* http://www.projekktor.com/docs/quickinstall */
+        /* http://www.projekktor.com/docs/configuration */
+        /* http://www.projekktor.com/docs/playlists */
+        controls: true,
+        autoplay: true,
+        continuous: true,
+        loop: true,
+        enableFullscreen: false,
+        height: 38,
+        width: 370,
+        /* path to the Flash-player fallback component */
+        playerFlashMP4: '{{ STATIC_URL }}projekktor/jarisplayer.swf',
+        playerFlashMP3: '{{ STATIC_URL }}projekktor/jarisplayer.swf',
+        playlist: [
+        {% for file in files %}
+        {
+            0:{src:'{{ file.href|urlencode }}', type: 'audio/mp3'},
+            config: {title: '{{ file.name }}'}
+        },
+        {% endfor %}
+        ]
+    }
+);
 {% endblock %}
