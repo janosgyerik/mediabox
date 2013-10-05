@@ -18,6 +18,10 @@
     <div class="span4 {% if files %}album{% endif %}">
         <h2>{{ foldername|capfirst }}</h2>
 
+        {% if files %}
+            <div id="audioplayer" class="projekktor"></div>
+        {% endif %}
+
         {% if folders %}
             <ul class="albums">
                 {% for folder in folders %}
@@ -94,4 +98,34 @@
     {{ foldername|capfirst }}
 </script>
 
+{% endblock %}
+
+{% block ready %}
+projekktor(
+    '#audioplayer',
+    {
+        /* Docs about how to use projekktor */
+        /* http://www.projekktor.com/docs/quickinstall */
+        /* http://www.projekktor.com/docs/configuration */
+        /* http://www.projekktor.com/docs/playlists */
+        controls: true,
+        autoplay: false,
+        continuous: true,
+        loop: true,
+        enableFullscreen: false,
+        height: 38,
+        width: 368,
+        /* path to the Flash-player fallback component */
+        playerFlashMP4: '{{ STATIC_URL }}projekktor/jarisplayer.swf',
+        playerFlashMP3: '{{ STATIC_URL }}projekktor/jarisplayer.swf',
+        playlist: [
+        {% for file in files %}
+        {
+            0:{src:'{{ file.href|urlencode }}', type: 'audio/mp3'},
+            config: {title: '{{ file.name }}'}
+        },
+        {% endfor %}
+        ]
+    }
+);
 {% endblock %}
