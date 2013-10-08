@@ -129,6 +129,14 @@ var playerInstance = projekktor(
     }
 );
 
+var showNowPlaying = function() {
+  if ($("#nowPlaying").length == 0) {
+    $("#audioplayer").before("<div id='nowPlaying'></div>");
+  }
+  $("#nowPlaying").html(playerInstance.getConfig().title);
+};
+playerInstance.addListener('start', showNowPlaying );
+
 $("ul.album.files li a").click(function() {
   playerInstance.setActiveItem($(this).parent().index());
   playerInstance.setPlay();
