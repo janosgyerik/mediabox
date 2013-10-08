@@ -19,7 +19,7 @@
         <h2>{{ foldername|capfirst }}</h2>
 
         {% if files %}
-            <div id="audioplayer" class="projekktor"></div>
+            <audio id="audioplayer" class="projekktor"></audio>
         {% endif %}
 
         {% if folders %}
@@ -101,7 +101,7 @@
 {% endblock %}
 
 {% block ready %}
-projekktor(
+var playerInstance = projekktor(
     '#audioplayer',
     {
         /* Docs about how to use projekktor */
@@ -128,4 +128,18 @@ projekktor(
         ]
     }
 );
+
+var showNowPlaying = function() {
+  if ($("#nowPlaying").length == 0) {
+    $("#audioplayer").before("<div id='nowPlaying'></div>");
+  }
+  $("#nowPlaying").html(playerInstance.getConfig().title);
+};
+playerInstance.addListener('start', showNowPlaying );
+
+$("ul.album.files li a").click(function() {
+  playerInstance.setActiveItem($(this).parent().index());
+  playerInstance.setPlay();
+  return false;
+});
 {% endblock %}
