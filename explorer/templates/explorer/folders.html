@@ -101,7 +101,7 @@
 {% endblock %}
 
 {% block ready %}
-projekktor(
+var playerInstance = projekktor(
     '#audioplayer',
     {
         /* Docs about how to use projekktor */
@@ -128,4 +128,10 @@ projekktor(
         ]
     }
 );
+
+$("ul.album.files li a").click(function() {
+  playerInstance.setActiveItem($(this).parent().index());
+  playerInstance.setPlay();
+  return false;
+});
 {% endblock %}
