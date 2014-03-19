@@ -6,3 +6,4 @@ tmp
 /static
 .DS_Store
 common/static/media
+virtualenv
