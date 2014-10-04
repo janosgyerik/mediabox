@@ -1,7 +1,6 @@
 *.pyc
 sqlite3.db
 file.mp3
-run.sh
 tmp
 /static
 .DS_Store
