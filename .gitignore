@@ -1,8 +1,15 @@
 *.pyc
-sqlite3.db
+sqlite3.db*
 file.mp3
 tmp
 /static
 .DS_Store
 common/static/media
 virtualenv
+
+# Intellij project files
+#*.iml
+#*.ipr
+#*.iws
+.idea
+*.iml
