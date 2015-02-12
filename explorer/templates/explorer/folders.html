@@ -135,7 +135,9 @@ var showNowPlaying = function() {
   }
   $("#nowPlaying").html(playerInstance.getConfig().title);
 };
-playerInstance.addListener('start', showNowPlaying );
+if (playerInstance) {
+    playerInstance.addListener('start', showNowPlaying );
+}
 
 $("ul.album.files li a").click(function() {
   playerInstance.setActiveItem($(this).parent().index());
