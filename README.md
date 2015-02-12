@@ -1,5 +1,6 @@
 MediaBox
 ========
+
 A simple web interface to access to your media from anywhere.  Open ID
 login with whitelisting. Open-source project, using Django, Python,
 Backbone.js, HTML5, Bootstrap from Twitter.
@@ -7,6 +8,7 @@ Backbone.js, HTML5, Bootstrap from Twitter.
 
 Setup
 -----
+
 1. Install required python modules
 
         pip install -r requirements.txt
@@ -38,6 +40,7 @@ Setup
 
 Local settings
 --------------
+
 The default settings.py is suitable for development. To override some
 settings, especially DATABASES and SECRET_KEY, create a custom
 local_settings.py file, based on the included local_settings.py.sample
@@ -48,17 +51,21 @@ and call manage.py like this:
 
 Live demos
 ----------
+
 - http://mediabox.janosgyerik.com/
 
 
 Screenshots
 -----------
+
 ![Folders](https://github.com/janosgyerik/mediabox/raw/master/common/static/screenshots/folders1.png)
+
 ![Albums](https://github.com/janosgyerik/mediabox/raw/master/common/static/screenshots/album1.png)
 
 
 Features
 --------
+
 - Browse directory of music files
 - mp3 files are playable in the browser using Yahoo! WebPlayer
   (looking for a suitable alternative, implemented in pure html5)
@@ -75,6 +82,7 @@ Work in progress: (stuff that's working but not really used yet)
 
 Technologies used or planned (for aspiring contributors)
 --------------------------------------------------------
+
 - django/python: database not used yet, but will be used to replace folder traversal
 - a versioned and defined and stable ReST server as well to allow add-on's and alternate front-ends in the future, while not in code now it is thought about as features are added
 - \_, Backbone, jQ.tpl all powerhousing the new responsive Bootstrap Framework based set of theme(s)
@@ -82,12 +90,11 @@ Technologies used or planned (for aspiring contributors)
 - mutagen: used to get music file meta data, supports many audio formats
 - webplayer by Yahoo!: the current media player, but it would be great to change this
   to a pure html5 implementation without Flash
-- openid + whitelisting + invites: only invited ppl can login, via openid
 
 
 Planned features (most important at the top)
 --------------------------------------------
-- openid + whitelisting + invites: only invited ppl can login, via openid
+
 - Change the navigation: instead of page reloads folder by folder, load the entire
   collection on the client side into backbone objects and use js to navigate artists and albums.
 - Search!
