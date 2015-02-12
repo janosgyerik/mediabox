@@ -245,5 +245,3 @@ $(function() {
     onDomReady();
     YAHOO.MediaPlayer.onAPIReady.subscribe(onPlayerReady);
 });
-
-// eof
