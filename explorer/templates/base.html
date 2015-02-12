@@ -22,9 +22,9 @@
             </ul>
             <p class="navbar-text pull-right">
             {% if user.is_authenticated %}
-            Logged in as {{ user }}&mdash;<a href="{% url 'accounts.views.logout' %}">Logout</a>
+            Logged in as {{ user }}&mdash;<a href="{% url 'whitelist_auth.views.logout' %}">Logout</a>
             {% else %}
-            <a href="{% url 'accounts.views.login' %}">Login</a>
+            <a href="{% url 'whitelist_auth.views.login' %}">Login</a>
             {% endif %}
             </p>
           </div>
