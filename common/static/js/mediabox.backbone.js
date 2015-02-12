@@ -25,7 +25,7 @@ App.Media = Backbone.Model.extend({
         artist: 'ARTIST',
         album: 'ALBUM',
         title: 'TITLE',
-        url: 'file.mp3',
+        url: 'file.mp3'
     }
 });
 
@@ -35,7 +35,7 @@ App.MediaView = Backbone.View.extend({
     render: function() {
         this.$el.html(this.template(this.model.toJSON()));
         return this;
-    },
+    }
 });
 
 App.MediaList = Backbone.Collection.extend({
@@ -121,7 +121,7 @@ App.FieldView = Backbone.View.extend({
         var html = this.$('.list');
         html.empty();
         var fieldName = this.fieldName();
-        var pluck = function(item) { return item.get(fieldName); }
+        var pluck = function(item) { return item.get(fieldName); };
         var items = _.uniq(_.map(this.model.getFiltered(fieldName), pluck));
         _.each(items, function(item) {
             html.append($('<li/>').append(item));
@@ -239,7 +239,7 @@ function onPlayerReady() {
         setTimeout(play, 1000);
     };
     player.onPlaylistUpdate.subscribe(onPlaylistUpdate);
-};
+}
 
 $(function() {
     onDomReady();
