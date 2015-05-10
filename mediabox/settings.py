@@ -103,11 +103,23 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'social_auth',
+    'social.apps.django_app.default',
     'whitelist_auth',
     'common',
     'explorer',
     'movies',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -180,27 +192,10 @@ MEDIA_WWWROOT = '/static/media'
 MEDIA_EXT = ('mp3', 'ogg')
 
 AUTHENTICATION_BACKENDS = (
-        'social_auth.backends.twitter.TwitterBackend',
-        'social_auth.backends.facebook.FacebookBackend',
-        'social_auth.backends.google.GoogleOAuthBackend',
-        'social_auth.backends.google.GoogleOAuth2Backend',
-        'social_auth.backends.google.GoogleBackend',
-        'social_auth.backends.yahoo.YahooBackend',
-        'social_auth.backends.browserid.BrowserIDBackend',
-        'social_auth.backends.contrib.linkedin.LinkedinBackend',
-        'social_auth.backends.contrib.disqus.DisqusBackend',
-        'social_auth.backends.contrib.livejournal.LiveJournalBackend',
-        'social_auth.backends.contrib.orkut.OrkutBackend',
-        'social_auth.backends.contrib.foursquare.FoursquareBackend',
-        'social_auth.backends.contrib.github.GithubBackend',
-        'social_auth.backends.contrib.vk.VKOAuth2Backend',
-        'social_auth.backends.contrib.live.LiveBackend',
-        'social_auth.backends.contrib.skyrock.SkyrockBackend',
-        'social_auth.backends.contrib.yahoo.YahooOAuthBackend',
-        'social_auth.backends.contrib.readability.ReadabilityBackend',
-        'social_auth.backends.contrib.fedora.FedoraBackend',
-        'social_auth.backends.OpenIDBackend',
-        'django.contrib.auth.backends.ModelBackend',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'

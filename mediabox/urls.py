@@ -11,7 +11,7 @@ urlpatterns = patterns(
     url(r'^api/', include('services.urls')),
 
     url(r'^login/', include('whitelist_auth.urls')),
-    url(r'', include('social_auth.urls')),
+    url(r'', include('social.apps.django_app.urls', namespace='social')),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),

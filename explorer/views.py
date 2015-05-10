@@ -1,4 +1,4 @@
-from urllib import unquote
+from urllib.parse import unquote
 import os
 
 #from django.http import HttpResponse

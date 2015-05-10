@@ -44,7 +44,7 @@ def model_service(model, request, url, include=None, exclude=None, limit=None):
             return model_entity(model, request, url, include, exclude, limit)
         else:
             return model_collection(model, request, url, include, exclude, limit)
-    except Exception, e:
+    except Exception as e:
         return HttpResponse(encode_error(e), status=500)
 
 
